@@ -8,8 +8,9 @@
 
 <style>
 .container {
-  display: flex;
-  justify-content: center;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
 }
 </style>
 
@@ -39,12 +40,12 @@ Welcome to Data Mining and Machine Learning (F21DV)<br>
 </table>
 
 <br>Weekly Study: 12-13hrs
-<br>Assessment: Exam (0%) Coursework (100%) (see VLE for details)<br>
+<br>Assessment: Exam (TBC) Coursework (TBC) (see <a href='https://canvas.hw.ac.uk'>VLE</a> for details)<br>
 </div>
 </div>
 
 <script>
-let lectures = [
+let toc = [
 	{ wk:1,  title:"introduction",                             },
 	{        title:"workflows",                                },
 	{ wk:2,  title:"datapreparation"                           },
@@ -55,20 +56,21 @@ let lectures = [
 	{ wk:7,  title:"clustering"                                },
 	{ wk:8,  title:"decision-trees"                            },
 	{ wk:9,  title:"linear-classification"                     },
-	{ wk:10, title:"neural-networks", "deep-neural-networks"   },
+	{ wk:10, title:"neural-networks"                           },
+	{        title:"deep-neural-networks"                      },
 	{ wk:11, title:"convolutional-neural-networks"             }
 ]
 let bodytoc = document.getElementById('bodytoc');
 
 
-lectures.forEach( (n)=>{
+toc.forEach( ( n, i )=>{
 	// Insert a row at the end of table
 	var newRow = bodytoc.insertRow();
 	
 	if ( toc[i].wk ) newRow.insertCell().innerHTML = toc[i].wk;
 	else             newRow.insertCell().innerHTML = ''; // week
 	
-	newRow.insertCell().innerHTML = toc[i].no;
+	newRow.insertCell().innerHTML = `<span style='color:rgba(0,0,0,0.3);'>${i}</span>`; // toc[i].no;
 	newRow.insertCell().innerHTML = toc[i].title;
 	
 });
