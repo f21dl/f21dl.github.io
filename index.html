@@ -5,9 +5,75 @@
 <meta name="description" content="Data Mining and Machine Learning">
 </head>
 <body>
+
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+}
+</style>
+
+<div id='container' class="container">
+<div class="center">
+
 <h1>Data Mining and Machine Learning</h1>
 Welcome to Data Mining and Machine Learning (F21DV)<br>
 
+<table>
+<thead id="headtoc">
+<tr>
+<td>Wk      		  </td>
+<td>No      		  </td>
+<td>Topic   		  </td>
+<td>        		  </td>
+<td>Lecture 		  </td>
+<td>        		  </td>
+<td>Notes   		  </td>
+<td>Jupyter Notebooks </td>
+<td>Quizzes    		  </td>
+<td>Extra 		      </td>
+</tr>
+</thead>
+<tbody id="bodytoc">
+</tbody>
+</table>
+
+<br>Weekly Study: 12-13hrs
+<br>Assessment: Exam (0%) Coursework (100%) (see VLE for details)<br>
+</div>
+</div>
+
+<script>
+let lectures = [
+	{ wk:1,  title:"introduction",                             },
+	{        title:"workflows",                                },
+	{ wk:2,  title:"datapreparation"                           },
+	{ wk:3,  title:"statistics"                                },
+	{ wk:4,  title:"evaluation-measures"                       },
+	{ wk:5,  title:"Bayes"                                     },
+	{ wk:6,  title:"Reading Week (No-Lectures)"                },
+	{ wk:7,  title:"clustering"                                },
+	{ wk:8,  title:"decision-trees"                            },
+	{ wk:9,  title:"linear-classification"                     },
+	{ wk:10, title:"neural-networks", "deep-neural-networks"   },
+	{ wk:11, title:"convolutional-neural-networks"             }
+]
+let bodytoc = document.getElementById('bodytoc');
+
+
+lectures.forEach( (n)=>{
+	// Insert a row at the end of table
+	var newRow = bodytoc.insertRow();
+	
+	if ( toc[i].wk ) newRow.insertCell().innerHTML = toc[i].wk;
+	else             newRow.insertCell().innerHTML = ''; // week
+	
+	newRow.insertCell().innerHTML = toc[i].no;
+	newRow.insertCell().innerHTML = toc[i].title;
+	
+});
+
+</script>
 
 
 </body>
