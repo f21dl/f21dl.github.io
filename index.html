@@ -8,18 +8,48 @@
 <body>
 
 <style>
+
+body {
+	padding: 40px;
+}
+
 .container {
+  position: relative;
   display: table;
   margin-right: auto;
   margin-left: auto;
 }
+
+.leftimage {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width:1160px) { /* nothing with screen size smaller than 960px */
+
+	.leftblock {
+		display:none!important;
+	}
+
+}
+
+
+#bodytoc td:hover{
+	background-color: rgba(200,200,200,0.5); 
+	cursor: hand;
+}
+
 </style>
 
 <div id='container' class="container">
-<div class="center">
+<div class='innercontainer'>
+<div class='leftblock leftimage' style='margin-right:20px; display: table-cell; margin:20px; vertical-align:top; height:100%; min-width: 400px; background: url("./material/images/spidertree2.jpg"); background-size:cover;' title='Millions of Spiders Encase Entire Trees in Webs'>
+</div>
+<div class='leftblock' style='display:table-cell;width:30px;'>
+</div>
+<div style='display:table-cell;'>
 
 <h1>Data Mining and Machine Learning</h1>
-Welcome to Data Mining and Machine Learning (F21DV)<br>
+Welcome to Data Mining and Machine Learning (F20DV/F21DV)<br><br>
 
 <table>
 <thead id="headtoc">
@@ -31,7 +61,7 @@ Welcome to Data Mining and Machine Learning (F21DV)<br>
 <td>Lecture 		  </td>
 <td>        		  </td>
 <td>Notes   		  </td>
-<td>Jupyter Notebooks </td>
+<td>Jupyter           </td>
 <td>Quizzes    		  </td>
 <td>Extra 		      </td>
 </tr>
@@ -42,6 +72,8 @@ Welcome to Data Mining and Machine Learning (F21DV)<br>
 
 <br>Weekly Study: 12-13hrs
 <br>Assessment: Exam (TBC) Coursework (TBC) (see <a href='https://canvas.hw.ac.uk'>VLE</a> for details)<br>
+</div>
+
 </div>
 </div>
 
