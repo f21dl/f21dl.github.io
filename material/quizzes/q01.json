@@ -1,0 +1,68 @@
+{
+"questions": [
+{
+  "question": "Which term refers to the process of converting raw data into a more structured format?",
+  "options": {
+    "a": "Data preprocessing",
+    "b": "Feature extraction",
+    "c": "Model training",
+    "d": "Prediction"
+  },
+  "answer": "a",
+  "clue": "It involves cleaning, transforming, and integrating data.",
+  "explanation": "Data preprocessing refers to the initial step in data mining where raw data is transformed and prepared for further analysis. It involves cleaning data, handling missing values, normalizing variables, and other techniques to improve data quality and usability."
+}
+,
+{
+  "question": "Which type of machine learning algorithm aims to find patterns in unlabeled data?",
+  "options": {
+    "a": "Supervised learning",
+    "b": "Unsupervised learning",
+    "c": "Reinforcement learning",
+    "d": "Semi-supervised learning"
+  },
+  "answer": "b",
+  "clue": "It focuses on discovering inherent structures and relationships.",
+  "explanation": "Unsupervised learning is a type of machine learning where the algorithm learns patterns and relationships from unlabeled data. The goal is to identify clusters, associations, or latent factors within the data without any predefined class labels."
+}
+,
+{
+  "question": "Which algorithm is commonly used for predicting continuous numerical values?",
+  "options": {
+    "a": "K-means",
+    "b": "Decision tree",
+    "c": "Linear regression",
+    "d": "Logistic regression"
+  },
+  "answer": "c",
+  "clue": "It models the relationship between variables with a straight line.",
+  "explanation": "Linear regression is a popular algorithm for predicting continuous numerical values. It fits a linear equation to the data by minimizing the sum of squared differences between the predicted and actual values. The resulting line can be used for making predictions."
+}
+,
+{
+  "question": "Which evaluation metric is commonly used for regression models?",
+  "options": {
+    "a": "Precision",
+    "b": "Recall",
+    "c": "Mean Squared Error (MSE)",
+    "d": "F1 Score"
+  },
+  "answer": "c",
+  "clue": "It measures the average squared difference between predicted and actual values.",
+  "explanation": "Mean Squared Error (MSE) is a widely used evaluation metric for regression models. It calculates the average of the squared differences between the predicted and actual values. Lower MSE values indicate better model performance."
+}
+,
+{
+  "question": "Which technique is used for dividing a dataset into training and testing subsets?",
+  "options": {
+    "a": "Feature scaling",
+    "b": "Cross-validation",
+    "c": "Dimensionality reduction",
+    "d": "Train-test split"
+  },
+  "answer": "d",
+  "clue": "It involves randomly partitioning the data.",
+  "explanation": "Train-test split is a common technique for evaluating machine learning models. It involves dividing the dataset into two subsets: one for training the model and the other for testing its performance. The training set is used to build the model, while the testing set is used to assess its generalization ability."
+}
+]
+}

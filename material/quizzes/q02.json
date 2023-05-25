@@ -1,0 +1,68 @@
+{
+"questions":[
+{
+  "question": "Which technique is used to discover patterns and relationships in large datasets?",
+  "options": {
+    "a": "Regression",
+    "b": "Clustering",
+    "c": "Classification",
+    "d": "Association rule mining"
+  },
+  "answer": "d",
+  "clue": "This technique aims to find associations between different items.",
+  "explanation": "Association rule mining is a technique used in data mining to discover relationships, dependencies, and associations among items in a dataset. It is often used in market basket analysis and recommendation systems."
+}
+,
+{
+  "question": "Which algorithm is a popular approach for supervised learning?",
+  "options": {
+    "a": "Apriori",
+    "b": "K-means",
+    "c": "Decision tree",
+    "d": "DBSCAN"
+  },
+  "answer": "c",
+  "clue": "This algorithm constructs a flowchart-like structure to make decisions.",
+  "explanation": "A decision tree is a popular algorithm for supervised learning. It uses a tree-like model of decisions and their possible consequences to create a predictive model. Decision trees are used in various applications, including classification and regression tasks."
+}
+,
+{
+  "question": "Which evaluation metric is commonly used to assess classification models?",
+  "options": {
+    "a": "RMSE",
+    "b": "R-squared",
+    "c": "Accuracy",
+    "d": "Mean Absolute Error (MAE)"
+  },
+  "answer": "c",
+  "clue": "It measures the percentage of correct predictions.",
+  "explanation": "Accuracy is a widely used evaluation metric for classification models. It measures the percentage of correct predictions made by the model on a given dataset. Accuracy is particularly useful when the classes in the dataset are balanced."
+}
+,
+{
+  "question": "Which technique is used for reducing the dimensionality of a dataset?",
+  "options": {
+    "a": "Linear regression",
+    "b": "Principal Component Analysis (PCA)",
+    "c": "Naive Bayes",
+    "d": "Support Vector Machine (SVM)"
+  },
+  "answer": "b",
+  "clue": "It transforms the original features into a new set of orthogonal features.",
+  "explanation": "Principal Component Analysis (PCA) is a technique used for dimensionality reduction. It identifies the directions (principal components) in which the data varies the most and transforms the data into a new coordinate system that is uncorrelated and ordered by importance."
+}
+,
+{
+  "question": "Which algorithm is commonly used for handling missing values in a dataset?",
+  "options": {
+    "a": "Random Forest",
+    "b": "K-nearest neighbors (KNN)",
+    "c": "Neural networks",
+    "d": "Logistic regression"
+  },
+  "answer": "b",
+  "clue": "It imputes missing values based on similar instances.",
+  "explanation": "K-nearest neighbors (KNN) is a popular algorithm used for handling missing values. It imputes missing values by finding the K most similar instances (neighbors) to the instance with missing values and uses their values to impute the missing values."
+}
+]
+}
