@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+
+window.onload = function()
+{
+	const queryString = window.location.search; // e.g. ?active=shirt&color=blue&newuser&size=m
+
+	const urlParams = new URLSearchParams(queryString);
+	
+	let questions = null;
+	if ( urlParams.has('id') )
+	{
+		const id = urlParams.get('id');
+		console.log('loading: ', id );
+		//let prom = await fetch( `https://f21dl.github.io/material/quizzes/q${id}.json` ); // {cache: "no-store"})
+		//let txt  = await prom.text();
+		
+		//questions = JSON.parse( txt ).questions;
+		let iframe = document.createElement('iframe');
+		document.body.appendChild( iframe );
+		iframe.src = `https://f21dl.github.io/material/lectures/${id}.pdf`; 
+		iframe.frameborder = "0";
+		iframe.style.width = "100%";
+		iframe.style.height = "100%";
+		
+	}
+}		
+		
+</script>
+
+
+<div style="display: block; position: fixed; bottom: 5px; left: 5px; margin-left: 0px; z-index: 200000;">
+	<a href="https://f20dl.github.io"><img src="images/webhome.png" height="25px"></a>
+</div>
+
+
+</body>
+</html>
+
+
