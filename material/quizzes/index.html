@@ -87,7 +87,7 @@
 		{
 			const id = urlParams.get('id');
 			console.log('loading: ', id );
-			let prom = await fetch( 'https://f21dl.github.io/material/quizzes/q{$id}.json' ); // {cache: "no-store"})
+			let prom = await fetch( 'https://f21dl.github.io/material/quizzes/q${id}.json' ); // {cache: "no-store"})
 			let txt  = await prom.text();
 			
 			questions = JSON.parse( txt ).questions;
