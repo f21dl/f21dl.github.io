@@ -1,0 +1,45 @@
+{
+"questions":[
+    {
+      "question": "How much is the total coursework component worth?",
+      "options": {
+        "a": "40%",
+        "b": "50%",
+        "c": "60%",
+		"d": "100%"
+      },
+      "answer": "d"
+    },
+	{
+      "question": "Is this a theory only course?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+	  "explanation": "Combinatoin of both theory and applied concepts; this requires you to attend labs and work through exercises (demonstrate your ability to critically assess, evaluate and problem solve)."
+    }
+	,
+	{
+      "question": "What are the course Pre-requisites?",
+      "options": {
+        "a": "No mathematical or programming knowledge",
+        "b": "Numeracy and basic OO programming ability (equivalent to 3rd year Computer Science Student)",
+		"c": "Expert in machine learning, programming and mathematics"
+      },
+      "answer": "b",
+	  "explanation": "(see for details: <a target='_blank' href='https://www.macs.hw.ac.uk/students/cs/courses/f21dv-data-visualisation-and-analytics/'> Link</a>)"
+    }
+	,
+    {
+      "question": "The course is worth 15 credits - how many hours of study/learning time does this require of you over the semester:",
+      "options": {
+        "a": "50  hours (4-5 hours a week)",
+        "b": "100 hours (8-9 hours a week)",
+		"c": "150 hours (12-13 hours a week)"
+      },
+      "answer": "c",
+	  "explanation": "(see for details: <a target='_blank' href='https://www.hw.ac.uk/uk/services/docs/academic-registry/examdoc5.pdf'> Link</a>)`"
+    }
+  ]
+}
