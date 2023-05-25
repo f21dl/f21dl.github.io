@@ -108,7 +108,7 @@ toc.forEach( ( n, i )=>{
 	
 	newRow.insertCell().innerHTML = '' // blank 
 	
-	if ( toc[i].l ) newRow.insertCell().innerHTML = <a href="https://f21dl.github.io/material/lectures/index.html?id=${toc[i].l}&">Slides</a>; // lecture 
+	if ( toc[i].l ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/lectures/index.html?id=${toc[i].l}&">Slides</a>`; // lecture 
 	else            newRow.insertCell().innerHTML = ''; 
 
 	newRow.insertCell().innerHTML = '' // blank 
