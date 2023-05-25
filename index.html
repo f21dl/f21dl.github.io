@@ -79,19 +79,19 @@ Welcome to Data Mining and Machine Learning (F20DV/F21DV)<br><br>
 
 <script>
 let toc = [
-	{ wk:1,  title:"Introduction",                             },
-	{        title:"Data-and-Workflows",                       },
-	{ wk:2,  title:"Data-Preparation"                          },
-	{ wk:3,  title:"Statistics"                                },
-	{ wk:4,  title:"Evaluation-Measures"                       },
-	{ wk:5,  title:"Bayes"                                     },
-	{ wk:6,  title:"Reading Week (No-Lectures)"                },
-	{ wk:7,  title:"Clustering"                                },
-	{ wk:8,  title:"Decision-Trees"                            },
-	{ wk:9,  title:"Linear-Classification"                     },
-	{ wk:10, title:"Neural-Networks"                           },
-	{        title:"Deep-Neural-Networks"                      },
-	{ wk:11, title:"Convolutional-Neural-Networks"             }
+	{ wk:1,  title:"Introduction"                       , q:"00"       },
+	{        title:"Data-and-Workflows"                 , q:"01"       },
+	{ wk:2,  title:"Data-Preparation"                                  },
+	{ wk:3,  title:"Statistics"                                        },
+	{ wk:4,  title:"Evaluation-Measures"                               },
+	{ wk:5,  title:"Bayes"                                             },
+	{ wk:6,  title:"Reading Week (No-Lectures)"                        },
+	{ wk:7,  title:"Clustering"                                        },
+	{ wk:8,  title:"Decision-Trees"                                    },
+	{ wk:9,  title:"Linear-Classification"              , q:'02'       },
+	{ wk:10, title:"Neural-Networks"                                   },
+	{        title:"Deep-Neural-Networks"                              },
+	{ wk:11, title:"Convolutional-Neural-Networks"                     }
 ]
 let bodytoc = document.getElementById('bodytoc');
 
@@ -106,6 +106,37 @@ toc.forEach( ( n, i )=>{
 	newRow.insertCell().innerHTML = `<span style='color:rgba(0,0,0,0.3);'>${i}</span>`; // toc[i].no;
 	newRow.insertCell().innerHTML = toc[i].title;
 	
+	newRow.insertCell().innerHTML = '' // blank 
+	
+	if ( toc[i].l ) newRow.insertCell().innerHTML = toc[i].l; // lecture 
+	else            newRow.insertCell().innerHTML = ''; 
+
+	newRow.insertCell().innerHTML = '' // blank 
+	
+	if ( toc[i].n ) newRow.insertCell().innerHTML = toc[i].n; // notes 
+	else            newRow.insertCell().innerHTML = ''; 
+	
+	if ( toc[i].j ) newRow.insertCell().innerHTML = toc[i].j; // jupyter 
+	else            newRow.insertCell().innerHTML = ''; 
+	
+	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/quizzes/index.html?id=${toc[i].q}&">Quiz</a>`; // quizzes 
+	else            newRow.insertCell().innerHTML = '';
+	
+	if ( toc[i].e ) newRow.insertCell().innerHTML = toc[i].e; // extra 
+	else            newRow.insertCell().innerHTML = '';
+
+/*
+<td>Wk      		  </td>
+<td>No      		  </td>
+<td>Topic   		  </td>
+<td>        		  </td>
+<td>Lecture 		  </td>
+<td>        		  </td>
+<td>Notes   		  </td>
+<td>Jupyter           </td>
+<td>Quizzes    		  </td>
+<td>Extra 		      </td>
+*/
 });
 
 </script>
