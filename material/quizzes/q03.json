@@ -1,0 +1,68 @@
+{
+"questions":[
+{
+  "question": "Which step of the data preparation process involves handling missing values?",
+  "options": {
+    "a": "Data integration",
+    "b": "Data cleaning",
+    "c": "Data transformation",
+    "d": "Data reduction"
+  },
+  "answer": "b",
+  "clue": "It aims to address the presence of null or incomplete data.",
+  "explanation": "Data cleaning is the step in the data preparation process that focuses on handling missing values, outliers, duplicates, and inconsistencies in the dataset. Various techniques, such as imputation or removal, are applied to ensure the quality and completeness of the data."
+}
+,
+{
+  "question": "Which technique is used to remove duplicate records in a dataset?",
+  "options": {
+    "a": "Feature scaling",
+    "b": "Data sampling",
+    "c": "Data discretization",
+    "d": "Data deduplication"
+  },
+  "answer": "d",
+  "clue": "It aims to eliminate repeated instances in the dataset.",
+  "explanation": "Data deduplication is a technique used to remove duplicate records from a dataset. It identifies and eliminates instances that have identical values across multiple attributes, ensuring that each record in the dataset is unique."
+}
+,
+{
+  "question": "Which technique is used to convert categorical variables into numerical form?",
+  "options": {
+    "a": "Feature engineering",
+    "b": "One-hot encoding",
+    "c": "Data imputation",
+    "d": "Data discretization"
+  },
+  "answer": "b",
+  "clue": "It creates binary variables for each category of a categorical feature.",
+  "explanation": "One-hot encoding is a technique used to represent categorical variables numerically. It creates new binary variables (0 or 1) for each category of a categorical feature, allowing machine learning algorithms to work with categorical data effectively."
+}
+,
+{
+  "question": "Which data preparation technique scales numerical features to a standard range?",
+  "options": {
+    "a": "Data imputation",
+    "b": "Data discretization",
+    "c": "Feature scaling",
+    "d": "Data integration"
+  },
+  "answer": "c",
+  "clue": "It ensures that all numerical features have a similar scale.",
+  "explanation": "Feature scaling is a data preparation technique that rescales numerical features to a standard range, such as 0 to 1 or -1 to 1. It is necessary when features have different scales, preventing certain features from dominating the learning process."
+}
+,
+{
+  "question": "Which technique is used to handle outliers in a dataset?",
+  "options": {
+    "a": "Data integration",
+    "b": "Data sampling",
+    "c": "Data discretization",
+    "d": "Data filtering"
+  },
+  "answer": "d",
+  "clue": "It involves identifying and removing or modifying extreme values.",
+  "explanation": "Data filtering is a technique used to handle outliers in a dataset. Outliers are data points that significantly deviate from the normal distribution of the dataset. They can be treated by removing them, replacing them with more representative values, or transforming them to reduce their impact on the analysis."
+}
+]
+}

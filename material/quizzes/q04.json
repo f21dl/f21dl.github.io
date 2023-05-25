@@ -1,0 +1,68 @@
+{
+"questions":[
+{
+  "question": "Which statistical measure provides a measure of central tendency for a dataset?",
+  "options": {
+    "a": "Variance",
+    "b": "Standard deviation",
+    "c": "Mean",
+    "d": "Correlation coefficient"
+  },
+  "answer": "c",
+  "clue": "It represents the average value of the dataset.",
+  "explanation": "The mean is a statistical measure of central tendency that represents the average value of a dataset. It is calculated by summing all the values in the dataset and dividing it by the number of observations."
+}
+,
+{
+  "question": "Which statistical measure describes the spread or dispersion of a dataset?",
+  "options": {
+    "a": "Median",
+    "b": "Mode",
+    "c": "Range",
+    "d": "Variance"
+  },
+  "answer": "d",
+  "clue": "It quantifies the variability between data points.",
+  "explanation": "Variance is a statistical measure that describes the spread or dispersion of a dataset. It quantifies the average squared deviation of each data point from the mean. A higher variance indicates a greater spread of the data."
+}
+,
+{
+  "question": "Which statistical measure is resistant to outliers?",
+  "options": {
+    "a": "Mean",
+    "b": "Mode",
+    "c": "Median",
+    "d": "Standard deviation"
+  },
+  "answer": "c",
+  "clue": "It represents the middle value of a dataset.",
+  "explanation": "The median is a statistical measure that represents the middle value in a dataset when arranged in ascending or descending order. It is resistant to outliers because it is not affected by extreme values."
+}
+,
+{
+  "question": "Which statistical test is used to determine the relationship between two continuous variables?",
+  "options": {
+    "a": "T-test",
+    "b": "Chi-square test",
+    "c": "ANOVA",
+    "d": "Correlation test"
+  },
+  "answer": "d",
+  "clue": "It measures the strength and direction of the linear relationship.",
+  "explanation": "A correlation test is used to determine the relationship between two continuous variables. It measures the strength and direction of the linear relationship between the variables, providing a correlation coefficient that ranges from -1 to 1."
+}
+,
+{
+  "question": "Which statistical measure is used to assess the spread of a dataset around the mean?",
+  "options": {
+    "a": "Skewness",
+    "b": "Kurtosis",
+    "c": "Range",
+    "d": "Standard deviation"
+  },
+  "answer": "d",
+  "clue": "It quantifies the average distance between data points and the mean.",
+  "explanation": "Standard deviation is a statistical measure used to assess the spread of a dataset around the mean. It quantifies the average distance between each data point and the mean, providing a measure of the dispersion of the data."
+}
+]
+}
