@@ -1,15 +1,5 @@
 {
 "questions":[
-    {
-      "question": "How much is the total coursework component worth?",
-      "options": {
-        "a": "40%",
-        "b": "50%",
-        "c": "60%",
-		"d": "100%"
-      },
-      "answer": "d"
-    },
 	{
       "question": "Is this a theory only course?",
       "options": {
@@ -28,7 +18,7 @@
 		"c": "Expert in machine learning, programming and mathematics"
       },
       "answer": "b",
-	  "explanation": "(see for details: <a target='_blank' href='https://www.macs.hw.ac.uk/students/cs/courses/f21dv-data-visualisation-and-analytics/'> Link</a>)"
+	  "explanation": "(see for details: <a target='_blank' href='https://www.macs.hw.ac.uk/students/cs/courses/'> Link</a>)"
     }
 	,
     {
