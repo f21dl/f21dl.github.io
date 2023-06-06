@@ -155,7 +155,7 @@ toc.forEach( ( n, i )=>{
 	if ( toc[i].n ) newRow.insertCell().innerHTML = toc[i].n; // notes 
 	else            newRow.insertCell().innerHTML = ''; 
 	
-	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a href="https://github.com/f21dl/f21dl.github.io/blob/main/material/jupyter/lab${toc[i].j}.ipynb">iPynb</a>`; // jupyter 
+	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/jupyter/index.html?id=${toc[i].j}&">iPynb</a>`; // jupyter 
 	else            newRow.insertCell().innerHTML = ''; 
 	
 	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/quizzes/index.html?id=${toc[i].q}&">Quiz</a>`; // quizzes 
