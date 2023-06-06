@@ -3,6 +3,8 @@
 </head>
 <body>
 
+<base target="_blank" />
+
 <script>
 
 window.onload = function()
@@ -16,19 +18,26 @@ window.onload = function()
 	{
 		const id = urlParams.get('id');
 		console.log('loading: ', id );
-		//let prom = await fetch( `https://f21dl.github.io/material/jupyter/lab${id}.json` ); // {cache: "no-store"})
+		//let prom = await fetch( `https://f21dl.github.io/material/jupyter/lab${id}.ipynb` ); // {cache: "no-store"})
 		//let txt  = await prom.text();
+
+		window.location.href = `https://github.com/f21dl/f21dl.github.io/blob/main/material/jupyter/lab${id}.ipynb`;
 		
+		/*
 		//questions = JSON.parse( txt ).questions;
 		let iframe = document.createElement('iframe');
 		document.body.appendChild( iframe );
 		iframe.src = `https://nbviewer.org/urls/f21dl.github.io/material/jupyter/lab${id}.ipynb`; 
 		iframe.frameborder = "0";
+		iframe.frameBorder="0";
 		iframe.scrolling = "0";
 		iframe.width = '100%';
 		iframe.height = '100%';
 		iframe.style.width = "100%";
 		iframe.style.height = "100%";
+		iframe.style.margin = '0';
+		iframe.style.padding = '0';
+		*/
 		
 	}
 }		
