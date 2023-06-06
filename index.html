@@ -33,9 +33,16 @@ body {
 }
 
 
-#bodytoc td:hover{
+#bodytoc tr:hover{
 	background-color: rgba(200,200,200,0.5); 
 	cursor: hand;
+}
+
+table {
+  border-collapse: collapse;
+}
+td {
+  padding: 2px;
 }
 
 </style>
@@ -71,6 +78,7 @@ Welcome to Data Mining and Machine Learning (F20DV/F21DV)<br><br>
 </table>
 
 <br>Weekly Study: 12-13hrs
+<br>Data Mining (1-4), Machine Learning (5-11)
 <br>Assessment: Exam (TBC) Coursework (TBC) (see <a href='https://canvas.hw.ac.uk'>VLE</a> for details)<br>
 </div>
 
@@ -79,26 +87,57 @@ Welcome to Data Mining and Machine Learning (F20DV/F21DV)<br><br>
 
 <script>
 let toc = [
-	{ wk:1,  title:"Introduction"                    , l:'00'   , q:"00"      },
-	{        title:"Data-and-Workflows"              , l:'01'   , q:"01"      },
-	{ wk:2,  title:"Data-Preparation"                , l:'02'   , q:"03"      },
-	{ wk:3,  title:"Statistics"                      , l:'03'   , q:"04"      },
-	{ wk:4,  title:"Evaluation-Measures"             , l:'04'                 },
-	{ wk:5,  title:"Bayes"                           , l:'05'                 },
-	{ wk:6,  title:"Reading Week (No-Lectures)"                               },
-	{ wk:7,  title:"Clustering"                      , l:'07a'                },
-	{ wk:8,  title:"Decision-Trees"                  , l:'08'    	          },
-	{ wk:9,  title:"Linear-Classification"           , l:'09a'  , q:'02'      },
-	{ wk:10, title:"Neural-Networks"                 , l:'10a'                },
-	{        title:"Deep-Neural-Networks"            , l:'10b'                },
-	{ wk:11, title:"Convolutional-Neural-Networks"   , l:'11'                 }
-]
+	{ wk:1,                     title:"Overview & Introduction"                       , l:'00'           ,  q:"00"      },
+	{ a1: "Part 1: Data analysis & pattern mining"},                                                     
+	{                           title:"Data Mining and Machine Learning"              , l:'01',  j:'01'  ,  q:"01"      },
+	{ wk:2,                     title:"Knowledge Representation and Data Preparation" , l:'02',  j:'02'  ,  q:"03"      },
+	{ wk:3,                     title:"Attribute Selection and Model Testing"         , l:'03',  j:'03'  ,  q:"04"      },
+	{ wk:4,                     title:"Evaluation Metrics"                            , l:'04'                          },
+	{ a1: "Part 2: Classification & clustering" },                                                          
+	{ wk:5,                     title:"Probabilistic Classification (Bayes)"          , l:'05'                          },
+	{ wk:6,                     title:"Reading Week (No-Lectures)"                                                      },
+	{ wk:7,                     title:"Clustering"                                    , l:'07a'             	        },
+	//{ a1: "Part 3: Clustering" },                                                                        
+	{ wk:8,                     title:"Decision Trees"                                , l:'08'                          },
+	{ wk:9,                     title:"Linear and Logistic Regression"                , l:'09a'          ,  q:'02'      },
+	{ a1: "Part 4: Regression"},                                                                           
+	{ wk:10,                    title:"Multilayer Perceptron (Neural Networks)"       , l:'10b'                         },
+	{ wk:11,                    title:"Convolutional Neural Networks"                 , l:'11'                          }
+]                                                                                                        
 let bodytoc = document.getElementById('bodytoc');
 
+/*
+Week 1: Course Overview & Introduction to Data Mining and Machine Learning
+Week 2: Knowledge Representation and Data Preparation
+Week 3: Attribute Selection and Model Testing
+Week 4: Evaluation Metrics & ML Project (A-Z)
+Week 5 Bayes Nets
+-
+Week 7: Clustering
+Week 8: Decision Trees
+Week 9. Linear and Logistic Regression
+Week 10. Multilayer Perceptron
+Week 11. Convolutional Neural Networks
+Week 12. Revision
+*/
 
 toc.forEach( ( n, i )=>{
 	// Insert a row at the end of table
 	var newRow = bodytoc.insertRow();
+	
+	if ( toc[i].a1 )
+	{
+		newRow.style.backgroundColor = 'rgba(200,200,200,0.2)';
+		let cell = newRow.insertCell();
+		cell.innerHTML = toc[i].a1;
+		cell.colSpan = "11";
+		return;
+	}
+	
+	if ( toc[i].wk && toc[i].wk==6 )
+	{ 
+		newRow.style.color = 'rgba(200,100,100,1.0)';
+	}
 	
 	if ( toc[i].wk ) newRow.insertCell().innerHTML = toc[i].wk;
 	else             newRow.insertCell().innerHTML = ''; // week
@@ -116,7 +155,7 @@ toc.forEach( ( n, i )=>{
 	if ( toc[i].n ) newRow.insertCell().innerHTML = toc[i].n; // notes 
 	else            newRow.insertCell().innerHTML = ''; 
 	
-	if ( toc[i].j ) newRow.insertCell().innerHTML = toc[i].j; // jupyter 
+	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a href="./material/jupyter/lab${toc[i].j}.ipynb">iPynb</a>`; // jupyter 
 	else            newRow.insertCell().innerHTML = ''; 
 	
 	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/quizzes/index.html?id=${toc[i].q}&">Quiz</a>`; // quizzes 
