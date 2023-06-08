@@ -115,15 +115,7 @@
    "clue": "Final predictions",
    "explanation": "The output layer in a Multilayer Perceptron produces the final predictions of the network. It applies the activation function to the weighted sum of inputs from the previous layer and outputs the predicted values or probabilities for each class."
 
-},
-{
-   "question": "What is the purpose of regularization techniques in training a Multilayer Perceptron?",
-   "options": {
-      "a": "To adjust the weights of the network during backpropagation.",
-      "b": "To control the number of hidden layers in the network.",
-      "c": "To prevent overfitting and improve generalization.",
-      "d": "To initialize
-   }
-  
+}
+
 ]
 }
