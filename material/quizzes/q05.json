@@ -1,0 +1,124 @@
+{
+"questions":[
+{
+   "question": "Which of the following is true about Bayes' theorem?",
+   "options": {
+      "a": "It is used to calculate conditional probabilities.",
+      "b": "It is used to calculate joint probabilities.",
+      "c": "It is used to calculate marginal probabilities.",
+      "d": "It is used to calculate posterior probabilities."
+   },
+   "answer": "a",
+   "clue": "Conditional probabilities",
+   "explanation": "Bayes' theorem is used to calculate conditional probabilities by reversing the conditional probability formula. It allows us to update our beliefs or predictions based on new evidence or information."
+},
+{
+   "question": "In probabilistic classification, what is the role of the prior probability?",
+   "options": {
+      "a": "It represents the probability of the input feature being classified correctly.",
+      "b": "It represents the probability of the output label given the input feature.",
+      "c": "It represents the probability of the input feature belonging to a specific class.",
+      "d": "It represents the probability of misclassification."
+   },
+   "answer": "c",
+   "clue": "Belonging to a specific class",
+   "explanation": "The prior probability in probabilistic classification represents the probability of the input feature belonging to a specific class before considering any evidence or observations."
+},
+{
+   "question": "What is the main assumption made by Naive Bayes classifiers?",
+   "options": {
+      "a": "Features are independent of each other given the class.",
+      "b": "Features are dependent on each other given the class.",
+      "c": "Features are independent of each other regardless of the class.",
+      "d": "Features are dependent on each other regardless of the class."
+   },
+   "answer": "a",
+   "clue": "Independence",
+   "explanation": "Naive Bayes classifiers assume that the features are independent of each other given the class. This assumption simplifies the calculations and makes the model more tractable."
+},
+{
+   "question": "What does the likelihood function represent in Bayes' theorem?",
+   "options": {
+      "a": "The prior probability of the class.",
+      "b": "The evidence or observations of the input features.",
+      "c": "The posterior probability of the class.",
+      "d": "The probability of misclassification."
+   },
+   "answer": "b",
+   "clue": "Evidence or observations",
+   "explanation": "The likelihood function in Bayes' theorem represents the evidence or observations of the input features given a specific class. It measures how likely the observed features are for a particular class."
+},
+{
+   "question": "Which technique can be used to handle continuous input features in Bayes' theorem?",
+   "options": {
+      "a": "Discretization",
+      "b": "Gaussian distribution",
+      "c": "Logistic regression",
+      "d": "Decision tree"
+   },
+   "answer": "b",
+   "clue": "Continuous input features",
+   "explanation": "A Gaussian distribution (or normal distribution) can be used to model continuous input features in Bayes' theorem. It assumes that the features follow a bell-shaped curve."
+},
+{
+   "question": "What is the range of values for probabilities calculated using Bayes' theorem?",
+   "options": {
+      "a": "0 to 1",
+      "b": "-1 to 1",
+      "c": "Negative infinity to positive infinity",
+      "d": "0 to 1"
+   },
+   "answer": "a",
+   "clue": "Range of probabilities",
+   "explanation": "Probabilities calculated using Bayes' theorem always fall within the range of 0 to 1. A probability of 0 represents impossibility, while a probability of 1 represents certainty."
+},
+{
+   "question": "What is the main disadvantage of the Naive Bayes classifier?",
+   "options": {
+      "a": "It cannot handle missing values in the input features.",
+      "b": "It is computationally expensive for large datasets.",
+      "c": "It assumes that the features are dependent on each other given the class.",
+      "d": "It is sensitive to irrelevant features in the dataset."
+   },
+   "answer": "c",
+   "clue": "Dependency assumption",
+   "explanation": "The main disadvantage of the Naive Bayes classifier is that it assumes the features are independent of each other given the class, which is often not the case in real-world scenarios."
+},
+{
+   "question": "What is the purpose of the Laplace smoothing technique in Naive Bayes classifiers?",
+   "options": {
+      "a": "To handle missing values in the input features.",
+      "b": "To reduce the effect of irrelevant features in the dataset.",
+      "c": "To prevent zero probabilities in case of unseen feature-label combinations.",
+      "d": "To improve computational efficiency."
+   },
+   "answer": "c",
+   "clue": "Zero probabilities",
+   "explanation": "Laplace smoothing, also known as add-one smoothing, is used in Naive Bayes classifiers to prevent zero probabilities when encountering unseen feature-label combinations. It adds a small value to each count to ensure non-zero probabilities."
+},
+{
+   "question": "What is the purpose of the decision boundary in probabilistic classification?",
+   "options": {
+      "a": "To separate the input feature space into different classes.",
+      "b": "To calculate the prior probabilities of the classes.",
+      "c": "To estimate the posterior probabilities of the classes.",
+      "d": "To handle missing values in the input features."
+   },
+   "answer": "a",
+   "clue": "Separating classes",
+   "explanation": "The decision boundary in probabilistic classification is a boundary or hyperplane that separates the input feature space into different classes. It determines which class a given input belongs to based on its position relative to the boundary."
+},
+{
+   "question": "What is the relationship between Bayes' theorem and maximum likelihood estimation?",
+   "options": {
+      "a": "Bayes' theorem is a generalization of maximum likelihood estimation.",
+      "b": "Maximum likelihood estimation is a special case of Bayes' theorem.",
+      "c": "Bayes' theorem is used to estimate the parameters in maximum likelihood estimation.",
+      "d": "Maximum likelihood estimation is used to calculate the prior probabilities in Bayes' theorem."
+   },
+   "answer": "b",
+   "clue": "Relationship with maximum likelihood estimation",
+   "explanation": "Maximum likelihood estimation is a special case of Bayes' theorem where the prior probabilities are assumed to be uniform or non-informative. It is a commonly used method for estimating the parameters of a probability distribution."
+}
+]
+}

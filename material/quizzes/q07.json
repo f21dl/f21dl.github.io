@@ -1,0 +1,70 @@
+{
+"questions":[
+
+{
+"question": "What is the goal of clustering in machine learning?",
+"options": {
+"a": "To classify data into predefined categories.",
+"b": "To predict continuous values.",
+"c": "To discover inherent patterns or groupings in data.",
+"d": "To assign labels to new instances."
+},
+"answer": "c",
+"clue": "Discover patterns or groupings",
+"explanation": "The goal of clustering in machine learning is to discover inherent patterns or groupings in data. It involves partitioning data points into clusters based on their similarity, without prior knowledge of the groups or categories."
+}
+,
+{
+"question": "Which of the following clustering algorithms requires the number of clusters as an input parameter?",
+"options": {
+"a": "K-means",
+"b": "DBSCAN",
+"c": "Hierarchical clustering",
+"d": "Mean-shift"
+},
+"answer": "a",
+"clue": "Number of clusters input",
+"explanation": "The K-means clustering algorithm requires the number of clusters as an input parameter. It aims to partition the data into a predefined number of clusters, where K represents the number of clusters to be identified."
+}
+,
+{
+"question": "What is the main limitation of K-means clustering?",
+"options": {
+"a": "It cannot handle categorical data.",
+"b": "It requires labeled training data.",
+"c": "It is sensitive to the initial choice of cluster centroids.",
+"d": "It cannot handle large datasets."
+},
+"answer": "c",
+"clue": "Initial centroid sensitivity",
+"explanation": "The main limitation of K-means clustering is its sensitivity to the initial choice of cluster centroids. Depending on the initial centroids, K-means can converge to different solutions, resulting in different cluster assignments and potentially suboptimal results."
+}
+,
+{
+"question": "Which clustering algorithm is based on density and does not require specifying the number of clusters?",
+"options": {
+"a": "K-means",
+"b": "DBSCAN",
+"c": "Agglomerative clustering",
+"d": "Spectral clustering"
+},
+"answer": "b",
+"clue": "Density-based and no fixed clusters",
+"explanation": "DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a clustering algorithm based on density. It does not require specifying the number of clusters in advance and can discover clusters of arbitrary shape while also identifying noise points."
+}
+,
+{
+"question": "What is the main advantage of hierarchical clustering?",
+"options": {
+"a": "Efficiency in handling large datasets.",
+"b": "Ability to handle categorical data.",
+"c": "Flexibility in choosing the number of clusters.",
+"d": "Robustness against outliers."
+},
+"answer": "c",
+"clue": "Flexibility in cluster number",
+"explanation": "The main advantage of hierarchical clustering is its flexibility in choosing the number of clusters. It produces a hierarchical structure of clusters, allowing practitioners to select the desired number of clusters based on their specific needs."
+}
+  
+]
+}

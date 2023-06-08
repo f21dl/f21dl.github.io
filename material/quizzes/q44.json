@@ -1,0 +1,135 @@
+{
+"questions":[
+
+{
+   "question": "Which evaluation metric is commonly used for classification tasks to measure the accuracy of a model?",
+   "options": {
+      "a": "F1 score",
+      "b": "Precision",
+      "c": "Accuracy",
+      "d": "Mean squared error"
+   },
+   "answer": "c",
+   "clue": "Classification accuracy",
+   "explanation": "The accuracy metric is commonly used for classification tasks to measure the overall correctness of a model's predictions. It calculates the ratio of correctly predicted instances to the total number of instances."
+
+},
+{
+   "question": "Which evaluation metric is useful when the cost of false positives and false negatives is significantly different?",
+   "options": {
+      "a": "Recall",
+      "b": "Precision",
+      "c": "F1 score",
+      "d": "Accuracy"
+   },
+   "answer": "b",
+   "clue": "Different costs for false outcomes",
+   "explanation": "Precision is a useful evaluation metric when the cost of false positives and false negatives is significantly different. It focuses on the proportion of correctly predicted positive instances out of all predicted positive instances."
+
+},
+{
+   "question": "Which evaluation metric provides a balance between precision and recall?",
+   "options": {
+      "a": "F1 score",
+      "b": "Accuracy",
+      "c": "Mean absolute error",
+      "d": "R-squared"
+   },
+   "answer": "a",
+   "clue": "Balance between precision and recall",
+   "explanation": "The F1 score is an evaluation metric that provides a balance between precision and recall. It is the harmonic mean of precision and recall, and it is commonly used when both metrics are important and need to be considered together."
+
+},
+{
+   "question": "Which evaluation metric is commonly used for regression tasks to measure the average difference between predicted and actual values?",
+   "options": {
+      "a": "Root Mean Squared Error (RMSE)",
+      "b": "Area Under the Curve (AUC)",
+      "c": "Accuracy",
+      "d": "F1 score"
+   },
+   "answer": "a",
+   "clue": "Average difference in regression",
+   "explanation": "Root Mean Squared Error (RMSE) is a commonly used evaluation metric for regression tasks. It measures the average difference between the predicted and actual values, taking the square root of the mean of the squared differences."
+
+},
+{
+   "question": "Which evaluation metric is suitable for imbalanced classification tasks, where positive instances are significantly fewer than negative instances?",
+   "options": {
+      "a": "Precision",
+      "b": "Recall",
+      "c": "F1 score",
+      "d": "Accuracy"
+   },
+   "answer": "b",
+   "clue": "Imbalanced classification",
+   "explanation": "Recall, also known as sensitivity or true positive rate, is suitable for imbalanced classification tasks. It focuses on the ability of the model to correctly identify positive instances, irrespective of the number of false positives."
+
+},
+{
+   "question": "Which evaluation metric is commonly used for binary classification tasks to measure the trade-off between true positive rate and false positive rate?",
+   "options": {
+      "a": "Accuracy",
+      "b": "Receiver Operating Characteristic (ROC) curve",
+      "c": "Mean squared error",
+      "d": "F1 score"
+   },
+   "answer": "b",
+   "clue": "Trade-off between true positive rate and false positive rate",
+   "explanation": "The Receiver Operating Characteristic (ROC) curve is commonly used for binary classification tasks to measure the trade-off between the true positive rate and false positive rate. It plots the sensitivity (true positive rate) against 1 minus specificity (false positive rate) for various classification thresholds."
+
+},
+{
+   "question": "Which evaluation metric is useful for multiclass classification tasks and measures the proportion of correctly classified instances for each class?",
+   "options": {
+      "a": "Confusion matrix",
+      "b": "Mean absolute error",
+      "c": "Precision",
+      "d": "Accuracy"
+   },
+   "answer": "a",
+   "clue": "Proportion of correctly classified instances for each class",
+   "explanation": "The confusion matrix is a useful evaluation metric for multiclass classification tasks. It provides a tabular representation of the model's predicted classes versus the actual classes, enabling the calculation of various metrics, including precision, recall, and F1 score, for each class."
+
+},
+{
+   "question": "Which evaluation metric is commonly used for information retrieval tasks and measures the proportion of relevant documents retrieved out of all relevant documents?",
+   "options": {
+      "a": "F1 score",
+      "b": "Recall",
+      "c": "Precision",
+      "d": "Accuracy"
+   },
+   "answer": "b",
+   "clue": "Proportion of relevant documents retrieved",
+   "explanation": "Recall, also known as sensitivity or true positive rate, is commonly used for information retrieval tasks. It focuses on the proportion of relevant documents retrieved out of all relevant documents in the collection, emphasizing comprehensive retrieval."
+
+},
+{
+   "question": "Which evaluation metric is useful when the class distribution is imbalanced and the true negative rate is of interest?",
+   "options": {
+      "a": "Precision",
+      "b": "Specificity",
+      "c": "F1 score",
+      "d": "Accuracy"
+   },
+   "answer": "b",
+   "clue": "Imbalanced class distribution and true negative rate",
+   "explanation": "Specificity, also known as true negative rate, is useful when the class distribution is imbalanced and the true negative rate is of interest. It measures the proportion of correctly identified negative instances out of all actual negative instances."
+
+},
+{
+   "question": "Which evaluation metric is commonly used for regression tasks to measure the proportion of the variance in the target variable explained by the model?",
+   "options": {
+      "a": "R-squared",
+      "b": "Mean squared error",
+      "c": "Accuracy",
+      "d": "F1 score"
+   },
+   "answer": "a",
+   "clue": "Proportion of variance explained",
+   "explanation": "R-squared, also known as the coefficient of determination, is commonly used for regression tasks. It measures the proportion of the variance in the target variable that is explained by the model, indicating the goodness of fit."
+}   
+
+]
+}

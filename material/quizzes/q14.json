@@ -1,0 +1,137 @@
+{
+"questions":[
+
+{
+   "question": "What is the primary purpose of a Convolutional Neural Network (CNN)?",
+   "options": {
+      "a": "Image classification",
+      "b": "Text generation",
+      "c": "Tabular data analysis",
+      "d": "Audio processing"
+   },
+   "answer": "a",
+   "clue": "Primary purpose",
+   "explanation": "The primary purpose of a Convolutional Neural Network (CNN) is image classification. CNNs are specifically designed to analyze and extract features from images, making them widely used for tasks such as object recognition and image categorization."
+
+},
+{
+   "question": "What is the main advantage of using convolutional layers in a CNN?",
+   "options": {
+      "a": "Efficient parameter sharing",
+      "b": "Non-linearity",
+      "c": "Global pooling",
+      "d": "Regularization"
+   },
+   "answer": "a",
+   "clue": "Parameter sharing",
+   "explanation": "Convolutional layers in a CNN have the advantage of efficient parameter sharing. By using shared weights, the same filters are applied to different parts of an image, reducing the number of parameters and allowing the network to learn and detect local patterns."
+
+},
+{
+   "question": "What is the purpose of pooling layers in a CNN?",
+   "options": {
+      "a": "To apply the activation function to the input features.",
+      "b": "To reduce the spatial dimensions of the feature maps.",
+      "c": "To compute the weighted sum of inputs.",
+      "d": "To initialize the weights of the network."
+   },
+   "answer": "b",
+   "clue": "Spatial dimensions reduction",
+   "explanation": "Pooling layers in a CNN are used to reduce the spatial dimensions of the feature maps. By down-sampling the feature maps, pooling helps to extract the most relevant information and reduce computational complexity while maintaining important spatial relationships."
+
+},
+{
+   "question": "What is the purpose of the activation function in a CNN?",
+   "options": {
+      "a": "To compute the weighted sum of inputs.",
+      "b": "To introduce non-linearity to the network.",
+      "c": "To initialize the weights of the network.",
+      "d": "To adjust the learning rate during training."
+   },
+   "answer": "b",
+   "clue": "Non-linearity",
+   "explanation": "The activation function in a CNN introduces non-linearity to the network. It applies a non-linear transformation to the weighted sum of inputs and allows the network to learn complex relationships and make non-linear predictions."
+
+},
+{
+   "question": "What is the purpose of stride in a convolutional layer of a CNN?",
+   "options": {
+      "a": "To adjust the learning rate during training.",
+      "b": "To control the number of filters in the layer.",
+      "c": "To determine the size of the pooling window.",
+      "d": "To control the amount of shifting applied to the filter during convolution."
+   },
+   "answer": "d",
+   "clue": "Filter shifting",
+   "explanation": "Stride in a convolutional layer of a CNN controls the amount of shifting applied to the filter during convolution. A larger stride value reduces the spatial dimensions of the feature maps, resulting in more spatial downsampling."
+
+},
+{
+   "question": "What is the purpose of padding in a CNN?",
+   "options": {
+      "a": "To adjust the learning rate during training.",
+   "b": "To control the number of filters in the layer.",
+   "c": "To prevent the reduction of spatial dimensions.",
+   "d": "To control the amount of shifting applied to the filter during convolution."
+ },
+ "answer": "c",
+ "clue": "Preventing spatial reduction",
+ "explanation": "Padding in a CNN is used to prevent the reduction of spatial dimensions during convolution. It adds extra border pixels around the input feature maps, allowing the filters to have a larger receptive field and preserving the spatial information."
+
+},
+{
+  "question": "What is the purpose of the fully connected layers in a CNN?",
+  "options": {
+    "a": "To apply the activation function to the input features.",
+    "b": "To introduce non-linearity to the network.",
+    "c": "To compute the weighted sum of inputs.",
+    "d": "To make predictions based on the extracted features."
+  },
+  "answer": "d",
+  "clue": "Final predictions",
+  "explanation": "The fully connected layers in a CNN are responsible for making predictions based on the extracted features. They receive the flattened feature maps as input and apply the activation function to produce the final output, often representing class probabilities or regression values."
+
+},
+{
+  "question": "What is the purpose of dropout regularization in a CNN?",
+  "options": {
+    "a": "To adjust the learning rate during training.",
+    "b": "To control the number of filters in the layer.",
+    "c": "To prevent overfitting by randomly disabling neurons during training.",
+    "d": "To reduce the spatial dimensions of the feature maps."
+  },
+  "answer": "c",
+  "clue": "Overfitting prevention",
+  "explanation": "Dropout regularization in a CNN helps prevent overfitting by randomly disabling neurons during training. It forces the network to learn more robust features and reduces the reliance on individual neurons, leading to improved generalization and performance on unseen data."
+
+},
+{
+  "question": "What is the role of max-pooling in a CNN?",
+  "options": {
+    "a": "To apply the activation function to the input features.",
+    "b": "To introduce non-linearity to the network.",
+    "c": "To compute the weighted sum of inputs.",
+    "d": "To down-sample and extract the most prominent features."
+  },
+  "answer": "d",
+  "clue": "Feature extraction",
+  "explanation": "Max-pooling in a CNN is used to down-sample the feature maps and extract the most prominent features. It takes the maximum value within a pooling window and discards the rest, capturing the most important information while reducing the computational complexity."
+
+},
+{
+  "question": "What is the main advantage of using CNNs over fully connected neural networks for image processing tasks?",
+  "options": {
+    "a": "Efficient parameter sharing and local feature detection.",
+    "b": "Non-linearity and activation functions.",
+    "c": "Ability to handle sequential data.",
+    "d": "Flexibility in processing various data types."
+  },
+  "answer": "a",
+  "clue": "Parameter sharing and feature detection",
+  "explanation": "The main advantage of using CNNs over fully connected neural networks for image processing tasks is their efficient parameter sharing and ability to detect local features. CNNs leverage local receptive fields, shared weights, and hierarchical architectures to effectively extract meaningful features from images, making them well-suited for image-related tasks."	
+}	  
+	  
+
+  
+]
+}

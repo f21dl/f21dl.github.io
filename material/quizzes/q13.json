@@ -1,0 +1,129 @@
+{
+"questions":[
+{
+   "question": "What is the purpose of the activation function in a Multilayer Perceptron?",
+   "options": {
+      "a": "To compute the weighted sum of inputs.",
+      "b": "To introduce non-linearity to the network.",
+      "c": "To initialize the weights of the network.",
+      "d": "To adjust the learning rate during training."
+   },
+   "answer": "b",
+   "clue": "Non-linearity",
+   "explanation": "The activation function in a Multilayer Perceptron introduces non-linearity to the network, allowing it to learn and model complex relationships in the data. It applies a transformation to the weighted sum of inputs and produces the output of a neuron."
+},
+{
+   "question": "What is the purpose of the hidden layers in a Multilayer Perceptron?",
+   "options": {
+      "a": "To make predictions based on input features.",
+      "b": "To adjust the weights during training.",
+      "c": "To extract and learn relevant features from the input data.",
+      "d": "To apply the activation function to the input features."
+   },
+   "answer": "c",
+   "clue": "Feature extraction",
+   "explanation": "The hidden layers in a Multilayer Perceptron are responsible for extracting and learning relevant features from the input data. Each hidden layer applies a series of transformations to the input data, allowing the network to learn more abstract representations of the data."
+
+},
+{
+   "question": "What is the backpropagation algorithm used for in Multilayer Perceptrons?",
+   "options": {
+      "a": "Initializing the weights of the network.",
+      "b": "Calculating the gradient of the loss function.",
+      "c": "Making predictions on new input data.",
+      "d": "Applying the activation function to the input features."
+   },
+   "answer": "b",
+   "clue": "Gradient calculation",
+   "explanation": "The backpropagation algorithm is used in Multilayer Perceptrons to calculate the gradient of the loss function with respect to the network's weights. It allows the network to update the weights in the direction that minimizes the loss, enabling the model to learn from the training data."
+
+},
+{
+   "question": "What is the purpose of the bias term in a neuron of a Multilayer Perceptron?",
+   "options": {
+      "a": "To adjust the learning rate during training.",
+      "b": "To introduce non-linearity to the network.",
+      "c": "To compute the weighted sum of inputs.",
+      "d": "To shift the activation function."
+   },
+   "answer": "d",
+   "clue": "Shifting the activation",
+   "explanation": "The bias term in a neuron of a Multilayer Perceptron allows for shifting the activation function. It provides an additional parameter that can be adjusted to control the output of the neuron, independent of the input values."
+
+},
+{
+   "question": "Which of the following is a common activation function used in Multilayer Perceptrons?",
+   "options": {
+      "a": "Sigmoid",
+      "b": "K-Means",
+      "c": "Support Vector Machine (SVM)",
+      "d": "Principal Component Analysis (PCA)"
+   },
+   "answer": "a",
+   "clue": "Common activation function",
+   "explanation": "The sigmoid function is a commonly used activation function in Multilayer Perceptrons. It maps the weighted sum of inputs to a value between 0 and 1, allowing the network to model non-linear relationships in the data."
+
+},
+{
+   "question": "What is the purpose of the forward propagation step in training a Multilayer Perceptron?",
+   "options": {
+      "a": "To update the weights of the network.",
+      "b": "To calculate the gradient of the loss function.",
+      "c": "To make predictions on new input data.",
+      "d": "To pass the input data through the network and compute the output."
+   },
+   "answer": "d",
+   "clue": "Compute the output",
+   "explanation": "The forward propagation step in training a Multilayer Perceptron involves passing the input data through the network, computing the weighted sum of inputs, applying the activation function, and obtaining the output. It is used to propagate the input through the network and produce predictions."
+
+},
+{
+   "question": "What is the purpose of the learning rate in training a Multilayer Perceptron?",
+   "options": {
+      "a": "To adjust the weights of the network during backpropagation.",
+      "b": "To control the number of hidden layers in the network.",
+      "c": "To initialize the weights of the network.",
+      "d": "To regularize the network and prevent overfitting."
+   },
+   "answer": "a",
+   "clue": "Weight adjustment",
+   "explanation": "The learning rate in training a Multilayer Perceptron determines the step size by which the weights are adjusted during the backpropagation algorithm. It affects the speed and stability of the learning process and finding an optimal learning rate is crucial for successful training."
+
+},
+{
+   "question": "What is the main purpose of training a Multilayer Perceptron?",
+   "options": {
+      "a": "To classify input data into multiple categories.",
+      "b": "To compute the weighted sum of inputs.",
+      "c": "To initialize the weights of the network.",
+      "d": "To apply the activation function to the input features."
+   },
+   "answer": "a",
+   "clue": "Classification",
+   "explanation": "The main purpose of training a Multilayer Perceptron is to classify input data into multiple categories. By adjusting the weights and biases of the network through the training process, the model learns to make predictions and assign input data to different classes."
+
+},
+{
+   "question": "What is the role of the output layer in a Multilayer Perceptron?",
+   "options": {
+      "a": "To compute the weighted sum of inputs.",
+      "b": "To introduce non-linearity to the network.",
+      "c": "To initialize the weights of the network.",
+      "d": "To produce the final predictions of the network."
+   },
+   "answer": "d",
+   "clue": "Final predictions",
+   "explanation": "The output layer in a Multilayer Perceptron produces the final predictions of the network. It applies the activation function to the weighted sum of inputs from the previous layer and outputs the predicted values or probabilities for each class."
+
+},
+{
+   "question": "What is the purpose of regularization techniques in training a Multilayer Perceptron?",
+   "options": {
+      "a": "To adjust the weights of the network during backpropagation.",
+      "b": "To control the number of hidden layers in the network.",
+      "c": "To prevent overfitting and improve generalization.",
+      "d": "To initialize
+   }
+  
+]
+}

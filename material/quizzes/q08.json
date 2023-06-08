@@ -1,0 +1,134 @@
+{
+"questions":[
+
+{
+   "question": "What is the primary goal of decision tree algorithms in machine learning?",
+   "options": {
+      "a": "To perform regression analysis",
+      "b": "To solve classification problems",
+      "c": "To handle missing data",
+      "d": "To generate neural network architectures"
+   },
+   "answer": "b",
+   "clue": "Classification problems",
+   "explanation": "The primary goal of decision tree algorithms in machine learning is to solve classification problems. Decision trees are powerful models for classifying data into distinct categories based on a set of features and their associated decision rules."
+
+},
+{
+   "question": "Which criterion is commonly used to measure the impurity of a node in a decision tree?",
+   "options": {
+      "a": "Entropy",
+      "b": "Gradient",
+      "c": "Variance",
+      "d": "Loss function"
+   },
+   "answer": "a",
+   "clue": "Impurity measurement",
+   "explanation": "Entropy is commonly used as a criterion to measure the impurity of a node in a decision tree. It quantifies the uncertainty or disorder within a node by calculating the entropy of the class labels, aiming to minimize it during the tree construction process."
+
+},
+{
+   "question": "What is pruning in decision trees?",
+   "options": {
+      "a": "The process of removing redundant features",
+      "b": "The process of removing noisy data points",
+      "c": "The process of reducing the tree size by removing unnecessary branches",
+      "d": "The process of selecting the best split point for each node"
+   },
+   "answer": "c",
+   "clue": "Reducing tree size",
+   "explanation": "Pruning in decision trees refers to the process of reducing the tree size by removing unnecessary branches. It helps prevent overfitting by eliminating complex, low-impact branches that may not generalize well to unseen data."
+
+},
+{
+   "question": "Which technique is used to handle missing data in decision tree algorithms?",
+   "options": {
+      "a": "Mean imputation",
+      "b": "Mode imputation",
+      "c": "Median imputation",
+      "d": "Splitting the data into separate branches"
+   },
+   "answer": "d",
+   "clue": "Handling missing data",
+   "explanation": "Decision tree algorithms handle missing data by splitting the data into separate branches. This allows the algorithm to consider both the available and missing data points separately during the decision-making process."
+
+},
+{
+   "question": "What is the purpose of feature selection in decision trees?",
+   "options": {
+      "a": "To remove irrelevant features from the dataset",
+      "b": "To balance the class distribution",
+      "c": "To handle missing data",
+      "d": "To prevent overfitting"
+   },
+   "answer": "a",
+   "clue": "Removing irrelevant features",
+   "explanation": "The purpose of feature selection in decision trees is to remove irrelevant features from the dataset. By selecting only the most informative features, the algorithm focuses on the relevant aspects of the data, reducing complexity and improving accuracy."
+
+},
+{
+   "question": "What is the maximum depth of a decision tree?",
+   "options": {
+      "a": "The number of nodes in the tree",
+      "b": "The number of features in the dataset",
+      "c": "The number of classes in the target variable",
+      "d": "The maximum number of levels of the tree"
+   },
+   "answer": "d",
+   "clue": "Maximum number of levels",
+   "explanation": "The maximum depth of a decision tree refers to the maximum number of levels or splits in the tree. It determines the complexity and capacity of the tree to capture intricate relationships in the data. Controlling the tree depth is important to avoid overfitting and promote generalization."
+
+},
+{
+   "question": "Which algorithm can be used to construct a decision tree from a labeled dataset?",
+   "options": {
+      "a": "ID3",
+      "b": "SVM",
+      "c": "K-means",
+      "d": "PCA"
+   },
+   "answer": "a",
+   "clue": "Decision tree construction",
+   "explanation": "The ID3 (Iterative Dichotomiser 3) algorithm is commonly used to construct decision trees from labeled datasets. It employs an information-theoretic approach based on entropy to select the best splitting criteria at each node."
+
+},
+{
+   "question": "Which type of attribute can a decision tree handle?",
+   "options": {
+      "a": "Continuous",
+      "b": "Categorical",
+      "c": "Ordinal",
+      "d": "All of the above"
+   },
+   "answer": "d",
+   "clue": "Handling attribute types",
+   "explanation": "A decision tree can handle various types of attributes, including continuous, categorical, and ordinal. Different splitting criteria and techniques are applied depending on the attribute type to effectively construct the tree."
+},
+{
+   "question": "What is the advantage of using decision trees for machine learning tasks?",
+   "options": {
+      "a": "Interpretability and human-understandable rules",
+      "b": "High computational efficiency",
+      "c": "Ability to handle large-scale datasets",
+      "d": "No requirement for feature selection"
+   },
+   "answer": "a",
+   "clue": "Interpretability and rule clarity",
+   "explanation": "One advantage of using decision trees for machine learning tasks is their interpretability and the human-understandable rules they generate. Decision trees provide clear decision paths, allowing users to interpret and explain the reasoning behind the model's predictions."
+},
+{
+   "question": "What is the main disadvantage of decision trees?",
+   "options": {
+      "a": "Tendency to overfit on complex datasets",
+      "b": "Limited ability to handle numerical data",
+      "c": "Sensitive to outliers",
+      "d": "Inability to handle missing values"
+   },
+   "answer": "a",
+   "clue": "Overfitting on complex data",
+   "explanation": "The main disadvantage of decision trees is their tendency to overfit on complex datasets. Decision trees can create overly complex models that capture noise or irrelevant patterns in the training data, leading to decreased generalization performance on unseen data."
+}
+   
+  
+]
+}
