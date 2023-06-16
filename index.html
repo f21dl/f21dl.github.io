@@ -100,12 +100,23 @@ let toc = [
 	//{ a1: "Part 3: Clustering" },                                                                        
 	{ wk:8,                     title:"Decision Trees"                                , l:'08',  j:'08'  ,  q:'08'      },
 	{ a1: "Part 4: Regression"},   
-	{                           title:"Linear and Logistic Regression"                , l:'08a', j:'08'  ,  q:'08'      },
+	{                           title:"Linear and Logistic Regression"                , l:'08a', j:'08'  ,  q:'08a'     },
 	{ wk:9,                     title:"Neural Networks"                               , l:'09',  j:'09'  ,  q:'02'      },	                                                                                     
 	{ wk:10,                    title:"Multilayer Perceptron (Neural Networks)"       , l:'10b'          ,  q:'13'      },
 	{ wk:11,                    title:"Convolutional Neural Networks"                 , l:'11'           ,  q:'14'      }
 ]                                                                                                        
 let bodytoc = document.getElementById('bodytoc');
+
+let jtitle = { 
+   '01': { title: 'Getting started with Python' },
+   '02': { title: 'Data Exploration and Visualization' },
+   '03': { title: 'Introduction to Scikit-learn. <br> Image Processing in Python' },
+   '04': { title: 'Scikit-Learn II (End to End Machine Learning' },
+   '05': { title: 'Classifiers and Advanced Features' },
+   '07': { title: 'Clustering' },
+   '08': { title: 'Decision Tree, Linear Regression and Logistic Regression' },
+   '09': { title: 'Classification using Perceptron and MLP' }
+};
 
 /*
 Week 1: Course Overview & Introduction to Data Mining and Machine Learning
@@ -156,7 +167,9 @@ toc.forEach( ( n, i )=>{
 	if ( toc[i].n ) newRow.insertCell().innerHTML = toc[i].n; // notes 
 	else            newRow.insertCell().innerHTML = ''; 
 	
-	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/jupyter/index.html?id=${toc[i].j}&">iPynb</a>`; // jupyter 
+	let title = '';
+	if ( toc[i].j in jtitle ) title = jtitle[ toc[i].j ].title;
+	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/jupyter/index.html?id=${toc[i].j}&" title="${title}">iPynb</a>`; // jupyter 
 	else            newRow.insertCell().innerHTML = ''; 
 	
 	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a href="https://f21dl.github.io/material/quizzes/index.html?id=${toc[i].q}&">Quiz</a>`; // quizzes 
