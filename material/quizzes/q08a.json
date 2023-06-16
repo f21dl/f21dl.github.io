@@ -1,134 +1,240 @@
 {
-"questions":[
+  "questions": [
+    {
+      "question": "1. What is the primary difference between linear regression and logistic regression?",
+      "options": {
+        "a": "Linear regression is used for continuous target variables, while logistic regression is used for binary classification.",
+        "b": "Linear regression is used for binary classification, while logistic regression is used for continuous target variables.",
+        "c": "There is no difference between linear regression and logistic regression.",
+        "d": "Linear regression and logistic regression are the same model with different names."
+      },
+      "answer": "a",
+      "clue": "Think about the types of problems each model is commonly used for.",
+      "explanation": "Linear regression is used for predicting continuous target variables, while logistic regression is used for binary classification problems where the target variable is categorical."
+    },
+    {
+      "question": "2. What is the appropriate cost function for linear regression?",
+      "options": {
+        "a": "Mean Squared Error (MSE)",
+        "b": "Mean Absolute Error (MAE)",
+        "c": "Log Loss",
+        "d": "Cross Entropy"
+      },
+      "answer": "a",
+      "clue": "Consider the commonly used cost function for linear regression.",
+      "explanation": "The appropriate cost function for linear regression is Mean Squared Error (MSE), which measures the average squared difference between the predicted and actual values."
+    },
+    {
+      "question": "3. Which of the following is true about the coefficients in logistic regression?",
+      "options": {
+        "a": "The coefficients represent the change in the log odds of the target variable for a one-unit change in the predictor variable.",
+        "b": "The coefficients represent the change in the probability of the target variable for a one-unit change in the predictor variable.",
+        "c": "The coefficients represent the slope of the regression line.",
+        "d": "The coefficients have no meaningful interpretation in logistic regression."
+      },
+      "answer": "a",
+      "clue": "Consider the interpretation of the coefficients in logistic regression.",
+      "explanation": "In logistic regression, the coefficients represent the change in the log odds of the target variable for a one-unit change in the predictor variable. They provide insights into the impact of the predictors on the likelihood of the target variable."
+    },
+    {
+      "question": "4. Which transformation can be applied to the target variable in linear regression to handle non-linear relationships?",
+      "options": {
+        "a": "Logarithmic transformation",
+        "b": "Exponential transformation",
+        "c": "Square root transformation",
+        "d": "All of the above"
+      },
+      "answer": "d",
+      "clue": "Consider the different transformations that can be applied to handle non-linear relationships in linear regression.",
+      "explanation": "All of the above transformations (logarithmic, exponential, square root) can be applied to the target variable in linear regression to handle non-linear relationships and improve model fit."
+    },
+    {
+      "question": "5. Which of the following is an assumption of linear regression?",
+      "options": {
+        "a": "The residuals are normally distributed.",
+        "b": "There is no multicollinearity among the predictor variables.",
+        "c": "There is a linear relationship between the predictor variables and the target variable.",
+        "d": "All of the above"
+      },
+      "answer": "d",
+      "clue": "Consider the assumptions of linear regression.",
+      "explanation": "All of the above options are assumptions of linear regression. The residuals should be normally distributed, there should be no multicollinearity among the predictor variables, and there should be a linear relationship between the predictor variables and the target variable.
 
 {
-   "question": "What is the primary goal of decision tree algorithms in machine learning?",
-   "options": {
-      "a": "To perform regression analysis",
-      "b": "To solve classification problems",
-      "c": "To handle missing data",
-      "d": "To generate neural network architectures"
-   },
-   "answer": "b",
-   "clue": "Classification problems",
-   "explanation": "The primary goal of decision tree algorithms in machine learning is to solve classification problems. Decision trees are powerful models for classifying data into distinct categories based on a set of features and their associated decision rules."
-
+  "question": "6. Which algorithm is commonly used for training logistic regression models?",
+  "options": {
+    "a": "Gradient Descent",
+    "b": "Random Forest",
+    "c": "K-Means",
+    "d": "Naive Bayes"
+  },
+  "answer": "a",
+  "clue": "Consider the optimization algorithm commonly used for training logistic regression models.",
+  "explanation": "Gradient Descent is commonly used to train logistic regression models. It iteratively updates the model parameters to minimize the cost function and find the optimal values for the coefficients."
 },
 {
-   "question": "Which criterion is commonly used to measure the impurity of a node in a decision tree?",
-   "options": {
-      "a": "Entropy",
-      "b": "Gradient",
-      "c": "Variance",
-      "d": "Loss function"
-   },
-   "answer": "a",
-   "clue": "Impurity measurement",
-   "explanation": "Entropy is commonly used as a criterion to measure the impurity of a node in a decision tree. It quantifies the uncertainty or disorder within a node by calculating the entropy of the class labels, aiming to minimize it during the tree construction process."
-
+  "question": "7. Which of the following is true about the sigmoid function in logistic regression?",
+  "options": {
+    "a": "It maps the input to a continuous range between 0 and 1.",
+    "b": "It is used to compute the mean squared error.",
+    "c": "It is a linear function.",
+    "d": "It is only applicable to binary classification."
+  },
+  "answer": "a",
+  "clue": "Consider the properties and purpose of the sigmoid function in logistic regression.",
+  "explanation": "The sigmoid function maps the input to a continuous range between 0 and 1, which represents the predicted probability in logistic regression. It allows us to interpret the output as the likelihood of the positive class."
 },
 {
-   "question": "What is pruning in decision trees?",
-   "options": {
-      "a": "The process of removing redundant features",
-      "b": "The process of removing noisy data points",
-      "c": "The process of reducing the tree size by removing unnecessary branches",
-      "d": "The process of selecting the best split point for each node"
-   },
-   "answer": "c",
-   "clue": "Reducing tree size",
-   "explanation": "Pruning in decision trees refers to the process of reducing the tree size by removing unnecessary branches. It helps prevent overfitting by eliminating complex, low-impact branches that may not generalize well to unseen data."
-
+  "question": "8. In logistic regression, what does the decision boundary represent?",
+  "options": {
+    "a": "The line that separates the positive and negative classes.",
+    "b": "The mean squared error of the model.",
+    "c": "The coefficients of the model.",
+    "d": "The intercept of the model."
+  },
+  "answer": "a",
+  "clue": "Consider the purpose and interpretation of the decision boundary in logistic regression.",
+  "explanation": "The decision boundary is the line that separates the positive and negative classes in logistic regression. It determines the region where the predicted probabilities are assigned to each class."
 },
 {
-   "question": "Which technique is used to handle missing data in decision tree algorithms?",
-   "options": {
-      "a": "Mean imputation",
-      "b": "Mode imputation",
-      "c": "Median imputation",
-      "d": "Splitting the data into separate branches"
-   },
-   "answer": "d",
-   "clue": "Handling missing data",
-   "explanation": "Decision tree algorithms handle missing data by splitting the data into separate branches. This allows the algorithm to consider both the available and missing data points separately during the decision-making process."
-
+  "question": "9. What is the advantage of using regularization in linear regression?",
+  "options": {
+    "a": "It helps reduce overfitting by adding a penalty term to the cost function.",
+    "b": "It improves model interpretation by scaling the coefficients.",
+    "c": "It speeds up the training process by reducing the number of iterations.",
+    "d": "It guarantees convergence to the global optimum."
+  },
+  "answer": "a",
+  "clue": "Consider the purpose and benefits of using regularization in linear regression.",
+  "explanation": "Regularization helps reduce overfitting in linear regression models by adding a penalty term to the cost function. It encourages the model to select fewer features and control the magnitude of the coefficients."
 },
 {
-   "question": "What is the purpose of feature selection in decision trees?",
-   "options": {
-      "a": "To remove irrelevant features from the dataset",
-      "b": "To balance the class distribution",
-      "c": "To handle missing data",
-      "d": "To prevent overfitting"
-   },
-   "answer": "a",
-   "clue": "Removing irrelevant features",
-   "explanation": "The purpose of feature selection in decision trees is to remove irrelevant features from the dataset. By selecting only the most informative features, the algorithm focuses on the relevant aspects of the data, reducing complexity and improving accuracy."
-
+  "question": "10. What is the purpose of the cost function in logistic regression?",
+  "options": {
+    "a": "To measure the accuracy of the model predictions.",
+    "b": "To minimize the sum of squared errors.",
+    "c": "To find the optimal values for the coefficients.",
+    "d": "To penalize misclassifications and guide model training."
+  },
+  "answer": "d",
+  "clue": "Consider the role of the cost function in logistic regression.",
+  "explanation": "The cost function in logistic regression is used to penalize misclassifications and guide the model training process. It aims to minimize the discrepancy between the predicted probabilities and the actual class labels of the training data, encouraging the model to make accurate predictions."
 },
 {
-   "question": "What is the maximum depth of a decision tree?",
-   "options": {
-      "a": "The number of nodes in the tree",
-      "b": "The number of features in the dataset",
-      "c": "The number of classes in the target variable",
-      "d": "The maximum number of levels of the tree"
-   },
-   "answer": "d",
-   "clue": "Maximum number of levels",
-   "explanation": "The maximum depth of a decision tree refers to the maximum number of levels or splits in the tree. It determines the complexity and capacity of the tree to capture intricate relationships in the data. Controlling the tree depth is important to avoid overfitting and promote generalization."
-
+  "question": "11. What is the purpose of feature scaling in linear regression?",
+  "options": {
+    "a": "To normalize the target variable.",
+    "b": "To transform the target variable into a binary format.",
+    "c": "To standardize the predictor variables.",
+    "d": "To remove outliers from the dataset."
+  },
+  "answer": "c",
+  "clue": "Consider the reason for applying feature scaling in linear regression.",
+  "explanation": "Feature scaling is used to standardize the predictor variables in linear regression. It ensures that the variables are on the same scale, which can help prevent certain variables from dominating the model due to their larger magnitude."
 },
 {
-   "question": "Which algorithm can be used to construct a decision tree from a labeled dataset?",
-   "options": {
-      "a": "ID3",
-      "b": "SVM",
-      "c": "K-means",
-      "d": "PCA"
-   },
-   "answer": "a",
-   "clue": "Decision tree construction",
-   "explanation": "The ID3 (Iterative Dichotomiser 3) algorithm is commonly used to construct decision trees from labeled datasets. It employs an information-theoretic approach based on entropy to select the best splitting criteria at each node."
-
+  "question": "12. Which of the following statements is true about the p-value in linear regression?",
+  "options": {
+    "a": "A p-value less than 0.05 indicates a significant relationship between the predictor and target variable.",
+    "b": "A p-value greater than 0.05 indicates a significant relationship between the predictor and target variable.",
+    "c": "The p-value represents the strength of the linear relationship between the predictor and target variable.",
+    "d": "The p-value is not used in linear regression."
+  },
+  "answer": "a",
+  "clue": "Consider the interpretation of the p-value in linear regression.",
+  "explanation": "In linear regression, a p-value less than 0.05 is typically considered statistically significant, indicating a significant relationship between the predictor and target variable. It suggests that the predictor has a meaningful impact on the target variable."
 },
 {
-   "question": "Which type of attribute can a decision tree handle?",
-   "options": {
-      "a": "Continuous",
-      "b": "Categorical",
-      "c": "Ordinal",
-      "d": "All of the above"
-   },
-   "answer": "d",
-   "clue": "Handling attribute types",
-   "explanation": "A decision tree can handle various types of attributes, including continuous, categorical, and ordinal. Different splitting criteria and techniques are applied depending on the attribute type to effectively construct the tree."
+  "question": "13. Which of the following is true about the logistic regression equation?",
+  "options": {
+    "a": "The equation represents a linear relationship between the predictors and the log-odds of the target variable.",
+    "b": "The equation represents a linear relationship between the predictors and the probability of the target variable.",
+    "c": "The equation represents a non-linear relationship between the predictors and the log-odds of the target variable.",
+    "d": "The equation represents a non-linear relationship between the predictors and the probability of the target variable."
+  },
+  "answer": "a",
+  "clue": "Consider the form of the logistic regression equation.",
+  "explanation": "The logistic regression equation represents a linear relationship between the predictors and the log-odds (logarithm of the odds) of the target variable. Although the relationship between the predictors and the probabilities is non-linear, it is captured by the transformation applied to the linear equation."
 },
 {
-   "question": "What is the advantage of using decision trees for machine learning tasks?",
-   "options": {
-      "a": "Interpretability and human-understandable rules",
-      "b": "High computational efficiency",
-      "c": "Ability to handle large-scale datasets",
-      "d": "No requirement for feature selection"
-   },
-   "answer": "a",
-   "clue": "Interpretability and rule clarity",
-   "explanation": "One advantage of using decision trees for machine learning tasks is their interpretability and the human-understandable rules they generate. Decision trees provide clear decision paths, allowing users to interpret and explain the reasoning behind the model's predictions."
+  "question": "14. Which evaluation metric is commonly used to assess the performance of logistic regression models?",
+  "options": {
+    "a": "Mean Squared Error (MSE)",
+    "b": "Root Mean Squared Error (RMSE)",
+    "c": "Accuracy",
+    "d": "Area Under the ROC Curve (AUC-ROC)"
+  },
+  "answer": "d",
+  "clue": "Consider the appropriate evaluation metric for logistic regression models.",
+  "explanation": "The Area Under the ROC Curve (AUC-ROC) is commonly used to assess the performance of logistic regression models. It measures the model's ability to discriminate between the positive and negative classes, considering various thresholds."
 },
 {
-   "question": "What is the main disadvantage of decision trees?",
-   "options": {
-      "a": "Tendency to overfit on complex datasets",
-      "b": "Limited ability to handle numerical data",
-      "c": "Sensitive to outliers",
-      "d": "Inability to handle missing values"
-   },
-   "answer": "a",
-   "clue": "Overfitting on complex data",
-   "explanation": "The main disadvantage of decision trees is their tendency to overfit on complex datasets. Decision trees can create overly complex models that capture noise or irrelevant patterns in the training data, leading to decreased generalization performance on unseen data."
+  "question": "15. Which of the following is a limitation of linear regression?",
+  "options": {
+    "a": "It cannot handle categorical predictor variables.",
+    "b": "It is prone to overfitting when the number of predictor variables is large.",
+  "c": "It is only suitable for linear relationships between predictors and the target variable.",
+  "d": "It does not provide interpretable coefficients."
+},
+{
+  "question": "16. Which method can be used to handle multicollinearity in linear regression?",
+  "options": {
+    "a": "Dropping one of the correlated predictors",
+    "b": "Combining the correlated predictors into a single feature",
+    "c": "Using regularization techniques",
+    "d": "All of the above"
+  },
+  "answer": "d",
+  "clue": "Consider the methods for addressing multicollinearity in linear regression.",
+  "explanation": "To handle multicollinearity in linear regression, one can choose to drop one of the correlated predictors, combine the correlated predictors into a single feature, or use regularization techniques that can reduce the impact of correlated predictors on the model."
+},
+{
+  "question": "17. What is the purpose of the bias term (intercept) in linear regression?",
+  "options": {
+    "a": "To shift the regression line vertically",
+    "b": "To account for the average error in the model",
+    "c": "To prevent overfitting",
+    "d": "To scale the predictor variables"
+  },
+  "answer": "a",
+  "clue": "Consider the role of the bias term in linear regression.",
+  "explanation": "The bias term, or intercept, in linear regression allows the regression line to shift vertically, determining the point at which the line intersects the y-axis. It accounts for the average effect on the target variable when all predictors are zero."
+},
+{
+  "question": "18. Which of the following techniques is used to handle missing values in linear regression?",
+  "options": {
+    "a": "Dropping the rows with missing values",
+    "b": "Replacing missing values with the mean or median",
+    "c": "Using advanced imputation methods",
+    "d": "All of the above"
+  },
+  "answer": "d",
+  "clue": "Consider the approaches for handling missing values in linear regression.",
+  "explanation": "To handle missing values in linear regression, one can choose to drop the rows with missing values, replace missing values with the mean or median of the corresponding variable, or use more advanced imputation methods that consider the relationship between variables."
+},
+{
+  "question": "19. Which of the following is true about the log-odds in logistic regression?",
+  "options": {
+    "a": "It represents the probability of the positive class.",
+    "b": "It ranges from -∞ to +∞.",
+    "c": "It is a linear function of the predictors.",
+    "d": "It can be directly interpreted as probabilities."
+  },
+  "answer": "b",
+  "clue": "Consider the properties of the log-odds in logistic regression.",
+  "explanation": "The log-odds in logistic regression represent the logarithm of the odds of the positive class. It ranges from -∞ to +∞, allowing the transformation of the linear equation into a bounded range of probabilities using the sigmoid function."
+},
+{
+  "question": "20. Which of the following is a disadvantage of logistic regression?",
+  "options": {
+    "a": "It is sensitive to outliers.",
+    "b": "It can only handle binary classification problems.",
+    "c": "It requires large amounts of data to train accurately.",
+    "d": "It assumes a linear relationship between predictors and the target variable."
+  },
+  "answer": "d",
+  "clue": "Consider the limitations of logistic regression models.",
+  "explanation": "A disadvantage of logistic regression is that it assumes a linear relationship between the predictors and the target variable. If the relationship is non-linear, logistic regression may not capture it accurately without appropriate transformations or feature engineering."
 }
-   
-  
-]
+  ]
 }
