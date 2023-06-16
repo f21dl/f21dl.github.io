@@ -58,7 +58,9 @@
       },
       "answer": "d",
       "clue": "Consider the assumptions of linear regression.",
-      "explanation": "All of the above options are assumptions of linear regression. The residuals should be normally distributed, there should be no multicollinearity among the predictor variables, and there should be a linear relationship between the predictor variables and the target variable.
+      "explanation": "All of the above options are assumptions of linear regression. The residuals should be normally distributed, there should be no multicollinearity among the predictor variables, and there should be a linear relationship between the predictor variables and the target variable. "
+	}
+	,
 
 {
   "question": "6. Which algorithm is commonly used for training logistic regression models?",
