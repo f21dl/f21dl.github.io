@@ -1,0 +1,338 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Notes (Layout.xbdev.net)</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.3/showdown.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<style>
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    word-wrap: break-word;
+}
+
+table { word-break:break-all !important; }
+
+html {
+    background: #CCC;
+    padding-bottom: 100vh; /* allow scrolling past end of page */
+}
+
+.background5 {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    width:800px;
+    height:800px;
+    background: url("https://cdn.icon-icons.com/icons2/3159/PNG/512/paper_texture_background_cardboard_pattern_icon_193289.png");
+	background-position: right 0pt top 0pt;
+	background-repeat: no-repeat;
+	background-size: contain;	
+	opacity:0.05;
+	z-index:1;
+}
+
+.mdcontent {
+	text-align:left;
+    position:relative;
+    background: #FFF;
+    font-family: "Open Sans";
+    line-height: 1.4;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 100px;
+    min-height: calc(100vh - 240px);
+    box-shadow: 0 0 10px;
+	background-color:#fff;
+	color: black;
+
+}
+
+.mdcontent::before {    
+      content: "";
+      background: url("https://cdn.icon-icons.com/icons2/3159/PNG/512/paper_texture_background_cardboard_pattern_icon_193289.png");
+	  background-position: right -50pt top 50pt;
+	  background-repeat: no-repeat;
+	  background-size: contain;	
+	  background-color:#fff;
+      opacity: 0.02;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  z-index:0;
+	  pointer-events: none;
+}
+
+
+
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+li > ul {
+    padding-left: 20;
+}
+p + ul {
+    margin-top: -10;
+}
+li > p {
+    margin-top: 0;
+    margin-bottom: 10;
+}
+
+blockquote {
+  border-left: 8px solid rgba(100,100,100,0.5);
+  padding-left: 5px;
+}
+
+code {
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+    font-size: 85%;
+    line-height: 150%;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #e6e8db;
+    padding: 1px 3px 1px 3px;
+	border: 4px solid blue;
+}
+
+pre code {
+	border: 4px solid green;
+	display:block;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+hr { 
+    background-color: #fff;
+    border: 0;
+    border-top: 2px dashed #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4C50AF;
+  color: white;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+</style>
+
+<style>
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+</style>
+
+</head>
+<body>
+
+<div id='mdcontainer' style='text-align:center;'>
+</div>
+  
+<br><br>
+
+<textarea id='rawmd' style='display:none;'>
+
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://cdn-images-1.medium.com/max/960/1*G6miCRAP9Fxx5ulvT5zUPA.png) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=127253&root=2076/PNG/512/&file=book_learning_notebook_reading_study_icon_127253.png'>
+
+<div style='height:400px;'></div>
+
+## Data Mining and Machine Learning
+
+# Recommended Reading
+
+**Learning Python/Reference**
+
+* [Python Machine Learning - Third Edition by Sebastian Raschka , Vahid Mirjalili](https://github.com/PacktPublishing/Python-Machine-Learning-Second-Edition)
+
+**Data/Machine Learning**
+
+
+* [Data Mining and Machine Learning: Fundamental Concepts and Algorithms by  Mohammed J. Zaki and Wagner Meira, Jr](https://www.amazon.co.uk/Data-Mining-Machine-Learning-Fundamental-ebook/dp/B083M25G7Q/ref=sr_1_1?crid=1NJ8IH1FII8VV&keywords=data+mining+and+machine+learning&qid=1686908975&sprefix=data+mining+and+machine+learning%2Caps%2C82&sr=8-1)
+
+* [Introduction to Algorithms for Data Mining and Machine Learning by Xin-She Yang ](https://www.amazon.co.uk/Introduction-Algorithms-Mining-Machine-Learning-ebook/dp/B07T7VSR37/ref=sr_1_15?crid=1NJ8IH1FII8VV&keywords=data+mining+and+machine+learning&qid=1686908975&sprefix=data+mining+and+machine+learning%2Caps%2C82&sr=8-15)
+
+* [Introduction to machine learning with Python : a guide for data scientists / Andreas C. Müller and Sarah Guido](https://discovery.hw.ac.uk/primo-explore/fulldisplay?docid=44hwa_alma5169409930003206&vid=44HWA_V1&search_scope=HW&tab=default_tab&lang=en_US&context=L)
+
+
+:::warning
+<div style='width:40%;float:left;'>
+<img width='80%' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+</div><div markdown="1" style='width:60%;float:right;'>
+
+[Data Mining: Practical Machine Learning Tools and Techniques, by Witten, Frank and Hall](https://www.amazon.co.uk/Data-Mining-Practical-Techniques-Management/dp/0128042915/ref=sr_1_1?crid=1HJTQZV8Q3HRN&keywords=Data+Mining%3A+Practical+Machine+Learning+Tools+and+Techniques%2C+by+Witten%2C+Frank+and+Hall&qid=1686909146&sprefix=data+mining+practical+machine+learning+tools+and+techniques+by+witten+frank+and+hall%2Caps%2C72&sr=8-1)
+Supporting Web page with Slides and Contents [LINK](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+
+</div>
+:::
+
+
+
+
+
+* [Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow : concepts, tools, and techniques to build intelligent systems / Aurélien Géron.](https://discovery.hw.ac.uk/primo-explore/fulldisplay?docid=44hwa_alma2171469900003206&context=L&vid=44HWA_V1&lang=en_US&search_scope=HW&adaptor=Local%20Search%20Engine&tab=default_tab&query=any,contains,Hands%20on%20machine%20learning)
+
+
+:::info
+**New to Python and Machine Learning?**
+<div style='width:40%;float:left;'>
+<img width='80%' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+</div>
+<div markdown="1" tyle='width:60%;float:right;'>
+Try **Hands-on Machine Learning with Scikit-Learn and TensorFlow: 3rd Edition**. The book aims at teaching you the fundamentals of Machine Learning in **Python**. It contains the example code and solutions to the exercises in the second edition of my O'Reilly book. **Github repository** is available here: [LINK](https://github.com/ageron/handson-ml2/tree/master)
+</div>
+:::
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+
+<script>
+
+function extraMarkdown(txt)
+{
+	// bold words
+	//txt = txt.replaceAll( /\*\*([a-zA-Z0-9 ]*)\*\* /ig, `<b>$1</b> ` );
+	// italic words
+	//txt = txt.replaceAll( /\*(.*?)\* /ig, `<i>$1</i> ` );
+
+	let re = /(:::)(.*)\n((.|\n)*?)\n(:::)\n/ig;
+	txt = txt.replaceAll( re, `<div markdown=1 class='alert alert-$2'>$3<div style="clear: both;"></div></div>` );
+
+	return txt;
+}
+
+
+window.addEventListener('load', function() {
+
+	// html - add attribute 'markdown=1'
+
+	let converter = new showdown.Converter( { 
+                                            tables: 'true', 
+                                            disableForced4SpacesIndentedSublists: 'true', 
+                                            simpleLineBreaks: 'true',
+                                            strikethrough: 'true',
+                                            tasklists: true,
+                                            requireSpaceBeforeHeadingText: true }  );
+    converter.setFlavor('github');
+
+	let rawmd = document.getElementById('rawmd').value;
+
+    //console.log('rawmd:', rawmd );
+
+	let pages = rawmd.split("\n~~~");
+	
+	let res = '';
+	pages.forEach( (p,i )=>{
+		p = extraMarkdown( p );
+
+		p = converter.makeHtml( p );		
+
+		res += "<div id='page"+i+"' class='mdcontent'>"+p+"</div>";
+	});
+	
+	document.getElementById('mdcontainer').innerHTML = res;
+
+
+	/*
+	let els = document.getElementsByClassName('mdcontent');
+	els = [...els];
+	els.forEach( (el)=>{
+		el.innerHTML = converter.makeHtml( el.textContent );
+	});
+	*/
+
+	hljs.initHighlightingOnLoad();
+
+	
+	
+	let oldhash = window.location.hash;
+	let newhash = oldhash.replace('#', '');
+	console.log('--> old: ', oldhash, ' new:', newhash );
+	
+	window.location.hash = '';
+	window.location.hash = newhash;
+});
+</script>
+</body>
+</html>
