@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "question": "1. What is the primary difference between linear regression and logistic regression?",
+      "question": "What is the primary difference between linear regression and logistic regression?",
       "options": {
         "a": "Linear regression is used for continuous target variables, while logistic regression is used for binary classification.",
         "b": "Linear regression is used for binary classification, while logistic regression is used for continuous target variables.",
@@ -13,7 +13,7 @@
       "explanation": "Linear regression is used for predicting continuous target variables, while logistic regression is used for binary classification problems where the target variable is categorical."
     },
     {
-      "question": "2. What is the appropriate cost function for linear regression?",
+      "question": "What is the appropriate cost function for linear regression?",
       "options": {
         "a": "Mean Squared Error (MSE)",
         "b": "Mean Absolute Error (MAE)",
@@ -25,7 +25,7 @@
       "explanation": "The appropriate cost function for linear regression is Mean Squared Error (MSE), which measures the average squared difference between the predicted and actual values."
     },
     {
-      "question": "3. Which of the following is true about the coefficients in logistic regression?",
+      "question": "Which of the following is true about the coefficients in logistic regression?",
       "options": {
         "a": "The coefficients represent the change in the log odds of the target variable for a one-unit change in the predictor variable.",
         "b": "The coefficients represent the change in the probability of the target variable for a one-unit change in the predictor variable.",
@@ -37,7 +37,7 @@
       "explanation": "In logistic regression, the coefficients represent the change in the log odds of the target variable for a one-unit change in the predictor variable. They provide insights into the impact of the predictors on the likelihood of the target variable."
     },
     {
-      "question": "4. Which transformation can be applied to the target variable in linear regression to handle non-linear relationships?",
+      "question": "Which transformation can be applied to the target variable in linear regression to handle non-linear relationships?",
       "options": {
         "a": "Logarithmic transformation",
         "b": "Exponential transformation",
@@ -49,7 +49,7 @@
       "explanation": "All of the above transformations (logarithmic, exponential, square root) can be applied to the target variable in linear regression to handle non-linear relationships and improve model fit."
     },
     {
-      "question": "5. Which of the following is an assumption of linear regression?",
+      "question": "Which of the following is an assumption of linear regression?",
       "options": {
         "a": "The residuals are normally distributed.",
         "b": "There is no multicollinearity among the predictor variables.",
@@ -63,7 +63,7 @@
 	,
 
 {
-  "question": "6. Which algorithm is commonly used for training logistic regression models?",
+  "question": "Which algorithm is commonly used for training logistic regression models?",
   "options": {
     "a": "Gradient Descent",
     "b": "Random Forest",
@@ -75,7 +75,7 @@
   "explanation": "Gradient Descent is commonly used to train logistic regression models. It iteratively updates the model parameters to minimize the cost function and find the optimal values for the coefficients."
 },
 {
-  "question": "7. Which of the following is true about the sigmoid function in logistic regression?",
+  "question": "Which of the following is true about the sigmoid function in logistic regression?",
   "options": {
     "a": "It maps the input to a continuous range between 0 and 1.",
     "b": "It is used to compute the mean squared error.",
@@ -87,7 +87,7 @@
   "explanation": "The sigmoid function maps the input to a continuous range between 0 and 1, which represents the predicted probability in logistic regression. It allows us to interpret the output as the likelihood of the positive class."
 },
 {
-  "question": "8. In logistic regression, what does the decision boundary represent?",
+  "question": "In logistic regression, what does the decision boundary represent?",
   "options": {
     "a": "The line that separates the positive and negative classes.",
     "b": "The mean squared error of the model.",
@@ -99,7 +99,7 @@
   "explanation": "The decision boundary is the line that separates the positive and negative classes in logistic regression. It determines the region where the predicted probabilities are assigned to each class."
 },
 {
-  "question": "9. What is the advantage of using regularization in linear regression?",
+  "question": "What is the advantage of using regularization in linear regression?",
   "options": {
     "a": "It helps reduce overfitting by adding a penalty term to the cost function.",
     "b": "It improves model interpretation by scaling the coefficients.",
@@ -111,7 +111,7 @@
   "explanation": "Regularization helps reduce overfitting in linear regression models by adding a penalty term to the cost function. It encourages the model to select fewer features and control the magnitude of the coefficients."
 },
 {
-  "question": "10. What is the purpose of the cost function in logistic regression?",
+  "question": "What is the purpose of the cost function in logistic regression?",
   "options": {
     "a": "To measure the accuracy of the model predictions.",
     "b": "To minimize the sum of squared errors.",
@@ -123,7 +123,7 @@
   "explanation": "The cost function in logistic regression is used to penalize misclassifications and guide the model training process. It aims to minimize the discrepancy between the predicted probabilities and the actual class labels of the training data, encouraging the model to make accurate predictions."
 },
 {
-  "question": "11. What is the purpose of feature scaling in linear regression?",
+  "question": "What is the purpose of feature scaling in linear regression?",
   "options": {
     "a": "To normalize the target variable.",
     "b": "To transform the target variable into a binary format.",
@@ -135,7 +135,7 @@
   "explanation": "Feature scaling is used to standardize the predictor variables in linear regression. It ensures that the variables are on the same scale, which can help prevent certain variables from dominating the model due to their larger magnitude."
 },
 {
-  "question": "12. Which of the following statements is true about the p-value in linear regression?",
+  "question": "Which of the following statements is true about the p-value in linear regression?",
   "options": {
     "a": "A p-value less than 0.05 indicates a significant relationship between the predictor and target variable.",
     "b": "A p-value greater than 0.05 indicates a significant relationship between the predictor and target variable.",
@@ -147,7 +147,7 @@
   "explanation": "In linear regression, a p-value less than 0.05 is typically considered statistically significant, indicating a significant relationship between the predictor and target variable. It suggests that the predictor has a meaningful impact on the target variable."
 },
 {
-  "question": "13. Which of the following is true about the logistic regression equation?",
+  "question": "Which of the following is true about the logistic regression equation?",
   "options": {
     "a": "The equation represents a linear relationship between the predictors and the log-odds of the target variable.",
     "b": "The equation represents a linear relationship between the predictors and the probability of the target variable.",
@@ -159,7 +159,7 @@
   "explanation": "The logistic regression equation represents a linear relationship between the predictors and the log-odds (logarithm of the odds) of the target variable. Although the relationship between the predictors and the probabilities is non-linear, it is captured by the transformation applied to the linear equation."
 },
 {
-  "question": "14. Which evaluation metric is commonly used to assess the performance of logistic regression models?",
+  "question": "Which evaluation metric is commonly used to assess the performance of logistic regression models?",
   "options": {
     "a": "Mean Squared Error (MSE)",
     "b": "Root Mean Squared Error (RMSE)",
@@ -171,15 +171,7 @@
   "explanation": "The Area Under the ROC Curve (AUC-ROC) is commonly used to assess the performance of logistic regression models. It measures the model's ability to discriminate between the positive and negative classes, considering various thresholds."
 },
 {
-  "question": "15. Which of the following is a limitation of linear regression?",
-  "options": {
-    "a": "It cannot handle categorical predictor variables.",
-    "b": "It is prone to overfitting when the number of predictor variables is large.",
-  "c": "It is only suitable for linear relationships between predictors and the target variable.",
-  "d": "It does not provide interpretable coefficients."
-},
-{
-  "question": "16. Which method can be used to handle multicollinearity in linear regression?",
+  "question": "Which method can be used to handle multicollinearity in linear regression?",
   "options": {
     "a": "Dropping one of the correlated predictors",
     "b": "Combining the correlated predictors into a single feature",
@@ -191,7 +183,7 @@
   "explanation": "To handle multicollinearity in linear regression, one can choose to drop one of the correlated predictors, combine the correlated predictors into a single feature, or use regularization techniques that can reduce the impact of correlated predictors on the model."
 },
 {
-  "question": "17. What is the purpose of the bias term (intercept) in linear regression?",
+  "question": "What is the purpose of the bias term (intercept) in linear regression?",
   "options": {
     "a": "To shift the regression line vertically",
     "b": "To account for the average error in the model",
@@ -203,7 +195,7 @@
   "explanation": "The bias term, or intercept, in linear regression allows the regression line to shift vertically, determining the point at which the line intersects the y-axis. It accounts for the average effect on the target variable when all predictors are zero."
 },
 {
-  "question": "18. Which of the following techniques is used to handle missing values in linear regression?",
+  "question": "Which of the following techniques is used to handle missing values in linear regression?",
   "options": {
     "a": "Dropping the rows with missing values",
     "b": "Replacing missing values with the mean or median",
@@ -215,7 +207,7 @@
   "explanation": "To handle missing values in linear regression, one can choose to drop the rows with missing values, replace missing values with the mean or median of the corresponding variable, or use more advanced imputation methods that consider the relationship between variables."
 },
 {
-  "question": "19. Which of the following is true about the log-odds in logistic regression?",
+  "question": "Which of the following is true about the log-odds in logistic regression?",
   "options": {
     "a": "It represents the probability of the positive class.",
     "b": "It ranges from -∞ to +∞.",
@@ -227,7 +219,7 @@
   "explanation": "The log-odds in logistic regression represent the logarithm of the odds of the positive class. It ranges from -∞ to +∞, allowing the transformation of the linear equation into a bounded range of probabilities using the sigmoid function."
 },
 {
-  "question": "20. Which of the following is a disadvantage of logistic regression?",
+  "question": "Which of the following is a disadvantage of logistic regression?",
   "options": {
     "a": "It is sensitive to outliers.",
     "b": "It can only handle binary classification problems.",
