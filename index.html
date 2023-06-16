@@ -177,7 +177,7 @@ toc.forEach( ( n, i )=>{
 		let h = '';
 		toc[i].q.forEach( (q,k)=>{
 			h += `<a href="https://f21dl.github.io/material/quizzes/index.html?id=${toc[i].q}&">Q${k+1}</a>`; // quizzes 
-			if ( k+1 < toc[i].q.length ) h += ' ,';
+			if ( k+1 < toc[i].q.length ) h += ', ';
 		});
 		newRow.insertCell().innerHTML = h;
 	}
