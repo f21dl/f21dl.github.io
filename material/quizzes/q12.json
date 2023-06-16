@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "question": "1. What is the basic building block of a neural network?",
+      "options": {
+        "a": "Node",
+        "b": "Edge",
+        "c": "Layer",
+        "d": "Weight"
+      },
+      "answer": "a",
+      "clue": "Consider the fundamental unit of a neural network.",
+      "explanation": "The basic building block of a neural network is a node, also known as a neuron. It receives inputs, applies a transformation, and produces an output based on the activation function."
+    },
+    {
+      "question": "2. Which activation function is commonly used in the hidden layers of a neural network?",
+      "options": {
+        "a": "Sigmoid",
+        "b": "ReLU",
+        "c": "Tanh",
+        "d": "Linear"
+      },
+      "answer": "b",
+      "clue": "Consider the activation functions commonly used in neural networks.",
+      "explanation": "The rectified linear unit (ReLU) activation function is commonly used in the hidden layers of a neural network. It helps address the vanishing gradient problem and promotes better learning by allowing non-linearity."
+    },
+    {
+      "question": "3. Which term refers to the process of adjusting the weights and biases of a neural network during training?",
+      "options": {
+        "a": "Forward propagation",
+        "b": "Backward propagation",
+        "c": "Gradient descent",
+        "d": "Batch normalization"
+      },
+      "answer": "b",
+      "clue": "Consider the process of updating network parameters during training.",
+      "explanation": "Backward propagation, also known as backpropagation, is the process of adjusting the weights and biases of a neural network based on the computed gradients. It enables the network to learn from errors and improve its performance over time."
+    },
+    {
+      "question": "4. What is the purpose of the loss function in a neural network?",
+      "options": {
+        "a": "To measure the performance of the network",
+        "b": "To regularize the model",
+        "c": "To optimize the weights and biases",
+        "d": "To initialize the network parameters"
+      },
+      "answer": "a",
+      "clue": "Consider the role of the loss function in a neural network.",
+      "explanation": "The loss function is used to measure the performance of the neural network. It quantifies the discrepancy between the predicted output and the actual target, providing a signal for the network to adjust its parameters and minimize the error."
+    },
+    {
+      "question": "5. What is the purpose of dropout regularization in neural networks?",
+      "options": {
+        "a": "To prevent overfitting",
+        "b": "To speed up training",
+        "c": "To introduce non-linearity",
+        "d": "To normalize the input data"
+      },
+      "answer": "a",
+      "clue": "Consider the role of dropout regularization in neural networks.",
+      "explanation": "Dropout regularization is used to prevent overfitting in neural networks. It randomly disables a fraction of the neurons during training, forcing the network to learn redundant representations and improving its generalization ability."
+    },
+    {
+      "question": "6. Which type of neural network architecture is suitable for sequential data processing?",
+      "options": {
+        "a": "Feedforward neural network",
+        "b": "Convolutional neural network",
+        "c": "Recurrent neural network",
+        "d": "Generative adversarial network"
+      },
+      "answer": "c",
+      "clue": "Consider the type of neural network architecture commonly used for sequential data.",
+      "explanation": "Recurrent neural networks (RNNs) are suitable for sequential data processing. RNNs have recurrent connections that allow information to persist over time, making them effective for tasks such as language modeling, speech recognition, and time series analysis."
+    },
+    {
+      "question": "7. Which method can be used to prevent vanishing gradients in deep neural networks?",
+      "options": {
+        "a": "Batch normalization",
+        "b": "L1 regularization",
+        "c": "Gradient clipping",
+        "d": "Data augmentation"
+      },
+      "answer": "a",
+      "clue": "Consider the technique to mitigate vanishing gradients in deep neural networks.",
+      "explanation": "Batch normalization is a technique that can prevent vanishing gradients in deep neural networks. It normalizes the inputs of each layer by subtracting the batch mean and dividing by the batch standard deviation, ensuring stable gradients during training."
+    },
+    {
+      "question": "8. What is the purpose of the learning rate in neural network training?",
+      "options": {
+        "a": "To control the trade-off between bias and variance",
+        "b": "To initialize the network weights",
+        "c": "To measure the network performance",
+        "d": "To control the step size in weight updates"
+      },
+      "answer": "d",
+      "clue": "Consider the role of the learning rate in weight updates.",
+      "explanation": "The learning rate determines the step size in weight updates during neural network training. It controls how much the weights are adjusted based on the gradients computed by the optimizer. Setting an appropriate learning rate is crucial for achieving effective training and convergence."
+    },
+    {
+      "question": "9. What is the purpose of the activation function in a neural network?",
+      "options": {
+        "a": "To initialize the network parameters",
+        "b": "To measure the network performance",
+        "c": "To introduce non-linearity",
+        "d": "To regularize the model"
+      },
+      "answer": "c",
+      "clue": "Consider the role of the activation function in a neural network.",
+      "explanation": "The activation function introduces non-linearity to the outputs of a neural network. It allows the network to learn complex relationships and make non-linear transformations on the input data. Common activation functions include sigmoid, ReLU, and tanh."
+    },
+    {
+      "question": "10. Which optimization algorithm is commonly used for training deep neural networks?",
+      "options": {
+        "a": "Gradient descent",
+        "b": "Stochastic gradient descent",
+        "c": "Adam",
+        "d": "Adaboost"
+      },
+      "answer": "c",
+      "clue": "Consider the commonly used optimization algorithm for deep neural networks.",
+      "explanation": "Adam (Adaptive Moment Estimation) is a popular optimization algorithm used for training deep neural networks. It combines the advantages of adaptive learning rates and momentum to achieve faster convergence and better performance."
+    }
+  ]
+}
