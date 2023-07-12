@@ -49,7 +49,8 @@ td {
 
 <div id='container' class="container">
 <div class='innercontainer'>
-<div class='leftblock leftimage' style='margin-right:20px; display: table-cell; margin:20px; vertical-align:top; height:100%; min-width: 400px; background: url("./material/images/spidertree2.jpg"); background-size:cover;' title='Millions of Spiders Encase Entire Trees in Webs'>
+<div id='leftimageholder' class='leftblock leftimage' style='margin-right:20px; display: table-cell; margin:20px; vertical-align:top; height:100%; min-width: 400px; background: url("./material/images/spidertree2.jpg"); background-size:cover;' title='Millions of Spiders Encase Entire Trees in Webs'>
+<div id='leftimage'></div>
 </div>
 <div class='leftblock' style='display:table-cell;width:30px;'>
 </div>
@@ -205,6 +206,167 @@ toc.forEach( ( n, i )=>{
 });
 
 </script>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
+
+<style>
+    canvas {
+        max-width: 100%!important;
+        max-height: 100%!important;
+        width:auto!important;
+        height:auto!important;
+    }
+    #leftimageholder {
+        vertical-align: text-bottom;
+    }
+    #leftimage {
+        position:absolute; left:0px!important; top:0px; right:0px; bottom:0px; border:0px solid yellow;
+        width:400px;
+    }
+</style>
+
+<script>
+function setup() {
+    let li = document.getElementById("leftimage");
+    li.style.overflow = 'hidden';
+    li.style.position = 'relative';
+    
+    let c= createCanvas(600, 600);
+    c.parent( li );
+    let canvas = c.canvas;
+    canvas.style.position = 'relative';
+
+    textAlign(CENTER, CENTER);
+    rectMode(CENTER);
+    angleMode(DEGREES);
+    console.log('setup');
+}
+
+function draw() {
+    //background(0);
+    clear();
+    
+    var amount = 6;
+    var spacing = 20;
+    var radius = 140;
+  
+    for (var i = 0; i < amount; i++) {
+        createNumberRing(radius + spacing * i, 30 + 10 * i, i);
+    }
+
+    drawTitleText();
+    drawSubtitleText();
+    drawWebsite();
+}
+
+function createNumberRing(radius, amount, seed) {
+    randomSeed(seed);
+    var randomNumbers = [];
+    for (var i = 0; i <= amount; i++) {
+        randomNumbers.push(parseInt(random(2), 10));
+    }
+    var spacing = 360 / amount;
+
+    push();
+    translate(width / 2, height / 2);
+    var rotSpeed = 0.05;
+    rotate(frameCount * random(-rotSpeed, rotSpeed));
+    
+    for (var i = 0; i < amount; i++) {
+        push();
+        rotate(i * spacing);
+        var num = new Num(randomNumbers[i], 0 + radius, 0, 90, random(50, 255));
+        num.render();
+        pop();
+    }
+
+    pop();
+}
+
+function Num(msg, x, y, rot, clr) {
+    this.x = x;
+    this.y = y;
+    this.rot = rot;
+    this.msg = msg;
+    this.color = clr;
+
+    this.render = function() {
+        push();
+        fill(this.color);
+        translate(this.x, this.y);
+        rotate(this.rot);
+        text(this.msg, 0, 0);
+        pop();
+    }
+}
+
+function drawTitleText() {
+    push();
+    translate(width / 2, height / 2);
+
+    var scaleFactor = 0.5;
+    var maxLimit = 200;
+    if (frameCount < maxLimit) {
+        var currentScale = map(frameCount, 0, maxLimit, 0, scaleFactor);
+        scale(1.5 + currentScale);
+    } else {
+        scale(1.5 + scaleFactor);
+    }
+
+    strokeWeight(2);
+    stroke(255);
+    fill(0, 200);
+    rect(0, 0, 270, 30);
+
+    fill(255);
+    noStroke();
+    textFont('Arial');
+    text('DATA MINING AND MACHINE LEARNING', 0, 0);
+    pop();
+}
+
+function drawSubtitleText() {
+    push();
+    
+    translate(width/2, height/2 + 50);
+    scale(1.3);
+    
+    push();
+    fill('#ed225d');
+    textFont('Arial');
+    var msg = 'Interactive Learning';
+    text(msg, 0, 0);
+    pop();
+
+    pop();
+}
+
+function drawWebsite() {
+    push();
+    
+    translate(width/2, height * 0.95);
+    scale(1.2);
+    
+    push();
+
+    textFont('Verdana');
+    var msg = 'https://f21dl.github.io';
+    fill('#fff');
+    textSize(12);
+    text(msg, 0, 0);
+    pop();
+
+    pop();
+}
+//setup();
+
+console.log('ready..');
+</script>
+
 
 
 </body>
