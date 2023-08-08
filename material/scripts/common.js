@@ -1,5 +1,7 @@
 
 
+window.onload = () => {
+	
 let div = document.createElement('div');
 document.body.appendChild( div );
 div.id = 'helperbar';
@@ -16,3 +18,5 @@ div.innerHTML = `<a href="https://f21dl.github.io"><img src="https://f21dl.githu
 	<a href="https://f21dl.github.io"><img src="https://f21dl.github.io/material/images/webhome.png" height="40px"></a>
 </div>
 */
+
+};
