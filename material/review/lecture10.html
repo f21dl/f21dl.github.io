@@ -1,0 +1,613 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Multilayer Perceptron (Neural Networks)
+**Data Mining and Machine Learning**
+
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+<div style='font-size:85%'>
+
+# Overview
+ - Introduction to neural networks and artificial neurons
+   - What are neural networks?
+ - Perceptron model and activation functions (e.g., sigmoid, ReLU)
+ - Multilayer perceptron architecture and forward propagation
+ - Training and optimization techniques for neural networks (e.g., backpropagation, gradient descent)
+ - Regularization methods for neural networks (e.g., L1 and L2 regularization)
+ - Hyperparameter tuning for neural networks (e.g., learning rate, number of hidden layers)
+ - Handling overfitting and underfitting in neural networks
+ - Deep learning frameworks and libraries (e.g., TensorFlow, PyTorch)
+
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are neural networks?
+
+---
+
+## What are neural networks?
+
+Neural networks are a type of machine learning model inspired by the structure and function of the human brain. They consist of interconnected nodes called neurons that process and transmit information. Neural networks can learn and make predictions by adjusting the weights between neurons based on training data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is a neuron in a neural network?
+
+---
+
+## What is a neuron in a neural network?
+
+A neuron, also known as a perceptron, is the basic building block of a neural network. It takes input values, applies weights to them, passes the weighted sum through an activation function, and produces an output. The activation function introduces non-linearity and enables the network to learn complex relationships.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Activation Functions
+### What are activation functions in neural networks?
+
+---
+
+## What are activation functions in neural networks?
+
+Activation functions determine the output of a neuron and introduce non-linear transformations. Common activation functions include:
+- Sigmoid: Maps the input to a value between 0 and 1, useful for binary classification tasks.
+- ReLU (Rectified Linear Unit): Returns the input for positive values and 0 for negative values, commonly used in deep learning networks.
+- Tanh (Hyperbolic Tangent): Maps the input to a value between -1 and 1, similar to sigmoid but with a symmetric range.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is a multilayer perceptron (MLP)?
+
+---
+
+## What is a multilayer perceptron (MLP)?
+
+A multilayer perceptron is a type of feedforward neural network consisting of multiple layers of neurons. It consists of an input layer, one or more hidden layers, and an output layer. The hidden layers allow the network to learn complex representations and patterns.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Feedforward Process in MLP
+### How does the feedforward process work in an MLP?
+
+---
+
+## How does the feedforward process work in an MLP?
+
+The feedforward process in an MLP involves passing the input through the layers in a forward direction. Each neuron in a layer receives inputs from the previous layer, applies weights, and passes the output to the next layer. This process continues until the output layer is reached, which produces the final predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Backpropagation Algorithm
+### What is the backpropagation algorithm?
+
+---
+
+## What is the backpropagation algorithm?
+
+The backpropagation algorithm is used to train MLPs by adjusting the weights based on the error between the predicted and actual outputs. It works by propagating the error backward through the network and updating the weights using gradient descent or other optimization techniques.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How are neural networks trained, and what are loss functions?
+
+---
+
+## How are neural networks trained, and what are loss functions?
+
+Neural networks are trained by minimizing a loss function that measures the discrepancy between the predicted and actual outputs. Common loss functions include:
+- Mean Squared Error (MSE): Used for regression tasks.
+- Cross-Entropy Loss: Used for classification tasks with multiple classes.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overfitting and Regularization in MLPs
+### What is overfitting in MLPs, and how can it be addressed?
+
+---
+
+### What is overfitting in MLPs, and how can it be addressed?
+
+Overfitting occurs when an MLP learns to perform well on the training data but fails to generalize to new, unseen data. Regularization techniques can help address overfitting. Two common regularization methods are:
+- Dropout: Randomly sets
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is dropout in MLPs?
+
+---
+
+## What is dropout in MLPs?
+
+Dropout is a regularization technique used in MLPs to prevent overfitting. During training, a fraction of randomly selected neurons are temporarily "dropped out" or deactivated, meaning their outputs and connections are ignored. This helps prevent the network from relying too heavily on specific neurons and encourages the learning of more robust representations.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Hyperparameter Tuning in MLPs
+# What are hyperparameters in MLPs, and why are they important?
+
+---
+
+## What are hyperparameters in MLPs, and why are they important?
+
+Hyperparameters are parameters that are set before training and define the architecture and behavior of an MLP. They include the number of layers, the number of neurons per layer, learning rate, batch size, and more. Hyperparameter tuning is the process of selecting the optimal combination of hyperparameters to improve the network's performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Activation Functions for Output Layer
+# Are there specific activation functions for the output layer in MLPs?
+
+---
+
+## Are there specific activation functions for the output layer in MLPs?
+
+The choice of activation function for the output layer depends on the task at hand:
+- For binary classification, a sigmoid activation function is commonly used to produce probabilities.
+- For multi-class classification, a softmax activation function is often used to produce class probabilities.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+#  What are the advantages of MLPs?
+
+---
+
+## What are the advantages of MLPs?
+
+Advantages of MLPs include:
+- Ability to learn complex patterns and representations.
+- Suitable for various types of data, including numerical and categorical.
+- Flexibility in architecture and activation functions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the limitations of MLPs?
+
+---
+
+## What are the limitations of MLPs?
+
+Limitations of MLPs include:
+- Prone to overfitting, especially with limited training data.
+- Sensitive to the choice of hyperparameters.
+- Computationally expensive for large networks and datasets.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Applications of MLPs
+### What are some applications of MLPs?
+
+MLPs have found applications in various domains, including:
+- Image and speech recognition.
+- Natural language processing.
+- Financial forecasting.
+- Recommender systems.
+- Disease diagnosis.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Key points:
+
+- Emphasis on the significance of MLPs in solving complex problems.
+- Encouragement to explore and experiment with MLPs in practical applications.
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

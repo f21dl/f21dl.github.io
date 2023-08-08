@@ -1,14 +1,130 @@
-<html>
-<head>
-</head>
-<body>
 
-<base target="_blank" />
+
+<!--
+Jupyter notebook ipynb loader/viewer
+-->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism.css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js'></script>
+<link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css'>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.6.7/es5-shim.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.7.0/marked.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.3/purify.min.js'></script>
+
+<!--
+<script src="https://jsvine.github.io/nbpreview/js/vendor/notebook.min.js"></script>
+-->
+<script src='https://notebook.xbdev.net/var/scripts/jupnotebook.js'></script>
+<link rel="stylesheet" href="https://notebook.xbdev.net/var/scripts/jupnotebook.css" />
 
 <script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;
+</script>
 
-window.onload = function()
-{
+<style>
+body {
+    padding:70px;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#main {
+    width: 99%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+#header {
+    line-height: 2;
+    margin-bottom: 0.25em;
+    font-weight: bold;
+}
+
+#controls {
+    border: 1px dotted #CCC;
+    padding: 0.75em;
+    margin-bottom: 0.5em;
+    background-color: #EEF;
+}
+
+.language-python {
+  margin: 0!important;
+  padding: 0!important;
+  overflow-wrap: break-word;
+  white-space: initial;
+}
+
+.nb-input {
+  margin: 2px;
+  padding: 0px;
+  border: 1px solid rgb(200,200,200);
+  background-color: rgb(240,240,240);
+  margin-bottom:5px;
+}
+.nb-text-output, .nb-stdout {
+  margin: 2px;
+  border: 0px solid black;
+  background-color: rgb(240,240,240);
+}
+.nb-output {
+    overflow-x: auto;
+}
+.nb-input:before {
+  color: blue;
+}
+.nb-output:before {
+  color: red;
+}
+</style>
+
+
+<div id='header' style='display:none;'>
+    <input type='file' id='file-input'>
+</div>
+
+
+
+<div id="main">
+    <div id='download'></div>
+    <!--
+    <a href='https://courses.xbdev.net/courses/dmandml/jupyter/lab${id}/'>Download ipynb</a>
+    -->
+    <div id="notebook-holder"></div>
+    <br><br>
+</div>
+
+
+
+
+<script>
+// Example usage
+const fileInput = document.getElementById('file-input');
+
+// Function to load and parse the IPython Notebook file
+async function loadIPythonNotebook( txt ) {
+    var notebook = nb.parse(JSON.parse( txt  ));
+    var rendered = notebook.render();
+    var holder = document.querySelector("#notebook-holder");
+    holder.appendChild( rendered );
+    Prism.highlightAll();
+}
+
+fileInput.addEventListener('change', async (event) => {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = async () => {
+    await loadIPythonNotebook(reader.result);
+  }
+  reader.readAsText(file);
+});
+
+
+onload = async function(){
+    
 	const queryString = window.location.search; // e.g. ?active=shirt&color=blue&newuser&size=m
 
 	const urlParams = new URLSearchParams(queryString);
@@ -18,39 +134,30 @@ window.onload = function()
 	{
 		const id = urlParams.get('id');
 		console.log('loading: ', id );
-		//let prom = await fetch( `https://f21dl.github.io/material/jupyter/lab${id}.ipynb` ); // {cache: "no-store"})
-		//let txt  = await prom.text();
-
-		window.location.href = `https://github.com/f21dl/f21dl.github.io/blob/main/material/jupyter/lab${id}.ipynb`;
 		
-		/*
-		//questions = JSON.parse( txt ).questions;
-		let iframe = document.createElement('iframe');
-		document.body.appendChild( iframe );
-		iframe.src = `https://nbviewer.org/urls/f21dl.github.io/material/jupyter/lab${id}.ipynb`; 
-		iframe.frameborder = "0";
-		iframe.frameBorder="0";
-		iframe.scrolling = "0";
-		iframe.width = '100%';
-		iframe.height = '100%';
-		iframe.style.width = "100%";
-		iframe.style.height = "100%";
-		iframe.style.margin = '0';
-		iframe.style.padding = '0';
-		*/
+		//let p = await fetch( '..../lab01.ipynb' );
+		// https://courses.xbdev.net/courses/dmandml/quizzes/q01/
+		let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/` ); // {cache: "no-store"})
+		let txt  = await prom.text();
 		
+		await loadIPythonNotebook( txt );
+		
+		let d = document.getElementById('download');
+		let a = document.createElement('a');
+		d.appendChild( a );
+		a.href = `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/`;
+		a.innerHTML = 'Download ipynb';
+		a.download  = `lab${id}.ipynb`;
+		//<a href='https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/'>Download ipynb</a>
+		
+		//Prism.highlightAll();
 	}
-}		
-		
+}
+
 </script>
 
 
-<div style="display: block; position: fixed; bottom: 20px; left: 20px; margin-left: 0px; z-index: 200000;">
-	<a href="https://f21dl.github.io"><img src="https://f21dl.github.io/material/images/webhome.png" height="40px"></a>
-</div>
 
 
-</body>
-</html>
 
 

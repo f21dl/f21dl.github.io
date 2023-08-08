@@ -1,0 +1,551 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border: 0px solid orange;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg,black, black 10%, rgba(0,0,0,0.2) 100% ),url('https://images.theconversation.com/files/374303/original/file-20201210-18-elk4m.jpg\?ixlib=rb-1.1.0&rect=0%2C22%2C7500%2C5591&q=45&auto=format&w=926&fit=clip') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+
+
+<!--{border: 0px solid orange}-->
+<!--{background:https://images.theconversation.com/files/374303/original/file-20201210-18-elk4m.jpg?ixlib=rb-1.1.0&rect=0%2C22%2C7500%2C5591&q=45&auto=format&w=926&fit=clip}-->
+<!--{gradient:90deg,black, black 10%, rgba(0,0,0,0.2) 100% }-->
+					
+
+# Neural Networks
+## Data Mining & Machine Learning
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:70%'>
+
+# Reading Material
+
+<!-- -------------------------------------- -->
+<div style='background-color:rgb(100,155,255); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2)
+* Ch10: Introduction to Artificial Neural Networks
+* Ch11: Training Deep Neural Nets
+
+</span>
+<img style='margin:0px; max-height:100%;' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,155,155); padding:10px; height:160px; '>
+
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining:Practical Machine Learning Tools and Techniques](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+* Ch10: Deep learning
+
+</span>
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,55,155); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining and Machine Learning: Fundamental Concepts and Algorithms](https://dataminingbook.info/)
+* Part I: Data Analysis Foundations
+
+</span>
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51Nk67LGBQL.jpg'>
+
+</div>
+<!-- -------------------------------------- -->
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Neural Networks
+# The *Digital* Brain!
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview 
+
+Neural Networks are a class of powerful machine learning algorithms inspired by the structure and functioning of the human brain. They are designed to learn complex patterns and representations from data, making them highly effective in a wide range of tasks, including image recognition, natural language processing, and time-series forecasting. Neural Networks have revolutionized many areas of data mining and machine learning due to their ability to automatically learn hierarchical features from raw data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Summary of Neural Networks:
+* Artificial Neurons (Perceptrons)
+* Feedforward Neural Networks
+* Activation Functions
+* Backpropagation
+* Deep Learning
+* Convolutional Neural Networks (CNNs)
+* Recurrent Neural Networks (RNNs)
+* Long Short-Term Memory (LSTM) Networks
+* Transfer Learning
+* Applications
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Artificial Neurons (Perceptrons)
+At the core of Neural Networks are artificial neurons (perceptrons), which mimic the basic functionality of biological neurons. Each neuron takes multiple inputs, applies weights to them, and passes the weighted sum through an activation function to produce an output.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Feedforward Neural Networks
+Feedforward Neural Networks are the simplest form of Neural Networks, where neurons are organized in layers, and data flows only in one direction, from input to output. They can have multiple hidden layers, making them capable of learning intricate representations of the input data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Activation Functions
+Activation functions introduce non-linearity into the Neural Network, allowing it to learn complex relationships between inputs and outputs. Common activation functions include ReLU (Rectified Linear Unit), Sigmoid, and Tanh.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Backpropagation
+Backpropagation is a key algorithm used to train Neural Networks. It adjusts the weights of the neurons iteratively by minimizing the difference between the predicted outputs and the true labels using gradient descent. This process is known as the optimization or learning process.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Deep Learning
+Deep Learning refers to Neural Networks with multiple hidden layers, also known as deep neural networks. Deep Learning has gained tremendous popularity and success in various tasks, thanks to its ability to learn hierarchical and abstract representations from data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Convolutional Neural Networks (CNNs)
+CNNs are a type of Neural Network particularly effective for image and video processing tasks. They use convolutional layers to automatically learn relevant features from images, followed by pooling layers for spatial downsampling.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Recurrent Neural Networks (RNNs)
+RNNs are specialized Neural Networks for sequential data, such as time series and natural language. They have feedback connections that allow them to maintain memory and process sequences of inputs, making them suitable for tasks like sentiment analysis and machine translation.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Long Short-Term Memory (LSTM) Networks
+LSTM is a type of RNN designed to handle the vanishing gradient problem, which arises when training deep RNNs. LSTM cells can selectively store and forget information over time, making them effective in capturing long-range dependencies in sequential data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Transfer Learning
+Transfer Learning is a technique in Neural Networks where a pre-trained model on one task is adapted to a different but related task. Transfer Learning allows leveraging knowledge learned from one domain to improve performance in another, even with limited data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+## Applications
+Neural Networks have seen widespread adoption in various applications, including image and speech recognition, natural language processing, recommender systems, autonomous vehicles, and robotics.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+Neural Networks have become a central pillar of modern machine learning and artificial intelligence. Their ability to handle complex data and learn intricate representations has led to significant advancements and breakthroughs in numerous fields. However, training deep Neural Networks often requires substantial computational resources and data, making them more suitable for large-scale tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

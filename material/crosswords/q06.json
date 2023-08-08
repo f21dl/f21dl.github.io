@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A popular clustering algorithm that aims to partition data into K clusters.",
+      "answer": "KMeans"
+    },
+    {
+      "question": "A clustering algorithm based on density and connectivity between data points.",
+      "answer": "DBSCAN"
+    },
+    {
+      "question": "A clustering technique that seeks to minimize the variance within clusters.",
+      "answer": "KMedoids"
+    },
+    {
+      "question": "A measure of how compact the members of a cluster are.",
+      "answer": "Cohesion"
+    },
+    {
+      "question": "A clustering method used for categorical data and text analysis.",
+      "answer": "KModes"
+    },
+    {
+      "question": "A technique to evaluate the optimal number of clusters in a dataset.",
+      "answer": "ElbowMethod"
+    },
+    {
+      "question": "A distance-based clustering algorithm that iteratively assigns data points to clusters.",
+      "answer": "Hierarchical"
+    },
+    {
+      "question": "A clustering algorithm that uses medoids instead of centroids to represent clusters.",
+      "answer": "PAM"
+    }
+  ]
+}
+
+

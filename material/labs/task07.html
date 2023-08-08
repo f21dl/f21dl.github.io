@@ -1,0 +1,608 @@
+
+		<style>
+            * {
+                font-family: "Open Sans";
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Notes (Layout.xbdev.net)</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.3/showdown.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<style>
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    word-wrap: break-word;
+}
+
+table { word-break:break-all !important; }
+
+html {
+    background: #CCC;
+    padding-bottom: 100vh; /* allow scrolling past end of page */
+}
+
+h1 {
+    font-size: 2em !important;
+}
+h2 {
+    font-size: 1.5em !important;
+}
+h3, h4, h5 {
+    font-size: 1.3em !important;
+}
+
+.mdcontent {
+	text-align:left;
+    position:relative;
+    background: #FFF;
+    font-family: "Open Sans";
+    line-height: 1.4;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 100px;
+    min-height: calc(100vh - 240px);
+    box-shadow: 0 0 10px;
+	background-color:#fff;
+	color: black;
+}
+
+.mdcontent::before {    
+      content: "";
+      background: url("https://courses.xbdev.net/var/images/backnote.png"); 
+	  background-position: right -50pt top 50pt;
+	  background-repeat: no-repeat;
+	  background-size: contain;	
+	  background-color:#fff;
+      opacity: 0.02;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  z-index:0;
+	  pointer-events: none;
+}
+
+@media (max-width: 568px) {
+    .mdcontent {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+li > ul {
+    padding-left: 20;
+}
+p + ul {
+    margin-top: -10;
+}
+li > p {
+    margin-top: 0;
+    margin-bottom: 10;
+}
+
+blockquote {
+  border-left: 8px solid rgba(100,100,100,0.5);
+  padding-left: 5px;
+}
+
+code {
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+    font-size: 85%;
+    line-height: 150%;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #e6e8db;
+    padding: 1px 3px 1px 3px;
+	border: 4px solid blue;
+}
+
+pre code {
+	border: 4px solid green;
+	display:block;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+hr { 
+    background-color: #fff;
+    border: 0;
+    border-top: 2px dashed #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4C50AF;
+  color: white;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+</style>
+
+<style>
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+</style>
+
+</head>
+<body>
+
+<div id='mdcontainer' style='text-align:center;'>
+</div>
+  
+<br><br>
+
+<textarea id='rawmd' style='display:none;'>
+
+
+
+
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://www.mozaweb.com/en/mozaik3D/FOL/termeszet/vulkanizmus/960.jpg) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=828&root=7/PNG/128/&file=history_clock_1192.png'>
+
+<div style='height:400px;'></div>
+
+## Data Mining and Machine Learning
+
+# Clustering
+
+:::warning
+Create a new Jupiter Notebook to track and record your solutions 
+:::
+
+
+
+
+# Exercises
+
+
+## Exercise 1: Load a dataset of your choice and perform necessary data preprocessing steps.
+<details><summary>Click to see example solution</summary>
+```
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+# Load the dataset
+data = pd.read_csv('data.csv')
+
+# Perform data preprocessing
+# Drop any unnecessary columns
+data = data.drop(['id', 'label'], axis=1)
+
+# Perform feature scaling
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(data)
+```
+</details>
+
+## Exercise 2: Apply K-means clustering algorithm to the preprocessed data.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.cluster import KMeans
+
+# Initialize the K-means clustering algorithm
+kmeans = KMeans(n_clusters=3, random_state=42)
+
+# Fit the K-means model to the data
+kmeans.fit(data_scaled)
+```
+</details>
+
+## Exercise 3: Determine the optimal number of clusters using the elbow method or silhouette analysis.
+<details><summary>Click to see example solution</summary>
+```
+import matplotlib.pyplot as plt
+from sklearn.metrics import silhouette_score
+
+# Define a range of cluster numbers to evaluate
+k_values = range(2, 10)
+silhouette_scores = []
+
+# Compute silhouette score for each cluster number
+for k in k_values:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(data_scaled)
+    silhouette_scores.append(silhouette_score(data_scaled, kmeans.labels_))
+
+# Plot the silhouette scores
+plt.plot(k_values, silhouette_scores, 'bo-')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Silhouette Score')
+plt.title('Silhouette Score vs Number of Clusters')
+plt.show()
+```
+</details>
+
+## Exercise 4: Visualize the clustering results using scatter plots or other suitable visualization techniques.
+<details><summary>Click to see example solution</summary>
+```
+# Assign cluster labels to the data points
+data['cluster_label'] = kmeans.labels_
+
+# Visualize the clusters using scatter plots
+plt.scatter(data['feature1'], data['feature2'], c=data['cluster_label'], cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('K-means Clustering Results')
+plt.show()
+```
+</details>
+
+## Exercise 5: Evaluate the quality of the clustering using internal evaluation metrics such as silhouette score or cohesion and separation measures.
+<details><summary>Click to see example solution</summary>
+```
+# Calculate the silhouette score for the clustering
+silhouette_score = silhouette_score(data_scaled, kmeans.labels_)
+print("Silhouette Score:", silhouette_score)
+```
+</details>
+
+
+## Exercise 6: Apply hierarchical clustering algorithm to the preprocessed data.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.cluster import AgglomerativeClustering
+
+# Initialize the hierarchical clustering algorithm
+agg_clustering = AgglomerativeClustering(n_clusters=3)
+
+# Fit the hierarchical clustering model to the data
+agg_clustering.fit(data_scaled)
+```
+</details>
+
+
+## Exercise 7: Visualize the clustering results using dendrograms or other suitable visualization techniques.
+<details><summary>Click to see example solution</summary>
+```
+import scipy.cluster.hierarchy as shc
+
+# Create the dendrogram
+dendrogram = shc.dendrogram(shc.linkage(data_scaled, method='ward'))
+```
+</details>
+
+
+## Exercise 8: Perform agglomerative clustering with different linkage criteria and compare the results.
+<details><summary>Click to see example solution</summary>
+```
+# Initialize agglomerative clustering with different linkage criteria
+agg_clustering_single = AgglomerativeClustering(n_clusters=3, linkage='single')
+agg_clustering_complete = AgglomerativeClustering(n_clusters=3, linkage='complete')
+
+# Fit the models to the data
+agg_clustering_single.fit(data_scaled)
+agg_clustering_complete.fit(data_scaled)
+```
+</details>
+
+
+## Exercise 9: Evaluate the quality of the clustering using internal evaluation metrics.
+<details><summary>Click to see example solution</summary>
+```
+# Calculate the silhouette score for the hierarchical clustering
+silhouette_score_agg = silhouette_score(data_scaled, agg_clustering.labels_)
+silhouette_score_single = silhouette_score(data_scaled, agg_clustering_single.labels_)
+
+silhouette_score_complete = silhouette_score(data_scaled, agg_clustering_complete.labels_)
+
+print("Silhouette Score (Agglomerative):", silhouette_score_agg)
+print("Silhouette Score (Agglomerative - Single linkage):", silhouette_score_single)
+print("Silhouette Score (Agglomerative - Complete linkage):", silhouette_score_complete)
+```
+</details>
+
+
+## Exercise 10: Apply DBSCAN (Density-Based Spatial Clustering of Applications with Noise) algorithm to the preprocessed data.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.cluster import DBSCAN
+
+# Initialize DBSCAN clustering algorithm
+dbscan = DBSCAN(eps=0.5, min_samples=5)
+
+# Fit the DBSCAN model to the data
+dbscan.fit(data_scaled)
+```
+</details>
+
+
+## Exercise 11: Determine the optimal values for the epsilon and minimum points parameters in DBSCAN.
+<details><summary>Click to see example solution</summary>
+```
+# Explore different values for epsilon and min_samples
+eps_values = [0.1, 0.3, 0.5, 0.7, 1.0]
+min_samples_values = [3, 5, 7, 10]
+
+# Iterate over different combinations of epsilon and min_samples
+for eps in eps_values:
+    for min_samples in min_samples_values:
+        dbscan = DBSCAN(eps=eps, min_samples=min_samples)
+        dbscan.fit(data_scaled)
+        # Assess the quality of the clustering using evaluation metrics
+        silhouette_score_dbscan = silhouette_score(data_scaled, dbscan.labels_)
+        print("Epsilon:", eps, "Min Samples:", min_samples, "Silhouette Score:", silhouette_score_dbscan)
+```
+</details>
+
+
+## Exercise 12: Visualize the clustering results of DBSCAN.
+<details><summary>Click to see example solution</summary>
+```
+# Assign cluster labels to the data points
+data['cluster_label_dbscan'] = dbscan.labels_
+
+# Visualize the clusters using scatter plots
+plt.scatter(data['feature1'], data['feature2'], c=data['cluster_label_dbscan'], cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('DBSCAN Clustering Results')
+plt.show()
+```
+</details>
+
+
+## Exercise 13: Evaluate the quality of the clustering using internal evaluation metrics.
+<details><summary>Click to see example solution</summary>
+```
+# Calculate the silhouette score for the DBSCAN clustering
+silhouette_score_dbscan = silhouette_score(data_scaled, dbscan.labels_)
+print("Silhouette Score (DBSCAN):", silhouette_score_dbscan)
+```
+</details>
+
+
+## Exercise 14: Apply other clustering algorithms such as Gaussian Mixture Models (GMM), Mean Shift, or Spectral Clustering.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.mixture import GaussianMixture
+from sklearn.cluster import MeanShift, SpectralClustering
+
+# Initialize and fit the GMM model
+gmm = GaussianMixture(n_components=3, random_state=42)
+gmm.fit(data_scaled)
+
+# Initialize and fit the Mean Shift model
+mean_shift = MeanShift()
+mean_shift.fit(data_scaled)
+
+# Initialize and fit the Spectral Clustering model
+spectral_clustering = SpectralClustering(n_clusters=3, random_state=42)
+spectral_clustering.fit(data_scaled)
+```
+</details>
+
+
+## Exercise 15: Compare the results of different clustering algorithms using evaluation metrics and visualization techniques.
+<details><summary>Click to see example solution</summary>
+```
+# Compare the silhouette scores of different clustering algorithms
+silhouette_score_kmeans = silhouette_score(data_scaled, kmeans.labels_)
+silhouette_score_agg = silhouette_score(data_scaled, agg_clustering.labels_)
+silhouette_score_dbscan = silhouette_score(data_scaled, dbscan.labels_)
+silhouette_score_gmm = silhouette_score(data_scaled, gmm.predict(data_scaled))
+silhouette_score_mean_shift = silhouette_score(data_scaled, mean_shift.labels_)
+silhouette_score_spectral = silhouette_score(data_scaled, spectral_clustering.labels_)
+
+print("Silhouette Score (K-means):", silhouette_score_kmeans)
+print("Silhouette Score (Agglomerative):", silhouette_score_agg)
+print("Silhouette Score (DBSCAN):", silhouette_score_dbscan)
+print("Silhouette Score (GMM):", silhouette_score_gmm)
+print("Silhouette Score (Mean Shift):", silhouette_score_mean_shift)
+print("Silhouette Score (Spectral Clustering):", silhouette_score_spectral)
+
+# Visualize the clusters of different algorithms
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 3, 1)
+plt.scatter(data['feature1'], data['feature2'], c=data['cluster_label'], cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('K-means Clustering')
+
+plt.subplot(2, 3, 2)
+plt.scatter(data['feature1'], data['feature2'], c=data['cluster_label_agg'], cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('Agglomerative Clustering')
+
+plt.subplot(2, 3, 3)
+plt.scatter(data['feature1'], data['feature2'], c=data['cluster_label_dbscan'], cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('DBSCAN Clustering')
+
+plt.subplot(2, 3, 4)
+plt.scatter(data['feature1'], data['feature2'], c=gmm.predict(data_scaled), cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('GMM Clustering')
+
+plt.subplot(2, 3, 5)
+plt.scatter(data['feature1'], data['feature2'], c=mean_shift.labels_, cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('Mean Shift Clustering')
+
+plt.subplot(2, 3, 6)
+plt.scatter(data['feature1'], data['feature2'], c=spectral_clustering.labels_, cmap='viridis')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.title('Spectral Clustering')
+
+plt.tight_layout()
+plt.show()
+```
+</details>
+
+
+
+
+
+
+This example provides a practical exercise in performing clustering using various algorithms, evaluating the clustering quality using silhouette scores, and visualizing the results. The answers to the exercises are provided through code examples and comments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+
+<script>
+
+function extraMarkdown(txt)
+{
+	// bold words
+	//txt = txt.replaceAll( /\*\*([a-zA-Z0-9 ]*)\*\* /ig, `<b>$1</b> ` );
+	// italic words
+	//txt = txt.replaceAll( /\*(.*?)\* /ig, `<i>$1</i> ` );
+
+	let re = /(:::)(.*)\n((.|\n)*?)\n(:::)\n/ig;
+	txt = txt.replaceAll( re, `<div markdown=1 class='alert alert-$2'>$3<div style="clear: both;"></div></div>` );
+
+	return txt;
+}
+
+
+window.addEventListener('load', function() {
+
+	// html - add attribute 'markdown=1'
+
+	let converter = new showdown.Converter( { 
+                                            tables: 'true', 
+                                            disableForced4SpacesIndentedSublists: 'true', 
+                                            simpleLineBreaks: 'true',
+                                            strikethrough: 'true',
+                                            tasklists: true,
+                                            requireSpaceBeforeHeadingText: true }  );
+    converter.setFlavor('github');
+
+	let rawmd = document.getElementById('rawmd').value;
+
+    //console.log('rawmd:', rawmd );
+
+	let pages = rawmd.split("\n~~~");
+	
+	let res = '';
+	pages.forEach( (p,i )=>{
+		p = extraMarkdown( p );
+
+		p = converter.makeHtml( p );		
+
+		res += "<div id='page"+i+"' class='mdcontent'>"+p+"</div>";
+	});
+	
+	document.getElementById('mdcontainer').innerHTML = res;
+
+
+	/*
+	let els = document.getElementsByClassName('mdcontent');
+	els = [...els];
+	els.forEach( (el)=>{
+		el.innerHTML = converter.makeHtml( el.textContent );
+	});
+	*/
+
+	hljs.initHighlightingOnLoad();
+
+	
+	
+	let oldhash = window.location.hash;
+	let newhash = oldhash.replace('#', '');
+	console.log('--> old: ', oldhash, ' new:', newhash );
+	
+	window.location.hash = '';
+	window.location.hash = newhash;
+});
+</script>
+</body>
+</html>

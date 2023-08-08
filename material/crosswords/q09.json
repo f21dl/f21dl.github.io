@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A popular activation function used in neural networks.",
+      "answer": "ReLU"
+    },
+    {
+      "question": "A neural network layer that connects each neuron to every neuron in the next layer.",
+      "answer": "FullyConnected"
+    },
+    {
+      "question": "A technique used to prevent overfitting in neural networks.",
+      "answer": "Dropout"
+    },
+    {
+      "question": "A neural network architecture with multiple layers.",
+      "answer": "Deep"
+    },
+    {
+      "question": "A type of neural network used for image recognition tasks.",
+      "answer": "CNN"
+    },
+    {
+      "question": "A neural network layer that selects the most important features.",
+      "answer": "Pooling"
+    },
+    {
+      "question": "A learning technique where the neural network learns from its errors.",
+      "answer": "Backpropagation"
+    },
+    {
+      "question": "A neural network layer that handles sequential data.",
+      "answer": "LSTM"
+    }
+  ]
+}
+
+

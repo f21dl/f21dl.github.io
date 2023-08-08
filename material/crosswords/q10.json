@@ -1,0 +1,40 @@
+
+
+{
+  "questions": [
+    {
+      "question": "A popular activation function used in the hidden layers of a Multilayer Perceptron.",
+      "answer": "ReLU"
+    },
+    {
+      "question": "The input layer of a Multilayer Perceptron receives data from the ________.",
+      "answer": "Inputs"
+    },
+    {
+      "question": "The process of updating weights in a Multilayer Perceptron to minimize errors.",
+      "answer": "Training"
+    },
+    {
+      "question": "A Multilayer Perceptron with more than one hidden layer is called a __________.",
+      "answer": "DeepMLP"
+    },
+    {
+      "question": "The output layer of a Multilayer Perceptron produces the ________.",
+      "answer": "Predictions"
+    },
+    {
+      "question": "A Multilayer Perceptron uses __________ learning for supervised training.",
+      "answer": "Backpropagation"
+    },
+    {
+      "question": "A Multilayer Perceptron is an example of __________ learning.",
+      "answer": "Supervised"
+    },
+    {
+      "question": "The nodes in the hidden layers of a Multilayer Perceptron are also called ________.",
+      "answer": "Neurons"
+    }
+  ]
+}
+
+

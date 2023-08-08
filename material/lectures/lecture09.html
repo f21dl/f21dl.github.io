@@ -1,0 +1,484 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid orange;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg,black, black 10%, rgba(0,0,0,0.2) 100% ),url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shadow_Hand_Bulb_large.jpg/1200px-Shadow_Hand_Bulb_large.jpg') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{border:0px solid orange}-->
+<!--{background:https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Shadow_Hand_Bulb_large.jpg/1200px-Shadow_Hand_Bulb_large.jpg}-->
+<!--{gradient:90deg,black, black 10%, rgba(0,0,0,0.2) 100% }-->
+					
+
+# Classification
+## Data Mining & Machine Learning
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:70%'>
+
+# Reading Material
+
+<!-- -------------------------------------- -->
+<div style='background-color:rgb(100,155,255); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2)
+* Ch4: Training Models
+
+</span>
+<img style='margin:0px; max-height:100%;' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,155,155); padding:10px; height:160px; '>
+
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining:Practical Machine Learning Tools and Techniques](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+* Ch7: Extending instance-based and linear models
+
+</span>
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,55,155); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining and Machine Learning: Fundamental Concepts and Algorithms](https://dataminingbook.info/)
+* Part I: Data Analysis Foundations
+
+</span>
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51Nk67LGBQL.jpg'>
+
+</div>
+<!-- -------------------------------------- -->
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+
+Classification is a fundamental task in data mining and machine learning that involves categorizing data into predefined classes or labels based on input features. It is a supervised learning technique, meaning the algorithm is trained on labeled data to learn the mapping between input features and target classes. Once trained, the classifier can then predict the class labels for new, unseen instances.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Summary of Classification:
+* Supervised Learning
+* Training Data
+* Decision Boundary
+* Types of Classifiers
+* Evaluation Metrics
+* Handling Imbalanced Data
+* Multiclass Classification
+* Feature Importance
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Supervised Learning
+Classification is a type of supervised learning, where the algorithm learns from labeled data, consisting of input features and corresponding class labels. The goal is to create a model that can accurately classify new instances based on the learned patterns.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Training Data
+To build a classification model, a labeled dataset is required, where the class labels are known for each instance. The dataset is split into training and testing subsets. The model is trained on the training data and evaluated on the testing data to assess its performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Decision Boundary
+
+The classifier learns decision boundaries in the feature space that separate different classes. These boundaries define the regions or decision regions for each class. Instances falling within a specific decision region are assigned the corresponding class label.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Types of Classifiers
+
+There are various classification algorithms, each with its own strengths and weaknesses. Some common classifiers include:
+
+* Logistic Regression
+* Support Vector Machines (SVM)
+* K-Nearest Neighbors (KNN)
+* Decision Trees
+* Random Forests
+* Naive Bayes
+* Neural Networks
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Evaluation Metrics
+
+To assess the performance of a classification model, various evaluation metrics are used. Common metrics include accuracy, precision, recall, F1-score, area under the receiver operating characteristic curve (AUC-ROC), and area under the precision-recall curve (AUC-PR).
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Handling Imbalanced Data
+In real-world scenarios, the class distribution in the dataset may be imbalanced, where one class is significantly more prevalent than others. Handling imbalanced data requires careful consideration of evaluation metrics and techniques such as resampling, class weighting, and using different decision thresholds.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Multiclass Classification
+Classification can be extended to multiclass problems, where instances can belong to one of several classes. Multiclass classification algorithms can handle these tasks by either using one-vs-rest (OvR) or one-vs-one (OvO) strategies.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Feature Importance
+Some classifiers, such as decision trees and random forests, can provide information about the importance of different features in making predictions. Feature importance helps identify which attributes have the most significant impact on the classification task.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary 
+Classification is a widely used technique in various domains, including image recognition, text classification, spam detection, sentiment analysis, medical diagnosis, and fraud detection. It forms the basis of many practical applications and is essential for automating decision-making processes and gaining insights from data. The choice of the appropriate classification algorithm depends on the nature of the data and the complexity of the problem at hand.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

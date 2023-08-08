@@ -1,0 +1,761 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Probabilistic Classification (Bayes)
+**Data Mining and Machine Learning**
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+ - Introduction to probabilistic classification and Bayesian inference
+ - Naive Bayes classifier and its assumptions
+ - Bayesian networks for probabilistic modeling
+ - Handling continuous and discrete data in probabilistic classification
+ - Evaluation and interpretation of probabilistic classifiers
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is probabilistic classification?
+
+---
+
+## What is probabilistic classification?
+
+Probabilistic classification is a classification approach that assigns class labels to instances based on the probabilities of the classes. It utilizes statistical techniques, such as Bayes' theorem, to estimate the probabilities and make informed predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Bayes' theorem?
+
+---
+
+## What is Bayes' theorem?
+
+Bayes' theorem is a fundamental concept in probabilistic classification. It calculates the probability of a hypothesis (class label) given the observed evidence (input features) by incorporating prior knowledge and likelihood information.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is prior probability?
+
+---
+
+## What is prior probability?
+
+Prior probability is the initial belief or probability assigned to each class before considering the observed evidence. It represents our knowledge or assumptions about the class distribution.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is likelihood in probabilistic classification?
+
+---
+
+## What is likelihood in probabilistic classification?
+
+Likelihood is the probability of observing the evidence (input features) given a particular class. It is used to assess how well the observed evidence supports each class.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is posterior probability?
+
+---
+
+## What is posterior probability?
+
+Posterior probability is the updated probability of a class after taking into account the observed evidence. It is calculated using Bayes' theorem and represents the probability of each class given the input features.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the Naive Bayes classifier?
+
+---
+
+## What is the Naive Bayes classifier?
+
+The Naive Bayes classifier is a popular probabilistic classification algorithm based on Bayes' theorem. It assumes that the input features are conditionally independent given the class label, which simplifies the computation of probabilities.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Gaussian Naive Bayes?
+
+---
+
+## What is Gaussian Naive Bayes?
+
+Gaussian Naive Bayes is a variant of the Naive Bayes classifier that assumes the input features follow a Gaussian (normal) distribution. It is suitable for continuous or numerical input features.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Multinomial Naive Bayes?
+
+---
+
+## What is Multinomial Naive Bayes?
+
+Multinomial Naive Bayes is a variant of the Naive Bayes classifier designed for discrete or count-based features. It works well with features that represent word counts, frequencies, or other discrete measurements.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Bernoulli Naive Bayes?
+
+---
+
+## What is Bernoulli Naive Bayes?
+
+Bernoulli Naive Bayes is another variant of the Naive Bayes classifier suitable for binary or boolean features. It assumes that the input features follow a Bernoulli distribution, where each feature is either present or absent.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Maximum Likelihood Estimation (MLE)?
+
+---
+
+## What is Maximum Likelihood Estimation (MLE)?
+
+Maximum Likelihood Estimation is a method used to estimate the parameters of a probabilistic model, such as the class priors and likelihoods, based on the observed data. It seeks the values that maximize the likelihood of observing the given data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Laplace smoothing?
+
+---
+
+## What is Laplace smoothing?
+
+Laplace smoothing, also known as additive smoothing, is a technique used to address the problem of zero probabilities in probabilistic classification. It adjusts the probability estimates by adding a small constant value to the numerator and denominator of the probability calculation. This helps prevent zero probabilities and improves the model's robustness.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why do we use a logarithmic transformation in probabilistic classification?
+
+---
+
+## Why do we use a logarithmic transformation in probabilistic classification?
+
+The logarithmic transformation is commonly applied to probabilities in probabilistic classification to simplify calculations and avoid numerical underflow. Taking the logarithm of probabilities converts multiplication operations into addition operations.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we train and test a probabilistic classifier?
+
+---
+
+## How do we train and test a probabilistic classifier?
+
+To train a probabilistic classifier, we use a labeled dataset to estimate the class priors and likelihoods. Then, to test the classifier, we apply Bayes' theorem using the trained parameters and input features to compute the posterior probabilities and make class predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we evaluate the performance of a probabilistic classifier?
+
+---
+
+## How do we evaluate the performance of a probabilistic classifier?
+
+The performance of a probabilistic classifier can be evaluated using various evaluation metrics such as accuracy, precision, recall, F1 score, and ROC curve analysis. These metrics assess the model's ability to correctly classify instances and handle imbalanced datasets.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the advantages of probabilistic classification?
+
+---
+
+## What are the advantages of probabilistic classification?
+
+Advantages of probabilistic classification include:
+- Ability to provide probability estimates, enabling decision-making based on confidence levels.
+- Interpretability of results through class probabilities and posterior probabilities.
+- Robustness to irrelevant features due to the conditional independence assumption in Naive Bayes classifiers.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the limitations of probabilistic classification?
+
+---
+
+## What are the limitations of probabilistic classification?
+
+Limitations of probabilistic classification include:
+- The Naive Bayes assumption of feature independence may not hold in some real-world scenarios.
+- Sensitivity to outliers or extreme values that can affect the Gaussian distribution assumption.
+- Reliance on the quality and representativeness of the training data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some applications of probabilistic classification?
+
+---
+
+## What are some applications of probabilistic classification?
+
+Probabilistic classification is widely used in various domains, including:
+- Spam email detection
+- Document categorization
+- Sentiment analysis
+- Medical diagnosis
+- Fraud detection
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Example: Spam Email Classification
+### How can probabilistic classification be applied to spam email classification?
+
+---
+
+### How can probabilistic classification be applied to spam email classification?
+
+In spam email classification, probabilistic classification can assign probabilities to incoming emails being spam or non-spam based on features such as word frequencies, email structure, and sender information. The classifier can then make predictions based on the calculated probabilities.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Example: Medical Diagnosis
+### How can probabilistic classification be applied to medical diagnosis?
+
+---
+
+### How can probabilistic classification be applied to medical diagnosis?
+
+In medical diagnosis, probabilistic classification can utilize patient symptoms, medical history, and test results to estimate the probability of different diseases or conditions. This information can assist doctors in making accurate diagnoses and treatment decisions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Example: Document Categorization
+### How can probabilistic classification be applied to document categorization?
+
+---
+
+### How can probabilistic classification be applied to document categorization?
+
+In document categorization, probabilistic classification can assign probabilities to documents belonging to different categories (e.g., news, sports, technology) based on their content and keywords. This enables automated organization and retrieval of documents.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+- Key concepts on probabilistic classification
+- Emphasis on the importance of probabilistic classification in modeling uncertainty and making informed predictions.
+- Encouragement to explore different variants of the Naive Bayes classifier and adapt them to specific problem domains.
+- Reminder to consider the assumptions and limitations of probabilistic classification techniques when applying them to real-world scenarios.
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

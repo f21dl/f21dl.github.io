@@ -1,0 +1,488 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border: 0px solid orange;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg,black, black 10%, rgba(0,0,0,0.2) 100% ),url('https://img.freepik.com/premium-photo/product-photo-cybernetic-eyeball-generative-ai_808510-256.jpg') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+					
+
+
+
+<!--{border: 0px solid orange}-->
+<!--{background:https://img.freepik.com/premium-photo/product-photo-cybernetic-eyeball-generative-ai_808510-256.jpg}-->
+<!--{gradient:90deg,black, black 10%, rgba(0,0,0,0.2) 100% }-->
+					
+
+# Convolutional Neural Networks
+## Data Mining & Machine Learning
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:70%'>
+
+# Reading Material
+
+<!-- -------------------------------------- -->
+<div style='background-color:rgb(100,155,255); padding:10px; height:170px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2)
+* Ch13: Convolutional Neural Networks
+
+</span>
+<img style='margin:0px; max-height:100%;' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,155,155); padding:10px; height:170px; '>
+
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining:Practical Machine Learning Tools and Techniques](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+* Ch10: Deep learning
+
+</span>
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,55,155); padding:10px; height:170px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining and Machine Learning: Fundamental Concepts and Algorithms](https://dataminingbook.info/)
+* Part I: Data Analysis Foundations
+
+</span>
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51Nk67LGBQL.jpg'>
+
+</div>
+<!-- -------------------------------------- -->
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+
+Convolutional Neural Networks (CNNs) are a specialized type of deep learning architecture designed for processing and analyzing visual data, such as images and videos. They have significantly advanced the field of computer vision and are now fundamental in various applications, including image recognition, object detection, and image generation.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Summary of Convolutional Neural Networks (CNNs):
+* Convolutional Layers
+* Pooling Layers
+* Feature Hierarchies
+* Activation Functions
+* Training and Backpropagation
+* Transfer Learning
+* Applications
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Convolutional Layers
+CNNs are built on convolutional layers, where filters (also called kernels) are applied to input images. These filters are small matrices that perform element-wise multiplication and summation over local regions of the input image. The purpose of these filters is to detect specific patterns, edges, or textures in the input data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+## Pooling Layers
+Pooling layers follow the convolutional layers and perform down-sampling of the feature maps. They reduce the spatial dimensions of the data, making the network computationally efficient and more resistant to small spatial shifts or distortions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+## Feature Hierarchies
+CNNs automatically learn hierarchical features from low-level to high-level representations. Lower layers detect simple features like edges and textures, while higher layers learn more complex features, like shapes or object parts. This hierarchical feature learning makes CNNs powerful in understanding visual data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Activation Functions
+Non-linear activation functions like ReLU (Rectified Linear Unit) are commonly used in CNNs to introduce non-linearity and allow the network to model complex relationships in the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Training and Backpropagation
+CNNs are trained using the backpropagation algorithm. During training, the network learns to adjust its weights and biases to minimize the difference between predicted and actual labels. This process is typically done through stochastic gradient descent or its variants.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+## Transfer Learning
+CNNs benefit from transfer learning, where pre-trained models on large datasets (e.g., ImageNet) can be fine-tuned for specific tasks with smaller datasets. Transfer learning allows leveraging the learned knowledge of general visual features, speeding up training and improving performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Applications
+CNNs are widely used in image classification, where the network predicts the most likely class label for an input image. They are also used in object detection to locate and classify multiple objects within an image. Other applications include image generation, style transfer, facial recognition, medical image analysis, and autonomous vehicles.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Computational Efficiency
+CNNs are designed to be computationally efficient, utilizing shared weights and local connectivity in convolutional layers. This design reduces the number of parameters and allows the network to scale to larger images and deeper architectures.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Convolutional Neural Networks have revolutionized computer vision tasks and achieved state-of-the-art performance on various benchmarks. Their ability to automatically learn hierarchical representations from visual data has made them a cornerstone in the field of deep learning and a vital component of many real-world applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

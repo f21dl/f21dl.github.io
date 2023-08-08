@@ -1,0 +1,749 @@
+
+		<style>
+            * {
+                font-family: "Open Sans";
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Notes (Layout.xbdev.net)</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.3/showdown.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<style>
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    word-wrap: break-word;
+}
+
+table { word-break:break-all !important; }
+
+html {
+    background: #CCC;
+    padding-bottom: 100vh; /* allow scrolling past end of page */
+}
+
+h1 {
+    font-size: 2em !important;
+}
+h2 {
+    font-size: 1.5em !important;
+}
+h3, h4, h5 {
+    font-size: 1.3em !important;
+}
+
+.mdcontent {
+	text-align:left;
+    position:relative;
+    background: #FFF;
+    font-family: "Open Sans";
+    line-height: 1.4;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 100px;
+    min-height: calc(100vh - 240px);
+    box-shadow: 0 0 10px;
+	background-color:#fff;
+	color: black;
+}
+
+.mdcontent::before {    
+      content: "";
+      background: url("https://courses.xbdev.net/var/images/backnote.png"); 
+	  background-position: right -50pt top 50pt;
+	  background-repeat: no-repeat;
+	  background-size: contain;	
+	  background-color:#fff;
+      opacity: 0.02;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  z-index:0;
+	  pointer-events: none;
+}
+
+@media (max-width: 568px) {
+    .mdcontent {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+li > ul {
+    padding-left: 20;
+}
+p + ul {
+    margin-top: -10;
+}
+li > p {
+    margin-top: 0;
+    margin-bottom: 10;
+}
+
+blockquote {
+  border-left: 8px solid rgba(100,100,100,0.5);
+  padding-left: 5px;
+}
+
+code {
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+    font-size: 85%;
+    line-height: 150%;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #e6e8db;
+    padding: 1px 3px 1px 3px;
+	border: 4px solid blue;
+}
+
+pre code {
+	border: 4px solid green;
+	display:block;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+hr { 
+    background-color: #fff;
+    border: 0;
+    border-top: 2px dashed #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4C50AF;
+  color: white;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+</style>
+
+<style>
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+</style>
+
+</head>
+<body>
+
+<div id='mdcontainer' style='text-align:center;'>
+</div>
+  
+<br><br>
+
+<textarea id='rawmd' style='display:none;'>
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://www.mozaweb.com/en/mozaik3D/FOL/termeszet/vulkanizmus/960.jpg) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=828&root=7/PNG/128/&file=history_clock_1192.png'>
+
+<div style='height:400px;'></div>
+
+## Data Mining and Machine Learning
+
+# Evaluation Metrics
+
+:::warning
+Create a new Jupiter Notebook to track and record your solutions 
+:::
+
+
+
+# Practical Exercise: Evaluation Metrics
+
+
+## Exercise 1: Load a dataset of your choice and split it into training and testing sets.
+
+<details><summary>Click to see example solution</summary>
+```
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+# Load the dataset
+dataset = pd.read_csv('dataset.csv')
+
+# Split the data into features (X) and target (y)
+X = dataset.drop('target', axis=1)
+y = dataset['target']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+</details>
+
+## Exercise 2: Train a classification model on the training set.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.linear_model import LogisticRegression
+
+# Create a logistic regression model
+model = LogisticRegression()
+
+# Train the model on the training set
+model.fit(X_train, y_train)
+```
+</details>
+
+
+## Exercise 3: Use the trained model to make predictions on the testing set.
+<details><summary>Click to see example solution</summary>
+```
+y_pred = model.predict(X_test)
+```
+</details>
+
+## Exercise 4: Calculate the following evaluation metrics:
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+# Accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+# Precision
+precision = precision_score(y_test, y_pred)
+
+# Recall
+recall = recall_score(y_test, y_pred)
+
+# F1-score
+f1 = f1_score(y_test, y_pred)
+
+# Confusion matrix
+confusion = confusion_matrix(y_test, y_pred)
+```
+</details>
+
+## Exercise 5: Visualize the ROC curve and calculate the Area Under the Curve (AUC) score.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
+
+# Get the predicted probabilities for positive class
+y_pred_prob = model.predict_proba(X_test)[:, 1]
+
+# Calculate the false positive rate, true positive rate, and thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
+
+# Plot the ROC curve
+plt.plot(fpr, tpr)
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.show()
+
+# Calculate the AUC score
+auc_score = roc_auc_score(y_test, y_pred_prob)
+```
+</details>
+
+
+## Exercise 6: Interpret and compare the evaluation metrics to assess the model's performance.
+<details><summary>Click to see example solution</summary>
+```
+print("Accuracy:", accuracy)
+print("Precision:", precision)
+print("Recall:", recall)
+print("F1-score:", f1)
+print("Confusion Matrix:\n", confusion)
+print("AUC Score:", auc_score)
+```
+</details>
+
+## Exercise 7: Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.model_selection import GridSearchCV
+
+# Define the hyperparameters to tune
+param_grid = {'C': [0.1, 1, 10], 'penalty': ['l1', 'l2']}
+
+# Create a grid search object
+grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5)
+
+# Fit the grid search object to the training data
+grid_search.fit(X_train, y_train)
+
+# Get the best parameters and model
+best_params = grid_search.best_params_
+best_model = grid_search.best_estimator_
+
+# Evaluate the updated model
+y_pred_updated = best_model.predict(X_test)
+accuracy_updated = accuracy_score(y_test, y_pred_updated)
+```
+</details>
+
+
+## Exercise 8: Implement cross-validation to assess the model's performance on multiple splits of the data.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.model_selection import cross_val_score
+
+# Perform cross-validation
+cv = cross_val_score(model, X, y, cv=5)
+
+# Calculate the mean and standard deviation of the cross-validation scores
+cv_mean = cv.mean()
+cv_std = cv.std()
+```
+</details>
+
+## Exercise 9: Calculate additional evaluation metrics such as specificity, false positive rate, false negative rate, etc.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.metrics import specificity_score, fpr_score, fnr_score
+
+# Specificity
+specificity = specificity_score(y_test, y_pred)
+
+# False Positive Rate
+fpr = fpr_score(y_test, y_pred)
+
+# False Negative Rate
+fnr = fnr_score(y_test, y_pred)
+```
+</details>
+
+## Exercise 10: Compare the performance of different classification models using evaluation metrics.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+# Create additional classification models
+tree_model = DecisionTreeClassifier()
+forest_model = RandomForestClassifier()
+
+# Train the models
+tree_model.fit(X_train, y_train)
+forest_model.fit(X_train, y_train)
+
+# Make predictions
+tree_pred = tree_model.predict(X_test)
+forest_pred = forest_model.predict(X_test)
+
+# Calculate evaluation metrics for each model
+tree_accuracy = accuracy_score(y_test, tree_pred)
+forest_accuracy = accuracy_score(y_test, forest_pred)
+```
+</details>
+
+## Exercise 11: Analyze the impact of class imbalance on evaluation metrics and consider techniques such as oversampling, undersampling, or weighted metrics.
+<details><summary>Click to see example solution</summary>
+```
+from imblearn.over_sampling import RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.utils import class_weight
+
+# Perform oversampling using RandomOverSampler
+oversampler = RandomOverSampler()
+X_oversampled, y_oversampled = oversampler.fit_resample(X_train, y_train)
+
+# Perform undersampling using RandomUnderSampler
+undersampler = RandomUnderSampler()
+X_undersampled, y_undersampled = undersampler.fit_resample(X_train, y_train)
+
+# Calculate class weights
+class_weights = class_weight.compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
+
+# Train and evaluate models on oversampled, undersampled, and weighted datasets
+```
+</details>
+
+## Exercise 12: Explore advanced evaluation techniques like precision-recall curve, average precision, or Cohen's Kappa coefficient.
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.metrics import precision_recall_curve, average_precision_score, cohen_kappa_score
+
+# Precision-Recall curve
+precision, recall, thresholds = precision_recall_curve(y_test, y_pred_prob)
+
+# Calculate Average Precision score
+avg_precision = average_precision_score(y_test, y_pred_prob)
+
+# Cohen's Kappa coefficient
+kappa = cohen_kappa_score(y_test, y_pred)
+```
+</details>
+
+## Exercise 13: Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
+<details><summary>Click to see example solution</summary>
+```
+from sklearn.metrics import classification_report
+
+# Generate a classification report for different subsets or groups
+report_age = classification_report(y_test, y_pred, labels=[0, 1], target_names=['Young', 'Old'])
+report_gender = classification_report(y_test, y_pred, labels=[0, 1], target_names=['Male', 'Female'])
+```
+</details>
+
+## Exercise 14: Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
+
+## Exercise 15: Document your findings and provide insights on the model's performance based on the evaluation metrics.
+
+
+## Additional tasks:
+- Handle missing values in the dataset and assess the impact on evaluation metrics.
+- Implement stratified sampling or other sampling techniques to address data imbalance issues.
+- Perform feature engineering or feature selection techniques and evaluate their impact on evaluation metrics.
+- Compare the performance of different algorithms or ensemble methods using evaluation metrics.
+
+
+
+
+~~~
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://i.pinimg.com/736x/d3/42/95/d342959e324beea1efb75a68e092950f.jpg) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=20689&root=157/PNG/256/&file=pie_chart_22137.png'>
+
+<div style='height:400px;'></div>
+
+# Example Solutions for Exercises
+
+
+
+```python
+# Practical Exercise: Evaluation Metrics
+
+# Task 1: Load a dataset of your choice and split it into training and testing sets.
+import pandas as pd
+from sklearn.model_selection import train_test_split
+
+# Load the dataset
+dataset = pd.read_csv('dataset.csv')
+
+# Split the data into features (X) and target (y)
+X = dataset.drop('target', axis=1)
+y = dataset['target']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Task 2: Train a classification model on the training set.
+from sklearn.linear_model import LogisticRegression
+
+# Create a logistic regression model
+model = LogisticRegression()
+
+# Train the model on the training set
+model.fit(X_train, y_train)
+
+# Task 3: Use the trained model to make predictions on the testing set.
+y_pred = model.predict(X_test)
+
+# Task 4: Calculate the following evaluation metrics:
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+# Accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+# Precision
+precision = precision_score(y_test, y_pred)
+
+# Recall
+recall = recall_score(y_test, y_pred)
+
+# F1-score
+f1 = f1_score(y_test, y_pred)
+
+# Confusion matrix
+confusion = confusion_matrix(y_test, y_pred)
+
+# Task 5: Visualize the ROC curve and calculate the Area Under the Curve (AUC) score.
+from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
+
+# Get the predicted probabilities for positive class
+y_pred_prob = model.predict_proba(X_test)[:, 1]
+
+# Calculate the false positive rate, true positive rate, and thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
+
+# Plot the ROC curve
+plt.plot(fpr, tpr)
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.show()
+
+# Calculate the AUC score
+auc_score = roc_auc_score(y_test, y_pred_prob)
+
+# Task 6: Interpret and compare the evaluation metrics to assess the model's performance.
+print("Accuracy:", accuracy)
+print("Precision:", precision)
+print("Recall:", recall)
+print("F1-score:", f1)
+print("Confusion Matrix:\n", confusion)
+print("AUC Score:", auc_score)
+
+# Task 7: Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
+from sklearn.model_selection import GridSearchCV
+
+# Define the hyperparameters to tune
+param_grid = {'C': [0.1, 1, 10], 'penalty': ['l1', 'l2']}
+
+# Create a grid search object
+grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5)
+
+# Fit the grid search object to the training data
+grid_search.fit(X_train, y_train)
+
+# Get the best parameters and model
+best_params = grid_search.best_params_
+best_model = grid_search.best_estimator_
+
+# Evaluate the updated model
+y_pred_updated = best_model.predict(X_test)
+accuracy_updated = accuracy_score(y_test, y_pred_updated)
+
+# Task 8: Implement cross-validation to assess the model's performance on multiple splits of the data.
+from sklearn.model_selection import cross_val_score
+
+# Perform cross-validation
+cv = cross_val_score(model, X, y, cv=5)
+
+# Calculate the mean and standard deviation of the cross-validation scores
+cv_mean = cv.mean()
+cv_std = cv.std()
+
+# Task 9: Calculate additional evaluation metrics such as specificity, false positive rate, false negative rate, etc.
+from sklearn.metrics import specificity_score, fpr_score, fnr_score
+
+# Specificity
+specificity = specificity_score(y_test, y_pred)
+
+# False Positive Rate
+fpr = fpr_score(y_test, y_pred)
+
+# False Negative Rate
+fnr = fnr_score(y_test, y_pred)
+
+# Task 10: Compare the performance of different classification models using evaluation metrics.
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+# Create additional classification models
+tree_model = DecisionTreeClassifier()
+forest_model = RandomForestClassifier()
+
+# Train the models
+tree_model.fit(X_train, y_train)
+forest_model.fit(X_train, y_train)
+
+# Make predictions
+tree_pred = tree_model.predict(X_test)
+forest_pred = forest_model.predict(X_test)
+
+# Calculate evaluation metrics for each model
+tree_accuracy = accuracy_score(y_test, tree_pred)
+forest_accuracy = accuracy_score(y_test, forest_pred)
+
+# Task 11: Analyze the impact of class imbalance on evaluation metrics and consider techniques such as oversampling, undersampling, or weighted metrics.
+from imblearn.over_sampling import RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.utils import class_weight
+
+# Perform oversampling using RandomOverSampler
+oversampler = RandomOverSampler()
+X_oversampled, y_oversampled = oversampler.fit_resample(X_train, y_train)
+
+# Perform undersampling using RandomUnderSampler
+undersampler = RandomUnderSampler()
+X_undersampled, y_undersampled = undersampler.fit_resample(X_train, y_train)
+
+# Calculate class weights
+class_weights = class_weight.compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
+
+# Train and evaluate models on oversampled, undersampled, and weighted datasets
+
+# Task 12: Explore advanced evaluation techniques like precision-recall curve, average precision, or Cohen's Kappa coefficient.
+from sklearn.metrics import precision_recall_curve, average_precision_score, cohen_kappa_score
+
+# Precision-Recall curve
+precision, recall, thresholds = precision_recall_curve(y_test, y_pred_prob)
+
+# Calculate Average Precision score
+avg_precision = average_precision_score(y_test, y_pred_prob)
+
+# Cohen's Kappa coefficient
+kappa = cohen_kappa_score(y_test, y_pred)
+
+# Task 13: Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
+from sklearn.metrics import classification_report
+
+# Generate a classification report for different subsets or groups
+report_age = classification_report(y_test, y_pred, labels=[0, 1], target_names=['Young', 'Old'])
+report_gender = classification_report(y_test, y_pred, labels=[0, 1], target_names=['Male', 'Female'])
+
+# Task 14: Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
+# Task 15: Document your findings and provide insights on the model's performance based on the evaluation metrics.
+
+# Add further tasks or additional code as required for your specific exercise.
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+
+<script>
+
+function extraMarkdown(txt)
+{
+	// bold words
+	//txt = txt.replaceAll( /\*\*([a-zA-Z0-9 ]*)\*\* /ig, `<b>$1</b> ` );
+	// italic words
+	//txt = txt.replaceAll( /\*(.*?)\* /ig, `<i>$1</i> ` );
+
+	let re = /(:::)(.*)\n((.|\n)*?)\n(:::)\n/ig;
+	txt = txt.replaceAll( re, `<div markdown=1 class='alert alert-$2'>$3<div style="clear: both;"></div></div>` );
+
+	return txt;
+}
+
+
+window.addEventListener('load', function() {
+
+	// html - add attribute 'markdown=1'
+
+	let converter = new showdown.Converter( { 
+                                            tables: 'true', 
+                                            disableForced4SpacesIndentedSublists: 'true', 
+                                            simpleLineBreaks: 'true',
+                                            strikethrough: 'true',
+                                            tasklists: true,
+                                            requireSpaceBeforeHeadingText: true }  );
+    converter.setFlavor('github');
+
+	let rawmd = document.getElementById('rawmd').value;
+
+    //console.log('rawmd:', rawmd );
+
+	let pages = rawmd.split("\n~~~");
+	
+	let res = '';
+	pages.forEach( (p,i )=>{
+		p = extraMarkdown( p );
+
+		p = converter.makeHtml( p );		
+
+		res += "<div id='page"+i+"' class='mdcontent'>"+p+"</div>";
+	});
+	
+	document.getElementById('mdcontainer').innerHTML = res;
+
+
+	/*
+	let els = document.getElementsByClassName('mdcontent');
+	els = [...els];
+	els.forEach( (el)=>{
+		el.innerHTML = converter.makeHtml( el.textContent );
+	});
+	*/
+
+	hljs.initHighlightingOnLoad();
+
+	
+	
+	let oldhash = window.location.hash;
+	let newhash = oldhash.replace('#', '');
+	console.log('--> old: ', oldhash, ' new:', newhash );
+	
+	window.location.hash = '';
+	window.location.hash = newhash;
+});
+</script>
+</body>
+</html>

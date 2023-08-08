@@ -1,0 +1,738 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Decision Trees
+**Data Mining and Machine Learning**
+
+
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+ - Introduction to decision trees and tree-based learning algorithms
+   - What is a decision tree?
+ - Construction and pruning of decision trees (e.g., ID3, C4.5, CART)
+ - Handling missing data and numerical attributes in decision trees
+ - Evaluation and interpretation of decision trees
+ - Ensemble methods based on decision trees (e.g., random forests, boosting)
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is a decision tree?
+
+---
+
+## What is a decision tree?
+
+A decision tree is a hierarchical structure that represents decisions and their possible consequences. In machine learning, decision trees are used for classification and regression tasks by dividing the feature space into regions based on the values of input features.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why are decision trees important in machine learning?
+
+---
+
+## Why are decision trees important in machine learning?
+
+Decision trees provide interpretable and intuitive models that can handle both categorical and numerical data. They are widely used in various domains due to their simplicity, ease of understanding, and ability to handle complex decision-making scenarios.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the main components of a decision tree?
+
+---
+
+## What are the main components of a decision tree?
+
+The main components of a decision tree include nodes, edges, a root node, internal nodes, and leaf nodes. The root node represents the initial decision or question, internal nodes represent intermediate decisions, and leaf nodes represent the final outcomes or predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do decision trees make decisions based on feature values?
+
+---
+
+## How do decision trees make decisions based on feature values?
+
+Decision trees make decisions by evaluating feature values at each node and following the corresponding branch based on the feature's condition. The process continues until a leaf node is reached, which provides the final prediction or decision.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How are decision trees learned from data?
+
+---
+
+## How are decision trees learned from data?
+
+Decision trees are learned through a recursive partitioning process. The data is repeatedly split into subsets based on the values of selected features, creating branches and sub-branches in the decision tree. The goal is to find the splits that maximize the homogeneity or purity of the resulting subsets.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the optimal splitting criteria?
+
+---
+
+## What is the optimal splitting criteria?
+
+The optimal splitting criteria depend on the task. For classification, common criteria include Gini impurity and information gain. For regression, mean squared error is often used to measure the variance of the target variable within each node.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is Gini impurity?
+
+---
+
+## What is Gini impurity?
+
+Gini impurity is a measure of node impurity or disorder in classification tasks. It quantifies the probability of incorrectly classifying a randomly chosen element in a node, considering the distribution of class labels.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Gini impurity
+### What is mean squared error?
+
+---
+
+### What is mean squared error?
+
+Mean squared error is a measure of variance or dispersion in regression tasks. It computes the average squared difference between the predicted and actual values of the target variable within a node.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the algorithms used to determine the best splits?
+
+---
+
+## What are the algorithms used to determine the best splits?
+
+Common algorithms for determining the best splits in decision trees include:
+- CART (Classification and Regression Trees): It uses the Gini index for classification and mean squared error for regression.
+- ID3 (Iterative Dichotomiser 3): It uses information gain based on entropy for classification.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do decision trees handle categorical features?
+
+---
+
+## How do decision trees handle categorical features?
+
+Decision trees handle categorical features by performing one-hot encoding. Each category is converted into a binary variable, and splitting is based on the presence or absence of each category.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How are missing values treated in decision trees?
+
+---
+
+## How are missing values treated in decision trees?
+
+Missing values can be handled by strategies such as ignoring the missing data, imputing missing values, or creating a separate branch for missing values. The splitting process is based on available feature values or imputation techniques.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is pruning in decision trees?
+
+---
+
+## What is pruning in decision trees?
+
+Pruning is a technique used to reduce overfitting in decision trees. It involves removing branches or nodes from the tree that may not contribute significantly to its predictive power. Pruning helps improve the generalization capability of the model.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the techniques for pruning?
+
+---
+
+## What are the techniques for pruning?
+
+There are two main techniques for pruning:
+- Pre-pruning: It involves setting a stopping criterion before growing the decision tree, such as limiting the maximum depth or minimum number of samples required for a split.
+- Post-pruning: It involves growing the decision tree to its full extent and then selectively removing branches or nodes based on pruning criteria.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can we measure the importance of features in decision trees?
+
+---
+
+## How can we measure the importance of features in decision trees?
+
+Feature importance in decision trees can be measured using various techniques, including:
+- Gini importance: It quantifies the total reduction in the Gini impurity achieved by a feature over all splits.
+- Information gain or gain ratio: It assesses the contribution of a feature to the overall information gain or entropy reduction in the tree.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can we visualize decision trees?
+
+---
+
+## How can we visualize decision trees?
+
+Decision trees can be visualized using tree diagrams. These diagrams illustrate the nodes, edges, and decisions made at each node. By following the decision paths, we can interpret how the tree reaches the final predictions or outcomes.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can decision trees be used in **ensemble methods**?
+
+---
+
+## How can decision trees be used in **ensemble methods**?
+
+Decision trees can be combined in ensemble methods to improve predictive performance. Two common ensemble methods with decision trees are:
+- Bagging: It combines multiple decision trees by training them on different subsets of the training data through bootstrap aggregating.
+- Random Forest: It combines decision trees by training them on different subsets of the training data and randomly selecting a subset of features at each split.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How are decision trees used for **regression tasks**?
+
+---
+
+## How are decision trees used for **regression tasks**?
+
+Decision trees can be used for regression by modifying the splitting criteria and algorithms. Instead of Gini impurity or information gain, mean squared error or other regression-specific metrics are used to measure node variance. The prediction in each leaf node is typically the average or median of the target variable values in that node.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Decision Trees in Practice
+### What are some real-world applications of decision trees
+
+---
+
+### What are some real-world applications of decision trees
+
+Decision trees find applications in various domains, including:
+- Customer churn prediction in telecommunications.
+- Credit risk assessment in finance.
+- Disease diagnosis in healthcare.
+- Recommender systems in e-commerce.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the limitations of decision trees?
+
+---
+
+## What are the limitations of decision trees?
+
+Decision trees can suffer from overfitting, especially when the trees become too complex or when the training data is noisy. Decision trees are also sensitive to small changes in the data or feature scales, which can lead to different tree structures or predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+# Summary
+
+Key Points:
+- Importance of decision trees in interpretable and explainable machine learning.
+- Encouragement to explore and apply decision tree algorithms in various domains.
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

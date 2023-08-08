@@ -1,0 +1,776 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Clustering
+**Data Mining and Machine Learning**
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+ - What is clustering?
+ - Introduction to clustering algorithms and unsupervised learning
+ - K-means clustering and its optimization objectives
+ - Hierarchical clustering methods (e.g., agglomerative, divisive)
+ - Evaluation of clustering results (e.g., silhouette coefficient, clustering validity indices)
+ - Handling categorical and numerical data in clustering algorithms
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is clustering?
+
+---
+
+## What is clustering?
+
+Clustering is an unsupervised machine learning technique that groups similar objects or data points together based on their intrinsic characteristics.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is clustering important in machine learning?
+
+---
+
+## Why is clustering important in machine learning?
+
+Clustering helps discover hidden patterns, relationships, and structures in data, enabling insights for decision-making, data exploration, and further analysis.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How does clustering differ from classification?
+
+---
+
+## How does clustering differ from classification?
+
+Clustering is an unsupervised learning technique that groups data based on similarity, whereas classification is a supervised learning technique that assigns predefined labels to data based on training examples.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the different types of clustering algorithms?
+
+---
+
+## What are the different types of clustering algorithms?
+
+The main types of clustering algorithms are:
+
+1. Partition-based clustering: Divides data into non-overlapping clusters (e.g., K-Means).
+2. Hierarchical clustering: Forms a hierarchy of clusters (e.g., Agglomerative).
+3. Density-based clustering: Groups dense regions separated by sparse areas (e.g., DBSCAN).
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is K-Means clustering?
+
+---
+
+## What is K-Means clustering?
+
+K-Means clustering is a partition-based clustering algorithm that aims to divide data into K clusters, where K is a predefined number.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How does the K-Means algorithm work?
+
+---
+
+## How does the K-Means algorithm work?
+
+The K-Means algorithm iteratively assigns data points to the nearest cluster centroid and updates the centroids based on the mean of the assigned points until convergence.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the key steps involved in K-Means clustering?
+
+---
+
+## What are the key steps involved in K-Means clustering?
+
+The key steps in K-Means clustering are:
+1. Initialize K centroids.
+2. Assign data points to the nearest centroid.
+3. Update centroids based on the assigned points.
+4. Repeat steps 2 and 3 until convergence.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# K-Means Clustering - Example
+### How can we illustrate the K-Means clustering process with an example?
+
+---
+
+### How can we illustrate the K-Means clustering process with an example?
+
+We can demonstrate the K-Means clustering process by applying the algorithm to a dataset, visualizing the data points, and observing the movement of cluster centroids with each iteration.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Evaluating Clustering Results
+### How do we evaluate the quality of clustering results?
+
+---
+
+### How do we evaluate the quality of clustering results?
+
+Clustering results can be evaluated using internal and external evaluation metrics. Internal metrics assess the compactness and separation of clusters within the data, while external metrics compare the clustering results to pre-existing labels or ground truth.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are internal evaluation metrics?
+
+---
+
+## What are internal evaluation metrics?
+
+Internal evaluation metrics, such as silhouette coefficient and cohesion and separation measures, quantify the compactness and separation of clusters within the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are external evaluation metrics?
+
+---
+
+## What are external evaluation metrics?
+
+External evaluation metrics, such as purity and Rand Index, compare the clustering results to pre-existing class labels or ground truth to measure the similarity between the clustering and the true class assignments.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is hierarchical clustering?
+
+---
+
+## What is hierarchical clustering?
+
+Hierarchical clustering is a method that creates a hierarchy of clusters by successively merging or splitting existing clusters based on the distance between data points.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How does the hierarchical clustering algorithm work?
+
+---
+
+## How does the hierarchical clustering algorithm work?
+
+The hierarchical clustering algorithm starts with each data point as an individual cluster and merges or splits clusters based on the proximity between data points. The process continues until a desired number of clusters is achieved or a specific criterion is met.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the advantages and disadvantages of hierarchical clustering?
+
+---
+
+## What are the advantages and disadvantages of hierarchical clustering?
+
+
+Advantages of hierarchical clustering include the ability to visualize the clustering hierarchy using dendrograms and not needing to specify the number of clusters in advance. Disadvantages include higher computational complexity and sensitivity to noise and outliers.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is a dendrogram?
+
+---
+
+## What is a dendrogram?
+
+A dendrogram is a tree-like diagram that represents the hierarchy of clusters in hierarchical clustering. It illustrates the fusion of clusters and the distance between them.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we interpret a dendrogram?
+
+---
+
+## How do we interpret a dendrogram?
+
+In a dendrogram, the vertical axis represents the distance or dissimilarity between clusters. The horizontal axis represents the data points or clusters. The height at which branches merge indicates the distance at which clusters are fused.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is density-based clustering (DBSCAN)?
+
+---
+
+## What is density-based clustering (DBSCAN)?
+
+DBSCAN is a density-based clustering algorithm that groups together data points that are closely packed and separates regions with lower density.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How does the DBSCAN algorithm work?
+
+---
+
+## How does the DBSCAN algorithm work?
+
+DBSCAN identifies core points, which have a sufficient number of neighboring points within a specified radius, and expands clusters by connecting directly reachable points based on density.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Clustering Applications
+### What are some real-world applications of clustering?
+
+---
+
+## What are some real-world applications of clustering?
+
+
+Clustering has various applications, such as:
+- Customer segmentation in marketing.
+- Image segmentation in computer vision.
+- Anomaly detection in cybersecurity.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the challenges in clustering analysis?
+
+---
+
+## What are the challenges in clustering analysis?
+
+Some challenges in clustering analysis include:
+- Determining the optimal number of clusters.
+- Handling high-dimensional data.
+- Dealing with noisy and outlier data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Key points
+- Importance of clustering in exploratory data analysis and pattern recognition.
+- Encouragement to explore and apply clustering techniques in various domains.
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

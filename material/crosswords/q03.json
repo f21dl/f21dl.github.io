@@ -1,0 +1,41 @@
+
+
+{
+  "questions": [
+    {
+      "question": "What is the process of selecting relevant and significant attributes from a dataset to improve model performance? _________ Selection (9)",
+      "answer": "Attribute"
+    },
+    {
+      "question": "Which attribute selection method ranks features based on their importance and selects the top k features? Top-K Feature __________ (9)",
+      "answer": "Selection"
+    },
+    {
+      "question": "What is the primary goal of attribute selection in machine learning? Dimensionality __________ (9)",
+      "answer": "Reduction"
+    },
+    {
+      "question": "Which attribute selection technique uses a greedy algorithm to build the feature subset incrementally?  Forward _______(9)",
+      "answer": "Selection"
+    },
+    {
+      "question": "In model testing, what term refers to the portion of the dataset that is not used during training and is used to evaluate model performance? (14)",
+      "answer": "Test Set"
+    },
+    {
+      "question": "What is the process of assessing a model's performance on unseen data? Model _______(7)",
+      "answer": "Testing"
+    },
+    {
+      "question": "Which model testing method evaluates a model's performance using a separate validation dataset to tune hyperparameters? _____-Validation (5)",
+      "answer": "Cross"
+    },
+    {
+      "question": "What is one of the dangers of model testing? (10)",
+      "answer": "Overfitting"
+    }
+  ]
+}
+
+
+

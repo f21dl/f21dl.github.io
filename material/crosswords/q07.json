@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A popular algorithm for building decision trees.",
+      "answer": "CART"
+    },
+    {
+      "question": "A measure of impurity used in decision tree splitting criteria.",
+      "answer": "Gini"
+    },
+    {
+      "question": "A decision tree learning algorithm for categorical target variables.",
+      "answer": "ID3"
+    },
+    {
+      "question": "A technique to prevent overfitting in decision trees.",
+      "answer": "Pruning"
+    },
+    {
+      "question": "A measure of the average reduction in impurity during tree construction.",
+      "answer": "InformationGain"
+    },
+    {
+      "question": "A decision tree learning algorithm for continuous target variables.",
+      "answer": "CART"
+    },
+    {
+      "question": "A node in a decision tree that has no child nodes.",
+      "answer": "Leaf"
+    },
+    {
+      "question": "A decision tree learning algorithm that handles both categorical and numerical features.",
+      "answer": "C4.5"
+    }
+  ]
+}
+
+

@@ -1,0 +1,887 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Attribute Selection and Model Testing
+**Data Mining and Machine Learning**
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+<div style='font-size:90%'>
+
+# Overview
+
+ - Importance of attribute selection and how to evaluate models effectively
+ - Feature selection techniques (e.g., filter methods, wrapper methods, embedded methods)
+ - Dimensionality reduction methods (e.g., principal component analysis, singular value decomposition)
+ - Model testing and validation approaches (e.g., holdout, cross-validation, bootstrap)
+ - Comparison of different model evaluation metrics (e.g., accuracy, precision, recall, F1 score)
+ - Techniques for model selection and hyperparameter tuning
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# What is attribute selection and why is it important?
+
+---
+
+## What is attribute selection and why is it important?
+
+- Attribute selection refers to the process of selecting the most relevant features from a dataset.
+- It is important because:
+    - Reduces dimensionality and computational complexity.
+    - Improves model performance and interpretability.
+    - Helps avoid overfitting and improves generalization.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# How can attribute selection be performed?
+
+---
+
+## How can attribute selection be performed?
+
+There are various techniques for attribute selection, including:
+- Univariate selection: Selects features based on their individual relationship with the target variable.
+- Recursive feature elimination: Iteratively removes features with the least importance.
+- Principal Component Analysis (PCA): Transforms the data into a lower-dimensional space.
+- Correlation analysis: Considers the correlation between features and removes redundant ones.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# What are evaluation metrics in model testing?
+
+---
+
+## What are evaluation metrics in model testing?
+
+- Evaluation metrics measure the performance of a predictive model.
+- They help assess how well the model predicts the target variable.
+- Common evaluation metrics include accuracy, precision, recall, F1 score, and area under the ROC curve (AUC-ROC).
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# How can we choose the right evaluation metric?
+
+---
+
+## How can we choose the right evaluation metric?
+
+The choice of evaluation metric depends on the problem and the desired outcome:
+- Accuracy: Suitable for balanced datasets and when false positives and false negatives have equal costs.
+- Precision: Focuses on minimizing false positives.
+- Recall: Focuses on minimizing false negatives.
+- F1 score: Balances precision and recall.
+- AUC-ROC: Measures the model's ability to rank true positives higher than false positives.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# When should we use cross-validation?
+
+---
+
+## When should we use cross-validation?
+
+- Cross-validation is used when we have limited data and need to estimate the model's performance.
+- It involves splitting the data into multiple subsets (folds) and performing training and testing on different combinations.
+- It helps to evaluate the model's performance on different subsets of data, providing more robust results.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# How does k-fold cross-validation work?
+
+---
+
+## How does k-fold cross-validation work?
+
+K-fold cross-validation involves the following steps:
+
+1. Split the data into k equal-sized folds.
+2. Iterate k times, each time using one fold as the test set and the remaining k-1 folds as the training set.
+3. Calculate the performance metric for each iteration and average the results to get the overall model performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# What is the purpose of model evaluation?
+
+---
+
+## What is the purpose of model evaluation?
+
+- Model evaluation helps us understand how well the model is performing and identify areas of improvement.
+- It enables us to compare different models and select the one that performs best on the given task.
+- It also helps in fine-tuning the model parameters and optimizing the model's performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	 
+
+# How can we interpret model evaluation results?
+
+---
+
+## How can we interpret model evaluation results?
+
+Model evaluation results provide insights into the model's performance:
+- If the model achieves high accuracy and other desired metrics, it indicates good performance.
+- If the model performs poorly, it may require further analysis, feature engineering, or model selection
+	
+
+	
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can we handle overfitting in model testing?
+
+---
+
+<div style='font-size:90%'>
+
+## How can we handle overfitting in model testing?
+
+- Overfitting occurs when the model performs well on the training data but fails to generalize to new data.
+- Techniques to address overfitting include:
+    - Regularization: Introducing penalties to the model's complexity to prevent overfitting.
+    - Cross-validation: Ensuring the model performs well on unseen data.
+    - Feature selection: Removing irrelevant or highly correlated features.
+    - Increasing training data: Providing more diverse examples for the model to learn from.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the bias-variance tradeoff?
+
+---
+
+## What is the bias-variance tradeoff?
+
+
+- The bias-variance tradeoff refers to the relationship between a model's bias and variance:
+    - Bias measures how far off the predictions are from the actual values.
+    - Variance measures the variability of the model's predictions for different training sets.
+- High bias (underfitting) occurs when the model is too simple and fails to capture the underlying patterns.
+- High variance (overfitting) occurs when the model is too complex and captures noise or irrelevant details.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can we strike the right balance between bias and variance?
+
+---
+
+## How can we strike the right balance between bias and variance?
+
+Striking the right balance between bias and variance involves:
+- Adjusting model complexity: Increase model complexity to reduce bias or decrease it to reduce variance.
+- Regularization techniques: Introduce regularization to control the model's complexity.
+- Ensemble methods: Combine multiple models to reduce variance and improve performance.
+- Model selection: Experiment with different algorithms and hyperparameters to find the optimal balance.
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some common attribute selection methods?
+
+---
+
+## What are some common attribute selection methods?
+
+
+- Common attribute selection methods include:
+  - Filter methods: Evaluate each feature independently based on statistical measures.
+  - Wrapper methods: Use a specific machine learning algorithm to evaluate subsets of features.
+  - Embedded methods: Incorporate attribute selection within the model training process itself.
+- Each method has its advantages and limitations, and the choice depends on the dataset and the desired outcome.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is feature importance significant in attribute selection?
+
+---
+
+## Why is feature importance significant in attribute selection?
+
+- Feature importance helps identify the most influential features in predicting the target variable.
+- It provides insights into the underlying patterns and relationships within the data.
+- By selecting the most important features, we can improve model performance, interpretability, and reduce computation time.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How can we measure the importance of features?
+
+---
+
+<div style='font-size:90%'>
+
+## How can we measure the importance of features?
+
+
+- Feature importance can be measured using various techniques, including:
+  - Decision tree-based methods: Calculate feature importance based on how often a feature is used to split the data.
+  - Coefficient-based methods: Analyze the weights or coefficients assigned to features in linear or logistic regression models.
+  - Permutation-based methods: Evaluate the decrease in model performance when a feature's values are randomly permuted.
+- Each method provides a different perspective on feature importance and can be used depending on the problem and the algorithm.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the purpose of model testing in attribute selection?
+
+---
+
+## What is the purpose of model testing in attribute selection?
+
+- Model testing aims to assess the performance and effectiveness of a predictive model.
+- It helps validate the model's ability to generalize to unseen data and make accurate predictions.
+- By testing different models and comparing their performance, we can select the best model for the given task.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some common techniques to evaluate model performance?
+
+---
+
+<div style='font-size:90%'>
+
+## What are some common techniques to evaluate model performance?
+
+Common techniques to evaluate model performance include:
+- Accuracy: Measures the percentage of correctly predicted instances.
+- Precision: Evaluates the ratio of true positives to the sum of true positives and false positives.
+- Recall: Measures the ratio of true positives to the sum of true positives and false negatives.
+- F1 score: Balances precision and recall to provide a single metric.
+- ROC curve: Plots the true positive rate against the false positive rate to evaluate classification models.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is model validation important in attribute selection?
+
+---
+
+## Why is model validation important in attribute selection?
+
+- Model validation helps estimate the model's performance on unseen data.
+- It reduces the risk of overfitting and provides a more realistic assessment of the model's predictive power.
+- Validation techniques, such as k-fold cross-validation, ensure that the model performs consistently across different subsets of the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How does k-fold cross-validation help in model testing?
+
+---
+
+## How does k-fold cross-validation help in model testing?
+
+- K-fold cross-validation involves dividing the data into k equally sized folds.
+- The model is trained and tested k times, with each fold serving as the test set once and the remaining folds as the training set.
+- The performance metrics are then averaged across all iterations to obtain a more robust estimation of the model's performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the advantages of using k-fold cross-validation?
+
+---
+
+<div style='font-size:90%'>
+
+## What are the advantages of using k-fold cross-validation?
+
+
+K-fold cross-validation has several advantages, including:
+- More reliable performance estimation by averaging results across multiple iterations.
+- Efficient use of data by utilizing all available samples for training and testing.
+- Reduced bias in performance estimation compared to a single train-test split.
+- Better understanding of model robustness and generalization ability.
+- Facilitates hyperparameter tuning and model selection by comparing performance across different parameter settings.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the advantages of using k-fold cross-validation?
+
+---
+
+## What are the advantages of using k-fold cross-validation?
+
+- Hyperparameters are parameters set by the user that determine the behavior and performance of the model.
+- Hyperparameter tuning involves selecting the optimal values for these parameters to improve model performance.
+- It helps find the right balance between underfitting and overfitting, ultimately enhancing the model's predictive power.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some techniques to perform hyperparameter tuning?
+
+---
+
+<div style='font-size:80%'>
+
+## What are some techniques to perform hyperparameter tuning?
+
+Techniques for hyperparameter tuning include:
+- Grid search: Exhaustively searches through a predefined grid of hyperparameter combinations.
+- Random search: Randomly samples hyperparameter combinations from a predefined search space.
+- Bayesian optimization: Utilizes Bayesian inference to select the most promising hyperparameters based on previous evaluations.
+- Automated techniques (e.g., AutoML): Use algorithms to automatically search and optimize hyperparameters.
+
+These techniques assist in finding the best hyperparameter values, improving model performance, and reducing manual effort.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+<div style='font-size:90%'>
+
+# Summary
+
+- Attribute selection is important to improve model performance and interpretability.
+- Feature importance helps identify influential features for better decision-making.
+- Model testing evaluates model performance and generalization ability.
+- Evaluation metrics provide insights into model accuracy, precision, recall, and F1 score.
+- Model validation, such as k-fold cross-validation, ensures reliable performance estimation.
+- Hyperparameter tuning optimizes the model's parameters for enhanced performance.
+
+</div>
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

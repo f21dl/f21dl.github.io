@@ -1,0 +1,500 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border: 0px solid orange;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg,black, black 10%, rgba(0,0,0,0.2) 100% ),url('https://www.datasciencecentral.com/wp-content/uploads/2022/01/AdobeStock_61453442.jpg') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+<!--{border: 0px solid orange}-->
+<!--{background:https://www.datasciencecentral.com/wp-content/uploads/2022/01/AdobeStock_61453442.jpg}-->
+<!--{gradient:90deg,black, black 10%, rgba(0,0,0,0.2) 100% }-->
+					
+
+# Bayesian Learning and Bayes Nets			
+## Data Mining & Machine Learning
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:80%'>
+
+# Reading Material
+
+<!-- -------------------------------------- -->
+<div style='background-color:rgb(100,155,255); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2)
+* Ch4: Training Models
+
+</span>
+<img style='margin:0px; max-height:100%;' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,155,155); padding:10px; height:160px; '>
+
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining:Practical Machine Learning Tools and Techniques](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+* Ch9: Probabilistic methods
+
+</span>
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,55,155); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining and Machine Learning: Fundamental Concepts and Algorithms](https://dataminingbook.info/)
+* Part I: Data Analysis Foundations
+
+</span>
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51Nk67LGBQL.jpg'>
+
+</div>
+<!-- -------------------------------------- -->
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+
+Probabilistic Classification, specifically Bayesian Classification, is a powerful approach in data mining and machine learning that utilizes Bayes' theorem to make predictions and estimate the probabilities of different class labels. It is based on the idea of using prior knowledge and updating it with observed evidence to arrive at more accurate and informed predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Summary of Probabilistic Classification (Bayes):
+* Bayes' Theorem
+* Bayesian Classification
+* Prior Probability
+* Likelihood
+* Class Posterior Probability
+* Naive Bayes Classifier
+* Laplace Smoothing
+* Multiclass Bayesian Classification
+* Continuous and Categorical Features
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Bayes' Theorem
+Bayes' theorem is a fundamental principle in probability theory that allows us to update our beliefs (probabilities) about an event based on new evidence. In the context of classification, Bayes' theorem is used to calculate the probability of a particular class label given the observed features of an instance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Bayesian Classification
+In Bayesian Classification, we model the probability of a class label given the input features, i.e., P(class | features). It involves calculating the posterior probability of each class label by combining prior probabilities (our initial beliefs) with the likelihood of observing the given features for each class.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Prior Probability
+The prior probability represents our initial belief about the likelihood of an instance belonging to each class before observing any evidence. It is typically estimated based on the class distribution in the training data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Likelihood
+The likelihood represents the probability of observing the given features for each class. In the case of independent features, the likelihood can be calculated as the product of the probabilities of individual feature values for the class.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Class Posterior Probability
+The class posterior probability is the updated probability of each class after observing the features of an instance. It is calculated using Bayes' theorem and serves as the basis for making predictions.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Naive Bayes Classifier
+The Naive Bayes classifier is a popular and widely used Bayesian classification algorithm. It is called "naive" because it makes a simplifying assumption that all features are conditionally independent given the class label. Despite this naive assumption, Naive Bayes can perform surprisingly well, especially in text classification and other high-dimensional datasets.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Laplace Smoothing
+Laplace smoothing (additive smoothing) is a technique used to address the problem of zero probabilities when a feature value is not observed in the training data for a particular class. It involves adding a small constant to all feature probabilities to ensure non-zero probabilities for all classes.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Multiclass Bayesian Classification
+Bayesian Classification can be extended to handle multiclass problems, where an instance can belong to one of several classes. In this case, the classifier calculates the posterior probabilities for each class and predicts the class with the highest probability as the final label.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Continuous and Categorical Features
+Bayesian Classification can handle both continuous and categorical features. For continuous features, we often assume normal (Gaussian) distributions, while for categorical features, we estimate probabilities directly from the training data.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Bayesian Classification is a well-established and interpretable method for probabilistic classification tasks. It has applications in various domains, such as email filtering, sentiment analysis, medical diagnosis, and spam detection. However, its effectiveness may be limited when strong feature dependencies exist or when data assumptions are not met.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

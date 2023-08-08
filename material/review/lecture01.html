@@ -1,0 +1,952 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Data Mining and Machine Learning
+**Data Mining and Machine Learning**
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://ideadrop.s3.eu-west-2.amazonaws.com/wp-content/uploads/2019/05/16133936/rsz_maarten-van-den-heuvel-73124-unsplash.jpg') 100% 100%/cover" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{background:https://ideadrop.s3.eu-west-2.amazonaws.com/wp-content/uploads/2019/05/16133936/rsz_maarten-van-den-heuvel-73124-unsplash.jpg}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+# Overview
+
+- What is data mining?
+- What is machine learning?
+- How are data mining and machine learning related?
+- What are the key steps in the data mining process?
+- What are some common data mining techniques?
+- Summary/Discussion
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="black"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data mining?
+
+<!--{color:black}-->
+<img height='500px' src='https://i.giphy.com/media/xT0xeuOy2Fcl9vDGiA/giphy.webp'> <a target="_blank" href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/375951/Education_and_Teaching.pdf'>*</a>
+
+
+---
+
+## What is data mining?
+Data mining is the process of extracting useful insights, patterns, and knowledge from large datasets. It involves the application of various techniques and algorithms to discover hidden relationships, trends, and patterns in the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg\?auto=compress&cs=tinysrgb&h=650&w=940') 100% 100%/cover" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{background:https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&h=650&w=940}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+# Why is data mining important?
+
+---
+
+## Why is data mining important?
+Data mining plays a crucial role in various fields, including:
+
+- Business: Uncovering market trends, customer segmentation, fraud detection.
+- Healthcare: Predictive modeling, disease diagnosis, treatment effectiveness.
+- Finance: Credit scoring, investment analysis, risk assessment.
+- Marketing: Targeted advertising, customer behavior analysis, recommendation systems.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://images.pexels.com/photos/434645/pexels-photo-434645.jpeg\?auto=compress&cs=tinysrgb&h=650&w=940') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{background:https://images.pexels.com/photos/434645/pexels-photo-434645.jpeg?auto=compress&cs=tinysrgb&h=650&w=940}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+
+# What are the key steps in the data mining process?
+
+---
+
+## What are the key steps in the data mining process?
+The data mining process typically involves the following steps:
+
+1. Data collection and integration
+2. Data preprocessing and cleaning
+3. Exploratory data analysis
+4. Feature selection and transformation
+5. Model building and evaluation
+6. Interpretation and knowledge discovery
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg\?auto=compress&cs=tinysrgb&h=650&w=940') 50% 50%/cover" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+<!--{background:https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&h=650&w=940,50% 50%/cover}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+
+
+# What are the different types of machine learning?
+
+---
+
+## What are the different types of machine learning?
+
+Classical machine learning is often categorized by how the algorithm learns, four basic approaches:
+* supervised learning
+* unsupervised learning
+* semi-supervised learning
+* reinforcement learning
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is supervised learning?
+
+---
+
+## What is supervised learning?
+
+Supervised Learning: Imagine you have a collection of pictures of fruits labeled as either "apple" or "orange." 
+
+You want to build a model that can automatically classify new fruits. 
+
+In supervised learning, you would show the model these labeled pictures and let it learn the patterns and characteristics of each fruit. 
+
+Once trained, the model can predict the type of fruit when given a new unlabeled picture.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is unsupervised learning?
+
+---
+
+## What is unsupervised learning?
+
+Unsupervised Learning: Imagine you have a large basket of mixed-up Lego pieces.
+
+You want to find groups of similar pieces without knowing their names or categories. 
+
+In unsupervised learning, you would let the model analyze the Lego pieces and discover patterns or similarities on its own. 
+
+It might group together Lego pieces that have similar shapes or colors, even if you didn't tell it what each piece represents.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is semi-supervised learning?
+
+---
+
+## What is semi-supervised learning?
+
+Semi-Supervised Learning: Imagine you have a bag of apples and oranges, but only a few of them are labeled. 
+
+You want to sort all the fruits into their respective types, but labeling each one would take a long time. 
+
+In semi-supervised learning, you would use the labeled fruits to guide the model's learning process. 
+
+The model would learn from the labeled examples and try to generalize that knowledge to classify the remaining unlabeled fruits.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is reinforcement learning?
+
+---
+
+## What is reinforcement learning?
+
+Reinforcement Learning: Imagine you have a virtual robot trying to learn how to navigate through a maze. 
+
+At first, the robot doesn't know anything about the maze or how to reach the goal. 
+
+In reinforcement learning, the robot explores the maze by taking actions (moving in different directions) and receives feedback in the form of rewards or penalties. 
+
+Over time, the robot learns which actions lead to positive outcomes (rewards) and adjusts its behavior to maximize the rewards, eventually finding the optimal path to the goal.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the difference between **supervised** and **unsupervised learning**?
+
+---
+
+## What is the difference between **supervised** and **unsupervised learning**?
+
+* Supervised learning, the models are trained using labeled data, where the desired output is known. 
+
+* Unsupervised learning, the models discover patterns and relationships in unlabeled data without any predefined output.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some common data mining techniques?
+
+---
+
+## What are some common data mining techniques?
+
+<div style='font-size:90%'>
+
+Common data mining techniques include:
+- Classification: Predicting categorical class labels for new instances.
+- Regression: Predicting numerical values based on input features.
+- Clustering: Grouping similar instances based on their characteristics.
+- Association rules: Discovering interesting relationships among variables.
+- Anomaly detection: Identifying unusual or abnormal instances.
+- Dimensionality reduction: Reducing the number of input features while preserving important information.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is **feature selection** important in data mining?
+
+---
+
+## Why is **feature selection** important in data mining?
+
+Feature selection is crucial as it helps in reducing the dimensionality of the dataset, removing irrelevant or redundant features, and improving the model's performance and interpretability. It focuses on selecting the most informative features that contribute the most to the prediction task.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the role of **data preprocessing** in data mining?
+
+---
+
+## What is the role of **data preprocessing** in data mining?
+
+Data preprocessing involves transforming and cleaning the raw data to improve its quality and make it suitable for analysis. It includes tasks such as handling missing values, outlier detection and treatment, normalization, and data discretization.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is **exploratory data analysis** (EDA)?
+
+---
+
+## What is **exploratory data analysis** (EDA)?
+
+Exploratory data analysis is the process of visually and statistically exploring the dataset to gain insights and understand its underlying characteristics. It involves techniques such as summary statistics, data visualization, and correlation analysis.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we **evaluate** the performance of data mining **models**?
+
+---
+
+## How do we **evaluate** the performance of data mining **models**?
+
+Model evaluation involves assessing the performance of data mining models using appropriate evaluation metrics such as accuracy, precision, recall, F1 score, and area under the ROC curve. Cross-validation and holdout validation are commonly used techniques for evaluating model performance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is overfitting and underfitting in data mining?
+
+---
+
+## What is overfitting and underfitting in data mining?
+
+Overfitting occurs when a model performs well on the training data but fails to generalize to new, unseen data. Underfitting, on the other hand, happens when a model is too simple to capture the underlying patterns in the data. Balancing between overfitting and underfitting is crucial for building accurate and robust models.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is cross-validation in data mining?
+
+---
+
+## What is cross-validation in data mining?
+
+Cross-validation is a technique used to assess the performance of a model by partitioning the dataset into multiple subsets. It involves training the model on a portion of the data and evaluating it on the remaining data. This helps in estimating the model's generalization ability and reducing the impact of data variability.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are **decision trees** in data mining?
+
+---
+
+## What are **decision trees** in data mining?
+
+Decision trees are graphical models that use a tree-like structure to represent decisions and their possible consequences. They split the dataset based on the values of input features and make predictions by following the branches of the tree. Decision trees are widely used for classification and regression tasks.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is **ensemble learning** in data mining?
+
+---
+
+## What is **ensemble learning** in data mining?
+
+Ensemble learning combines multiple models to make more accurate predictions than any individual model. Techniques such as bagging, boosting, and random forests are used to create an ensemble of models that collaborate to improve the overall performance and robustness.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are **association rules** in data mining?
+
+---
+
+## What are **association rules** in data mining?
+
+Association rules are used to discover interesting relationships among variables in a dataset. They identify frequently occurring patterns or itemsets and derive rules that describe the dependencies or associations between different items.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is **model interpretability** important in data mining?
+
+---
+
+## Why is **model interpretability** important in data mining?
+
+Model interpretability allows us to understand and explain the decisions and predictions made by the models. It enhances trust, facilitates domain knowledge integration, and helps in detecting biases or unintended consequences in the data mining process.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we **handle imbalanced** data in data mining?
+
+---
+
+## How do we **handle imbalanced** data in data mining?
+
+Imbalanced data refers to datasets where the number of instances in different classes is significantly imbalanced. Techniques such as oversampling the minority class, undersampling the majority class, and using appropriate evaluation metrics (e.g., F1 score) are employed to address the challenges posed by imbalanced datasets.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is **ethics important** in data mining?
+
+---
+
+## Why is **ethics important** in data mining?
+
+Data mining raises ethical concerns related to privacy, fairness, and bias. It is crucial to consider and mitigate these ethical issues to ensure responsible and ethical use of data mining techniques.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some **real-world applications** of data mining?
+
+---
+
+## What are some **real-world applications** of data mining?
+
+Data mining is applied in various domains, including:
+- E-commerce: Market basket analysis, personalized recommendations.
+- Healthcare: Disease diagnosis, patient monitoring, drug discovery.
+- Finance: Fraud detection, credit risk assessment.
+- Social media: Sentiment analysis, user behavior modeling.
+- Transportation: Route optimization, traffic prediction.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are some **future trends** in data mining?
+
+---
+
+## What are some **future trends** in data mining?
+
+<div style='font-size:80%'>
+
+Future trends in data mining include:
+- Big Data analytics: Handling and extracting insights from large-scale datasets.
+- Deep learning: Expanding the applications of deep learning in various domains.
+- Explainable AI: Developing models that can provide transparent and interpretable explanations for their predictions.
+- Privacy-preserving techniques: Ensuring data privacy while performing data mining tasks.
+- Reinforcement learning: Applying reinforcement learning algorithms for decision-making in dynamic environments.
+- Automated machine learning: Streamlining the process of model selection, feature engineering, and hyperparameter tuning.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+The **key points** from this lecture are:
+- Data mining is the process of extracting insights and knowledge from large datasets.
+- It involves various techniques like classification, clustering, association rules, and regression.
+- Feature selection, data preprocessing, and model evaluation are important steps in the data mining process.
+- Overfitting and underfitting should be avoided through appropriate model selection and validation techniques.
+- Model interpretability and ethical considerations are crucial in the application of data mining techniques.
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

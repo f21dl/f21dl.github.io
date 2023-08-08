@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "In the context of Knowledge Representation, what term refers to the process of encoding knowledge in a way that can be interpreted by machines? (10)",
+      "answer": "Ontology"
+    },
+    {
+      "question": "Which Knowledge Representation technique uses a directed acyclic graph to represent knowledge with nodes and edges? ________ Network (8)",
+      "answer": "Semantic"
+    },
+    {
+      "question": "What is the process of transforming raw data into a suitable format for analysis and modeling? Data __________ (11)",
+      "answer": "Preparation"
+    },
+    {
+      "question": "Which Data Preparation technique involves filling in missing values in a dataset? (8)",
+      "answer": "Imputation"
+    },
+    {
+      "question": "What type of Data Preparation method is used to reduce the dimensionality of data while preserving its important characteristics? Feature ________ (9)",
+      "answer": "Selection"
+    },
+    {
+      "question": "Which Data Preparation technique involves scaling or transforming features to a standard range? (11)",
+      "answer": "Normalization"
+    },
+    {
+      "question": "In Knowledge Representation, what term describes the process of reasoning with uncertainty or incomplete information? ______ Logic (5)",
+      "answer": "Fuzzy"
+    },
+    {
+      "question": "Which Knowledge Representation language is widely used in representing and reasoning about knowledge in the field of Artificial Intelligence? Web _______ Language (8)",
+      "answer": "Ontology"
+    }
+  ]
+}
+
+

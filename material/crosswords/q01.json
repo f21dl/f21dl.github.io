@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A branch of artificial intelligence that trains systems to learn from data and improve their performance over time. (8)",
+      "answer": "Machine Learning"
+    },
+    {
+      "question": "A technique in data mining used to find patterns or relationships in large datasets. (9)",
+      "answer": "Clustering"
+    },
+    {
+      "question": "The process of preparing data for analysis by cleaning, transforming, and organizing it. (10)",
+      "answer": "Data Wrangling"
+    },
+    {
+      "question": "A popular algorithm used in machine learning for classification tasks. (3)",
+      "answer": "SVM"
+    },
+    {
+      "question": "A method that allows computers to learn from data without being explicitly programmed. (12)",
+      "answer": "Unsupervised Learning"
+    },
+    {
+      "question": "A measure of a model's performance in classification problems. (8)",
+      "answer": "Accuracy"
+    },
+    {
+      "question": "A type of neural network designed to recognize patterns similar to the human brain. (3)",
+      "answer": "CNN"
+    },
+    {
+      "question": "The process of finding interesting and useful patterns and trends in data. (9)",
+      "answer": "Data Mining"
+    }
+  ]
+}
+
+

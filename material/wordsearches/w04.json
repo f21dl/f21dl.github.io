@@ -1,0 +1,18 @@
+
+{
+  "words": [
+    "F1Score",
+    "Precision",
+    "Recall",
+    "Accuracy",
+    "NDCG",
+    "AUCROC",
+    "PRCurve",
+    "MSE",
+    "RMSE",
+    "MAE",
+    "R2Score"
+  ]
+}
+
+

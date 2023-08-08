@@ -1,0 +1,905 @@
+
+
+<!--
+
+See wordsearch.xbdev.net for reference
+
+-->
+
+
+
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+	
+<link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+
+-->
+
+
+
+    <style>
+    /*
+        body{
+            margin:0;
+            padding:0;
+        }
+      */
+      
+        /* game will be within this area */
+        #gameArea {
+            position        : relative;
+            width           : 415px;
+            height          : 415px;
+            background-color: #eeeeee;
+            margin-left     : 20px;
+			margin-bottom   : 10px;
+			/*
+			min-width: 450px;
+			min-height: 450px;
+			*/
+        }
+        
+        /* place the game area inside container so it's centered */
+        #gameContainer {
+            /*
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            left:0px;
+            top:0px;
+            border: 3px solid green;
+		    */
+		    
+			display: flex;
+			float: right;
+			align-items: center;
+			justify-content: center;
+            
+            position        : absolute;
+            top             : 50%;
+            left            : 50%;
+            transform       : translate(-50%, -50%);
+            
+            text-align      : center;
+			box-sizing: border-box;
+        }
+		
+		.wordlist {
+			float: left;
+			font-size: 30pt;
+			position: relative;
+		}
+		
+		.lettertile {
+		    /*
+		    width:70px;
+		    */
+		    cursor: pointer;
+		    font-size: 30pt;
+		}
+		.innerword {
+		    display: block;
+		}
+		
+		@media (max-width:560px) {
+		    #gameContainer {
+		        flex-direction: column;
+		    }
+		    .innerword {
+		        display: inline;
+		        padding-right: 10px;
+		    }
+		    .innerword::after {
+		        content: ' ';
+		    }
+		    .innerword::before {
+		        content: ' ';
+		    }
+		    #gameArea {
+		        margin-left: 0px;
+		    }
+		    .wordlist {
+		        font-size: 17pt;
+		    }
+		    .lettertile {
+		        font-size: 17pt;
+		    }
+		}
+      </style>
+      
+
+
+
+<!-- details at the top of the container on what to do in the game -->
+<div id="gameContainer">
+	<div id="wordlist" class='wordlist'></div>
+	<div style='padding:0px;margin:0px;'>
+		<div id="gameArea"></div>
+		<span style='font-size:30pt;'>&nbsp;</span>
+		<span id='word' style='font-size:30pt;'> </span>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" >
+
+text = `
+Vulkan
+raytracing
+graphics
+animation
+interactive
+realtime
+code
+gpu
+technologies
+lighting
+debugging
+`;
+
+async function setupWordsearch(){
+	
+function grid()
+{
+	this.s = 0;
+	this.a = null;
+	
+	this.create = function(s)
+	{
+		this.s = s;
+		this.a = new Array( s * s );
+		for (let i=0; i<s*s; i++)
+		{
+			this.a[i] = -1;
+		}
+	}
+	
+	this.copy = function()
+	{
+		let g = new grid();
+		g.create(this.s);
+		for (let i=0; i<g.s*g.s; i++)
+		{
+			g.a[i] = this.a[i];
+		}
+		return g;
+	}
+	
+
+	
+	this.addletter = function( x, y, v )
+	{
+		let d = this.s - 1;
+		if ( x<0 || x>d ) return false;
+		if ( y<0 || y>d ) return false;
+		let c = this.a[x + y*this.s];
+		if ( v == c ) return true;
+		if ( c != -1 ) return false;
+		this.a[x + y*this.s] = v;
+		return true;
+	}
+	
+	this.addword = function( word )
+	{
+		let d = this.s-1;
+		let rx = Math.round( Math.random()*d ); // 0 to d
+		let ry = Math.round( Math.random()*d ); // 0 to d
+		
+		let dir = [ [ 1,  0],
+		            [-1,  0],
+					[ 0,  1],
+					[ 0, -1],
+					[ 1,  1],
+					[-1, -1],
+					[ 1, -1],
+					[-1,  1] ];
+					
+		let id = Math.round( Math.random()* (dir.length-1) ); // 0 to dir.length-1
+		//console.log( 'id: ' + id );
+		
+		//console.log( 'word: ' + word );
+		for (let i=0; i<word.length; i++)
+		{
+			let chr = word[i]; // letter
+			//console.log( chr );
+			if ( ! this.addletter( rx, ry, chr ) )
+			{
+				return false; // couldn't add
+			}
+			rx += dir[id][0];
+			ry += dir[id][1];
+		}
+		//console.log( 'g::: ' + this.a );
+		return true; // added successfully
+	}
+}
+
+
+
+
+function generateGrid( words, maxsize )
+{
+	let gridA = new grid();
+	gridA.create( maxsize );
+	
+	let sol = [ {w:[].concat(words), g:gridA } ];
+	
+	for (let tries=0; tries<400; tries++)
+	{
+		console.log( 'tries: ' + tries );
+		
+		let added = false;
+		for (let kk=0; kk<1000; kk++)
+		{
+			
+			let nextgrid  = sol[ sol.length-1 ].g.copy();
+			let nextwords = [].concat( sol[ sol.length-1 ].w );
+			
+			// pop a random word
+			
+			let ii = Math.round( Math.random() * (nextwords.length-1) );
+			let word = nextwords[ ii ];
+			nextwords.splice( ii, 1 );
+			
+			/*
+			let ii = nextwords.length-1;
+			let word = nextwords[ ii ];
+			nextwords.splice( ii, 1 );
+			*/
+			
+			//console.log( 'word:' + word );
+			
+			
+			if ( nextgrid.addword( word ) )
+			{
+				sol.push( {w:nextwords, g:nextgrid } );
+				//console.log( 'push' );
+				added = true;
+				break;
+			}
+		}
+		
+		if ( !added )
+		{	
+			//console.log( 'pop' );
+			if ( sol.length > 1 )
+			{
+				sol.pop();
+			}
+		}
+		
+		if ( sol[ sol.length-1 ].w.length == 0 )
+		{
+			break;
+		}
+	}
+	
+	for (let i=0; i<sol.length; i++)
+	{
+		console.log( sol[i].w );
+	}
+	
+	console.log('Remaining words not fitted: ' + ( sol[ sol.length-1 ].w.length ) );
+	
+	const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	// return a square array 
+	let gs = sol[ sol.length-1 ].g;
+	//console.log( gs.a );
+	//console.log( maxsize );
+	let ret = [];
+	for (let x=0; x<maxsize; x++)
+	{
+		ret[x] = [];
+		for (let y=0; y<maxsize; y++)
+		{
+			let bb = gs.a[ x + y*maxsize ];
+			//console.log( bb );
+			if ( bb == -1 )
+			{
+				bb = chars[ Math.round( Math.random() * (chars.length-1) ) ];
+			}
+			ret[x][y] = bb;
+		}
+	}
+	
+	let wordlist = [].concat(words);
+	let remaining = sol[ sol.length-1 ].w;
+	for (let i=0; i< remaining.length; i++)
+	{
+		//wordlist.remove( remaining[i] )
+		wordlist = wordlist.filter(function(s) {
+			return s !== remaining[i];
+		});
+
+	}
+	//console.log( ret );
+	return [ ret, wordlist ];
+}
+
+
+/*
+const wordlist = [ 'cat', 'frog', 'bat', 'sheep', 'panda', 'dog', 'ant' ];
+
+let wordarray = generateGrid( wordlist, 7 );
+
+let s = wordarray[0].length;
+let out = "";
+for (let x=0; x<s; x++)
+{
+	for (let y=0; y<s; y++)
+	{
+		let c = wordarray[x][y];
+		if ( c==-1 ) c = '_';
+		out +=  c + '_';
+	}
+	out += '\n';
+}
+console.log( out );
+*/
+
+/*
+const wordlist = ['CANVAS', 'CODE', 'FUN', 'FUNCTION', 'GAMES', 'JAVASCRIPT', 'KIDS', 'PLAY', 'SHARE', 'VARIABLE'];
+
+let ret = generateGrid( wordlist, 10 );
+
+let wordarray       = ret[0];
+let fittedworldlist = ret[1];
+
+let s = wordarray[0].length;
+let out = "";
+for (let x=0; x<s; x++)
+{
+	for (let y=0; y<s; y++)
+	{
+		let c = wordarray[x][y];
+		if ( c==-1 ) c = '_';
+		out +=  c + '_';
+	}
+	out += '\n';
+}
+console.log( out );
+console.log('words: ' + fittedworldlist);
+*/
+
+
+
+
+
+
+
+
+let   mywidth   = 800;          // Dimensions of the graphics area.
+let   myheight  = 800;
+
+let tileSize =  55;             // tile size, in pixels
+let fieldSize = 12;              // number of tiles per row/column
+let tileTypes = 3;              // different kind of tiles allowed
+let tileArray = [];             // array with all game tiles
+
+let tileColors = ['lightgrey', 'yellow', 'orange' ];
+
+/*
+const words = ['CANVAS', 'CODE', 'FUN', 'FUNCTION', 'GAMES', 'JAVASCRIPT', 'KIDS', 'PLAY', 'SHARE', 'VARIABLE'];
+
+var letters = [
+    ['J', 'Q', 'V', 'N', 'R', 'G', 'N', 'T', 'U', 'I'], 
+    ['V', 'L', 'A', 'O', 'S', 'A', 'X', 'P', 'S', 'C'], 
+    ['W', 'P', 'R', 'I', 'D', 'M', 'E', 'I', 'I', 'T'], 
+    ['K', 'P', 'I', 'T', 'I', 'E', 'T', 'R', 'H', 'K'],  
+    ['Z', 'U', 'A', 'C', 'K', 'S', 'G', 'C', 'X', 'T'],  
+    ['X', 'T', 'B', 'N', 'F', 'Z', 'Y', 'S', 'G', 'J'],  
+    ['O', 'D', 'L', 'U', 'Y', 'U', 'H', 'A', 'H', 'N'],  
+    ['A', 'F', 'E', 'F', 'C', 'A', 'N', 'V', 'A', 'S'],  
+    ['E', 'D', 'O', 'C', 'R', 'P', 'L', 'A', 'Y', 'A'],  
+    ['F', 'X', 'E', 'E', 'V', 'C', 'P', 'J', 'H', 'B']
+];
+*/
+
+
+//let inputwords = ['interactive', 'CANVAS', 'CODE', 'FUN', 'FUNCTION', 'GAMES', 'JAVASCRIPT', 'KIDS', 'PLAY', 'SHARE', 'VARIABLE'];
+// inputwords = inputwords.map( d=>{ return d.toUpperCase(); } );
+
+// get random words
+/*
+let prom = await fetch( 'https://wordsearch.xbdev.net/var/scripts/randomwords.txt' );
+let text = await prom.text();
+*/
+/*
+let text = `
+Vulkan
+raytracing
+graphics
+animation
+interactive
+realtime
+code
+gpu
+technologies
+lighting
+debugging
+`;
+*/
+text = text.trim();
+let allwords = text.split('\n');
+allwords = allwords.map( d => { return d.replace(' ', ''); } );
+allwords = allwords.filter( d=> { return (d.length>3) } );
+
+let shuffledallwords = allwords.sort((a, b) => 0.5 - Math.random());
+	
+let maxwords = Math.min( 10, shuffledallwords.length );
+
+let inputwords = [];
+for (let i=0; i<maxwords; i++)
+{
+	inputwords.push( shuffledallwords[i] );
+}
+	
+inputwords = inputwords.map( d=>{ return d.toUpperCase(); } );
+
+	
+console.log('inputwords:', inputwords );
+	
+	
+let ret = generateGrid( inputwords, fieldSize );
+const letters = ret[0];
+const words   = ret[1];
+
+let gameArea = document.getElementById( 'gameArea' );
+
+let mouseIsPressed  = false;
+
+let startTile      = null;
+let curTile        = null;
+let selectedTiles  = null;
+let foundWords     = [];
+
+
+window.onmousedown = function mouseDown(e)
+{
+	mouseIsPressed = true;
+}
+window.onmouseup = function mouseUp(e)
+{
+	mouseIsPressed = false;
+}
+
+// create a random tile (specify the position in the grid where the tile
+// will be put)
+function createRandomTile(i, j)
+{
+    console.log('tilesize:', tileSize );
+    
+    //let randomTile                = Math.floor(Math.random()*tileTypes)
+    let theTile                   = document.createElement('div');
+    theTile.className             = "lettertile";
+    theTile.style.position        = "absolute";
+    theTile.style.width           = tileSize + 'px';
+    theTile.style.height          = tileSize + 'px';
+    theTile.style.left            = (i*tileSize + 1*(i+1)) + "px";
+    theTile.style.top             = (j*tileSize + 1*(j+1)) + "px";
+    theTile.style.padding         = 0;
+    theTile.style.margin          = 0;
+    theTile.style.backgroundColor = tileColors[ 0 ];
+	theTile.style['line-height']  = tileSize + 'px'; // center vertically
+	//theTile.style['font-size']    = '30pt';
+	theTile.i = i;
+	theTile.j = j;
+	//theTile.letter                = letters[i,j];
+	//theTile.found                 = false;
+    // set an event for the mouse here - if any tile is picked with the 
+    // mouse, the pickTile(..) function will be called
+    theTile.onclick               = function() { pickTile(i, j); }
+	theTile.onmouseover           = function() { overTile(i, j); }
+	theTile.ontouchmove           = mytouchmove; // function(e) { overTile(i, j); };
+	theTile.ontouchstart          = mytouchstart;
+	theTile.ontouchend            = mytouchend;
+    //theTile.frame                 = randomTile;
+    gameArea.appendChild( theTile );
+    return theTile;
+}
+
+function mytouchend(e)
+{
+	if ( curTile == null ) return;
+
+	pickTile( curTile.row, curTile.col );
+}
+
+
+//Get the window size
+function getWindowSize() 
+{
+  if (typeof(window.innerWidth) == 'number') {
+    //Non-IE
+    mywidth  = window.innerWidth;
+    myheight = window.innerHeight;
+  }
+  else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+    //IE 6+ in 'standards compliant mode'
+    mywidth  = document.documentElement.clientWidth;
+    myheight = document.documentElement.clientHeight;
+  }
+  else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+    //IE 4 compatible
+    mywidth  = document.body.clientWidth;
+    myheight = document.body.clientHeight;
+  }
+  mycenterx = mywidth / 2;
+  mycentery = myheight / 2;
+}
+
+
+function mytouchstart(e)
+{
+	var touch = e.touches[0];
+
+	// get the DOM element
+	var element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+	// make sure an element was found - some areas on the page may have no elements
+	if (element) {
+		// interact with the DOM element
+		let i = element.i;
+		let j = element.j;
+		pickTile(i, j);
+	}
+}
+
+function mytouchmove(e)
+{
+	e.preventDefault();
+	var touch = e.touches[0];
+
+	// get the DOM element
+	var element = document.elementFromPoint(touch.clientX, touch.clientY);
+
+	// make sure an element was found - some areas on the page may have no elements
+	if (element) {
+		// interact with the DOM element
+		let i = element.i;
+		let j = element.j;
+		overTile(i, j);
+	}
+}
+
+// when the game is created, generate the tiles
+function startGame()
+{
+	getWindowSize();
+	let mins = Math.min( myheight, mywidth );
+	if ( mywidth < myheight ) mins *= 0.8;
+	tileSize = mins / (fieldSize + 2) ;
+	
+	//console.log( 'letters:', letters );
+	
+    // create the `square` grid ( fieldSize x fieldSize )
+    // tiles are created and stored in an array 'tileArray'
+    for(let i=0;i<fieldSize;i++){
+        tileArray[i]=[];
+        for(let j=0;j<fieldSize;j++){
+            tileArray[i][j]=createRandomTile(i, j);
+			tileArray[i][j].found     = false;
+			tileArray[i][j].letter    = letters[i][j];
+			tileArray[i][j].innerHTML = letters[i][j];
+        }
+    }
+    gameArea.style.width  = (tileSize * fieldSize) + 'px';
+	gameArea.style.height = (tileSize * fieldSize) + 'px';
+	updateDisplayList();
+}
+
+function updateDisplayList()
+{
+	let wordlist = document.getElementById('wordlist');
+	wordlist.innerHTML = "";
+	for (let i=0; i<words.length; i++)
+	{
+		if ( foundWords.includes( i ) )
+		{
+			wordlist.innerHTML += '<del><span class="innerword">' + words[i] + '</span></del>';
+		}
+		else 
+		{
+			wordlist.innerHTML += '<span class="innerword">' + words[i] + '</span>';
+		}
+	}
+}
+
+
+function pickTile(selectedRow, selectedCol)
+{
+	if ( startTile != null )
+	{
+		// check selection if won
+		let found = validateSelection();
+		
+		if ( found )
+		{
+			var word = selectedWord();
+			
+			for (let i=0; i<words.length; i++)
+			{
+				if ( word == words[i] )
+				{
+					foundWords.push( i );
+					break;
+				}
+			}
+			updateDisplayList();
+			
+			// check if game over
+			if ( foundWords.length == words.length )
+			{
+				alert('Congratulations! Try again?');
+				location.reload();
+			}
+			
+			
+			for (let i=0; i<selectedTiles.length; i++)
+			{
+				let r = selectedTiles[i].row;
+				let c = selectedTiles[i].col;		
+				tileArray[r][c].found = true;			
+			}
+		}
+		
+		for(let i=0;i<fieldSize;i++){
+		for(let j=0;j<fieldSize;j++){
+				if ( tileArray[i][j].found )
+					tileArray[i][j].style.backgroundColor  = tileColors[ 2 ];
+				else 
+					tileArray[i][j].style.backgroundColor  = tileColors[ 0 ];
+			}
+		}
+		
+		
+		startTile = null;
+		selectedTiles  = null;
+		validateSelection();
+		
+		return;
+	}
+	
+	startTile = {row:selectedRow, col:selectedCol};
+}
+
+
+function overTile(selectedRow, selectedCol)
+{
+	for(let i=0;i<fieldSize;i++){
+	for(let j=0;j<fieldSize;j++){
+			if ( tileArray[i][j].found )
+				tileArray[i][j].style.backgroundColor  = tileColors[ 2 ];
+			else 
+				tileArray[i][j].style.backgroundColor  = tileColors[ 0 ];
+		}
+	}
+	
+	tileArray[selectedRow][selectedCol].style.backgroundColor  = tileColors[ 1 ]
+		
+		
+	curTile = {row:selectedRow, col:selectedCol};
+	
+	//console.log( selectedTiles );
+
+		
+	if ( startTile == null || curTile == null )
+		return;
+		
+	tileArray[startTile.row][startTile.col].style.backgroundColor  = tileColors[ 1 ]
+	
+	//console.log( selectedRow  +', ' + selectedCol );
+
+	
+	selectedTiles = findSelection();	
+	
+	if ( selectedTiles != null )
+	{
+		for(let i=0;i<fieldSize;i++){
+		for(let j=0;j<fieldSize;j++){
+				if ( tileArray[i][j].found )
+					tileArray[i][j].style.backgroundColor  = tileColors[ 2 ];
+				else 
+					tileArray[i][j].style.backgroundColor  = tileColors[ 0 ];
+			}
+		}
+	
+		for (let i=0; i<selectedTiles.length; i++)
+		{
+			let r = selectedTiles[i].row;
+			let c = selectedTiles[i].col;			
+			tileArray[r][c].style.backgroundColor = tileColors[ 1 ];
+		}	
+	}
+	
+	var word = selectedWord();
+	document.getElementById('word').innerHTML = word;
+	
+}
+
+
+
+function validateSelection()
+{
+    var word = selectedWord();
+	document.getElementById('word').innerHTML = word;
+    if (!word)
+        return false;
+        
+	if ( !words.includes(word) )
+		return false; // not found
+	
+	for (let i=0; i<selectedTiles.length; i++)
+	{
+		let r = selectedTiles[i].row;
+		let c = selectedTiles[i].col;			
+		tileArray[r][c].found = true;
+	}
+		
+	return true;
+	
+    //if (foundWord(word))
+    //    return;
+        
+    //if (words.includes(word))
+    //    addFound(word, currSelection);
+        
+    //if (found.length === words.length)
+    //{
+    //    showScene("Congrats");
+    //}
+}
+
+
+
+
+function selectedWord()
+{
+    if (!selectedTiles)    
+        return "";
+        
+    var txt = "";    
+    
+    for (var o of selectedTiles )
+    {
+        txt += o.chr;
+    }
+    
+    return txt;
+}
+
+
+function findSelection()
+{
+    //if (!prevCell || !currCell)
+    //    return null;
+
+    // JavaScript feature
+    // Execute hSelection() ... and if null execute vSelection(), etc.
+    return hSelection() || vSelection() || dSelection();
+}
+
+function hSelection()
+{
+    //if (!prevCell || !currCell)
+    //    return null;
+        
+    if (startTile.row != curTile.row)
+        return null;
+
+    var ar = [];
+    
+    var delta = startTile.col <= curTile.col ? 1 : -1;
+
+    for(var col = startTile.col; col != curTile.col + delta; col += delta)
+    {
+        var row = startTile.row;
+        var chr = letters[row][col];
+        
+        ar.push( { row : row, col : col, chr : chr } );
+    }
+
+    return ar;        
+}
+
+function vSelection()
+{
+    //if (!startTile || !currCell)
+    //    return null;
+        
+    if (startTile.col != curTile.col)
+        return null;
+
+    var ar = [];
+    
+    var delta = startTile.row <= curTile.row ? 1 : -1;
+
+    for(var row = startTile.row; row != curTile.row + delta; row += delta)
+    {
+        var col = startTile.col;
+        var chr = letters[row][col];
+        
+        ar.push( { row : row, col : col, chr : chr } );
+    }
+
+    return ar;        
+}
+
+function dSelection()
+{
+   // if (!startTile || !currCell)
+    //    return null;
+        
+    if ( Math.abs(curTile.row - startTile.row) != Math.abs(curTile.col - startTile.col))
+        return null;
+    
+    var ar = [];
+    
+    var dh = startTile.col <= curTile.col ? 1 : -1;
+    var dv = startTile.row <= curTile.row ? 1 : -1;
+
+    var row = startTile.row;
+    var col = startTile.col;
+
+    while(row != curTile.row + dv && col != curTile.col + dh)
+    {
+        var chr = letters[row][col];
+        ar.push( { row : row, col : col, chr : chr } );
+
+        row += dv;
+        col += dh;
+    }
+
+    return ar;
+}
+
+
+
+startGame();
+
+
+}; // async
+
+
+window.onload = async function(){
+
+
+const queryString = window.location.search; // e.g. ?active=shirt&color=blue&newuser&size=m
+
+const urlParams = new URLSearchParams(queryString);
+
+let questions = null;
+if ( urlParams.has('id') )
+{
+	const id = urlParams.get('id');
+	console.log('loading: ', id );
+	let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/wordsearches/w${id}/` ); // {cache: "no-store"})
+	let txt  = await prom.text();
+	
+	//txt = txt.matchAll(/(\{"words":\[(\s|.| |"|\r|\n)*?]})/g);
+	//txt = [...txt][0][0];
+	
+	//console.log('retxt:', txt );
+	
+	let words = JSON.parse( txt ).words;
+	
+	text = '';
+	words.forEach( w=>{
+	    text += w + "\n";
+	})
+}
+
+console.log('text:', text );
+
+setupWordsearch();
+
+}
+
+
+
+
+</script>
+

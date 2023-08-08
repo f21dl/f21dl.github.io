@@ -1,0 +1,540 @@
+
+		<style>
+            * {
+                font-family: "Open Sans";
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Notes (Layout.xbdev.net)</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.3/showdown.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<style>
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    word-wrap: break-word;
+}
+
+table { word-break:break-all !important; }
+
+html {
+    background: #CCC;
+    padding-bottom: 100vh; /* allow scrolling past end of page */
+}
+
+h1 {
+    font-size: 2em !important;
+}
+h2 {
+    font-size: 1.5em !important;
+}
+h3, h4, h5 {
+    font-size: 1.3em !important;
+}
+
+.mdcontent {
+	text-align:left;
+    position:relative;
+    background: #FFF;
+    font-family: "Open Sans";
+    line-height: 1.4;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 100px;
+    min-height: calc(100vh - 240px);
+    box-shadow: 0 0 10px;
+	background-color:#fff;
+	color: black;
+}
+
+.mdcontent::before {    
+      content: "";
+      background: url("https://courses.xbdev.net/var/images/backnote.png"); 
+	  background-position: right -50pt top 50pt;
+	  background-repeat: no-repeat;
+	  background-size: contain;	
+	  background-color:#fff;
+      opacity: 0.02;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  z-index:0;
+	  pointer-events: none;
+}
+
+@media (max-width: 568px) {
+    .mdcontent {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+li > ul {
+    padding-left: 20;
+}
+p + ul {
+    margin-top: -10;
+}
+li > p {
+    margin-top: 0;
+    margin-bottom: 10;
+}
+
+blockquote {
+  border-left: 8px solid rgba(100,100,100,0.5);
+  padding-left: 5px;
+}
+
+code {
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+    font-size: 85%;
+    line-height: 150%;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #e6e8db;
+    padding: 1px 3px 1px 3px;
+	border: 4px solid blue;
+}
+
+pre code {
+	border: 4px solid green;
+	display:block;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+hr { 
+    background-color: #fff;
+    border: 0;
+    border-top: 2px dashed #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4C50AF;
+  color: white;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+</style>
+
+<style>
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+</style>
+
+</head>
+<body>
+
+<div id='mdcontainer' style='text-align:center;'>
+</div>
+  
+<br><br>
+
+<textarea id='rawmd' style='display:none;'>
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://www.mozaweb.com/en/mozaik3D/FOL/termeszet/vulkanizmus/960.jpg) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=828&root=7/PNG/128/&file=history_clock_1192.png'>
+
+<div style='height:400px;'></div>
+
+## Data Mining and Machine Learning
+
+# Practical exercises on Knowledge Representation and Data Preparation
+
+
+:::warning
+Create a new Jupiter Notebook to track and record your solutions 
+:::
+
+## Exercise 1: Data Cleaning and Preprocessing
+
+1. Load a dataset of your choice into a Pandas DataFrame.
+2. Identify and handle missing values in the dataset. Choose an appropriate method such as imputation or removal.
+3. Explore and visualize the distribution of numerical and categorical features in the dataset.
+4. Apply feature scaling techniques (e.g., Min-Max scaling, Standardization) to normalize numerical features.
+5. Convert categorical variables into numerical representations using one-hot encoding or label encoding.
+
+<details><summary>Click to see example solution</summary>
+1. Load a dataset of your choice into a Pandas DataFrame.
+```python
+import pandas as pd
+
+# Load dataset into DataFrame
+df = pd.read_csv('dataset.csv')
+```
+
+2. Identify and handle missing values in the dataset.
+```python
+# Check for missing values
+print(df.isnull().sum())
+
+# Handle missing values by dropping rows or filling with mean/median values
+df.dropna(inplace=True)
+```
+
+3. Explore and visualize the distribution of numerical and categorical features.
+```python
+# Histogram of numerical features
+df.hist()
+
+# Bar plot of categorical features
+df['Category'].value_counts().plot(kind='bar')
+```
+
+4. Apply feature scaling techniques to normalize numerical features.
+```python
+from sklearn.preprocessing import MinMaxScaler
+
+# Initialize scaler
+scaler = MinMaxScaler()
+
+# Apply scaling to numerical features
+df[['Age', 'Income']] = scaler.fit_transform(df[['Age', 'Income']])
+```
+
+5. Convert categorical variables into numerical representations using one-hot encoding or label encoding.
+```python
+# One-hot encoding
+df_encoded = pd.get_dummies(df, columns=['Category'])
+
+# Label encoding
+from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder()
+df['Category_Encoded'] = le.fit_transform(df['Category'])
+```
+</details>
+
+## Exercise 2: Feature Engineering and Selection
+
+1. Create new features based on existing ones, such as extracting date or time features from timestamps, calculating ratios, or creating interaction terms.
+2. Perform dimensionality reduction using techniques like Principal Component Analysis (PCA) or t-SNE to visualize high-dimensional data.
+3. Apply feature selection methods (e.g., correlation analysis, mutual information, feature importance) to identify the most relevant features for a given task.
+4. Implement recursive feature elimination to iteratively eliminate less important features and improve model performance.
+
+<details><summary>Click to see example solution</summary>
+1. Create new features based on existing ones.
+```python
+# Extracting date features from timestamp
+df['Year'] = pd.to_datetime(df['Date']).dt.year
+
+# Creating interaction terms
+df['Interaction'] = df['Feature1'] * df['Feature2']
+```
+
+2. Perform dimensionality reduction using techniques like Principal Component Analysis (PCA).
+```python
+from sklearn.decomposition import PCA
+
+# Initialize PCA
+pca = PCA(n_components=2)
+
+# Apply PCA to numerical features
+pca_features = pca.fit_transform(df[['Feature1', 'Feature2']])
+
+# Visualize reduced dimensional data
+plt.scatter(pca_features[:, 0], pca_features[:, 1])
+plt.xlabel('PC1')
+plt.ylabel('PC2')
+plt.show()
+```
+
+3. Apply feature selection methods to identify relevant features.
+```python
+from sklearn.feature_selection import SelectKBest, mutual_info_classif
+
+# Initialize feature selector
+selector = SelectKBest(score_func=mutual_info_classif, k=3)
+
+# Apply feature selection to numerical features
+selected_features = selector.fit_transform(df[['Feature1', 'Feature2', 'Feature3']], df['Target'])
+
+# Get selected feature indices
+selected_indices = selector.get_support(indices=True)
+```
+
+4. Implement recursive feature elimination to iteratively eliminate less important features.
+```python
+from sklearn.feature_selection import RFECV
+from sklearn.linear_model import LogisticRegression
+
+# Initialize estimator
+estimator = LogisticRegression()
+
+# Initialize recursive feature elimination
+rfe = RFECV(estimator, cv=5)
+
+# Apply recursive feature elimination to numerical features
+rfe_features = rfe.fit_transform(df[['Feature1', 'Feature2', 'Feature3']], df['Target'])
+```
+</details>
+
+## Exercise 3: Handling Outliers and Skewed Data
+
+1. Identify outliers in numerical features using statistical methods (e.g., Z-score, IQR) and visualize them using box plots or scatter plots.
+2. Decide on an appropriate strategy to handle outliers, such as removing them, transforming them, or treating them as missing values.
+3. Check for skewed distributions in numerical features and apply appropriate transformations (e.g., logarithmic, square root) to achieve a more normal distribution.
+4. Evaluate the impact of outlier handling and data transformation techniques on model performance.
+
+<details><summary>Click to see example solution</summary>
+
+1. Identify outliers in numerical features using statistical methods.
+```python
+# Calculate Z-scores for numerical features
+z_scores = (df['Feature1'] - df['Feature1'].mean()) / df['Feature1'].std()
+
+# Identify outliers using a threshold (e.g., Z-score > 3 or < -3)
+outliers = df[z_scores > 3]
+```
+
+
+2. Decide on an appropriate strategy to handle outliers.
+```python
+# Remove outliers
+df = df[z_scores <= 3]
+
+# Replace outliers with median values
+df.loc[z_scores > 3, 'Feature1'] = df['Feature1'].median()
+```
+
+3. Check for skewed distributions in numerical features and apply appropriate transformations.
+```python
+# Check skewness of numerical features
+skewness = df[['Feature1', 'Feature2']].skew()
+
+# Apply logarithmic transformation to reduce skewness
+df[['Feature1', 'Feature2']] = np.log1p(df[['Feature1', 'Feature2']])
+```
+
+4. Evaluate the impact of outlier handling and data transformation techniques on model performance.
+```python
+# Train and evaluate models with and without outlier handling and data transformation
+# Compare performance metrics such as accuracy, precision, recall, or mean squared error.
+```
+</details>
+
+## Exercise 4: Data Representation Techniques
+
+1. Implement one-hot encoding or dummy variable encoding for categorical variables with multiple levels.
+2. Use ordinal encoding to convert categorical variables with an inherent order into numerical representations.
+3. Explore and apply binary encoding or target encoding for categorical features with high cardinality.
+4. Experiment with embedding techniques (e.g., word2vec) for text or categorical data.
+
+<details><summary>Click to see example solution</summary>
+
+1. Implement one-hot encoding or dummy variable encoding for categorical variables.
+```python
+# One-hot encoding using pandas
+df_encoded = pd.get_dummies(df, columns=['Category'])
+
+# One-hot encoding using scikit-learn
+from sklearn.preprocessing import OneHotEncoder
+
+encoder = OneHotEncoder()
+encoded_features = encoder.fit_transform(df[['Category']])
+```
+
+2. Use ordinal encoding to convert categorical variables with an inherent order into numerical representations.
+```python
+# Ordinal encoding using a mapping dictionary
+category_mapping = {'Low': 0, 'Medium': 1, 'High': 2}
+df['Category_Encoded'] = df['Category'].map(category_mapping)
+```
+
+3. Explore and apply binary encoding or target encoding for categorical features with high cardinality.
+```python
+# Binary encoding using category_encoders library
+import category_encoders as ce
+
+encoder = ce.BinaryEncoder(cols=['Category'])
+df_encoded = encoder.fit_transform(df)
+
+# Target encoding using category_encoders library
+encoder = ce.TargetEncoder(cols=['Category'])
+df_encoded = encoder.fit_transform(df, df['Target'])
+```
+
+4. Experiment with embedding techniques for text or categorical data.
+```python
+# Word embeddings using Word2Vec
+from gensim.models import Word2Vec
+
+sentences = df['Text'].apply(lambda x: x.split())
+model = Word2Vec(sentences, size=100, min_count=1)
+
+# Categorical embeddings using entity embeddings
+import tensorflow as tf
+from tensorflow.keras.layers import Embedding
+from tensorflow.keras.models import Sequential
+
+embedding_dim = 8
+model = Sequential()
+model.add(Embedding(input_dim=num_categories, output_dim=embedding_dim, input_length=1))
+```
+</details>
+
+These exercises provide **hands-on experience** on various aspects of knowledge representation and data preparation, including data cleaning, feature engineering, dimensionality reduction, handling outliers, and different methods of data representation.
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+
+<script>
+
+function extraMarkdown(txt)
+{
+	// bold words
+	//txt = txt.replaceAll( /\*\*([a-zA-Z0-9 ]*)\*\* /ig, `<b>$1</b> ` );
+	// italic words
+	//txt = txt.replaceAll( /\*(.*?)\* /ig, `<i>$1</i> ` );
+
+	let re = /(:::)(.*)\n((.|\n)*?)\n(:::)\n/ig;
+	txt = txt.replaceAll( re, `<div markdown=1 class='alert alert-$2'>$3<div style="clear: both;"></div></div>` );
+
+	return txt;
+}
+
+
+window.addEventListener('load', function() {
+
+	// html - add attribute 'markdown=1'
+
+	let converter = new showdown.Converter( { 
+                                            tables: 'true', 
+                                            disableForced4SpacesIndentedSublists: 'true', 
+                                            simpleLineBreaks: 'true',
+                                            strikethrough: 'true',
+                                            tasklists: true,
+                                            requireSpaceBeforeHeadingText: true }  );
+    converter.setFlavor('github');
+
+	let rawmd = document.getElementById('rawmd').value;
+
+    //console.log('rawmd:', rawmd );
+
+	let pages = rawmd.split("\n~~~");
+	
+	let res = '';
+	pages.forEach( (p,i )=>{
+		p = extraMarkdown( p );
+
+		p = converter.makeHtml( p );		
+
+		res += "<div id='page"+i+"' class='mdcontent'>"+p+"</div>";
+	});
+	
+	document.getElementById('mdcontainer').innerHTML = res;
+
+
+	/*
+	let els = document.getElementsByClassName('mdcontent');
+	els = [...els];
+	els.forEach( (el)=>{
+		el.innerHTML = converter.makeHtml( el.textContent );
+	});
+	*/
+
+	hljs.initHighlightingOnLoad();
+
+	
+	
+	let oldhash = window.location.hash;
+	let newhash = oldhash.replace('#', '');
+	console.log('--> old: ', oldhash, ' new:', newhash );
+	
+	window.location.hash = '';
+	window.location.hash = newhash;
+});
+</script>
+</body>
+</html>

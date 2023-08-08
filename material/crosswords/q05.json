@@ -1,0 +1,38 @@
+
+{
+  "questions": [
+    {
+      "question": "A popular probabilistic classification algorithm named after its inventor.",
+      "answer": "NaiveBayes"
+    },
+    {
+      "question": "A measure of the uncertainty in a classification decision.",
+      "answer": "Entropy"
+    },
+    {
+      "question": "A probabilistic classifier based on the Bayes theorem.",
+      "answer": "Bayesian"
+    },
+    {
+      "question": "A classification algorithm that builds multiple decision trees.",
+      "answer": "RandomForest"
+    },
+    {
+      "question": "A probabilistic classification model with continuous target variables.",
+      "answer": "GaussianNB"
+    },
+    {
+      "question": "A technique to handle missing data in probabilistic classification.",
+      "answer": "Imputation"
+    },
+    {
+      "question": "A probabilistic classifier that uses decision boundaries to classify data.",
+      "answer": "LogisticReg"
+    },
+    {
+      "question": "A measure of the effectiveness of a probabilistic classification model.",
+      "answer": "AUCROC"
+    }
+  ]
+}
+

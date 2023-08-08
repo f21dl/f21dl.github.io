@@ -1,0 +1,554 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border: 0px solid orange;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg,black, black 10%, rgba(0,0,0,0.2) 100% ),url('https://www.sixt.tech/assets/clustering-algorithm/clustering-algorithms.jpg') 100% 100%/cover" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+<!--{border: 0px solid orange}-->
+<!--{background:https://www.sixt.tech/assets/clustering-algorithm/clustering-algorithms.jpg}-->
+<!--{gradient:90deg,black, black 10%, rgba(0,0,0,0.2) 100% }-->
+					
+
+# Clustering			
+## Data Mining & Machine Learning
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:70%'>
+
+# Reading Material
+
+<!-- -------------------------------------- -->
+<div style='background-color:rgb(100,155,255); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Hands-On Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml2)
+* Ch1: The Machine Learning Landscape
+
+</span>
+<img style='margin:0px; max-height:100%;' src='https://camo.githubusercontent.com/27a6f1d2f26314cdbd8d84090aeb8b5d3a56230bdaafc72ec879588728fa4f9a/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f353161715963315179724c2e5f53583337395f424f312c3230342c3230332c3230305f2e6a7067'>
+
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,155,155); padding:10px; height:160px; '>
+
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51xkbNga5kL._SX403_BO1,204,203,200_.jpg'>
+
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining:Practical Machine Learning Tools and Techniques](https://www.cs.waikato.ac.nz/ml/weka/book.html)
+* Ch3: Output: Knowledge representation
+* Ch4: Algorithms: the basic methods
+
+</span>
+</div>
+<!-- ------------------------------------- -->
+<div style='background-color:rgb(100,55,155); padding:10px; height:160px; '>
+<span style='display:inline-block;width:900px;vertical-align:top;'>
+
+[Data Mining and Machine Learning: Fundamental Concepts and Algorithms](https://dataminingbook.info/)
+* Part I: Data Analysis Foundations
+
+</span>
+<img style='margin:0px; height:100%;max-height:100%;' src='https://m.media-amazon.com/images/I/51Nk67LGBQL.jpg'>
+
+</div>
+<!-- -------------------------------------- -->
+</div>
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+
+Clustering is a key technique in data mining and machine learning that involves grouping similar data points together based on their inherent patterns and similarities. The primary objective of clustering is to discover hidden structures within data and create natural partitions without the need for predefined class labels. It is an unsupervised learning method, meaning the algorithm works solely on the input data without any external guidance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+Summary of Clustering:
+* Unsupervised Learning
+* Similarity Measures
+* Cluster Representation
+* Types of Clustering Algorithms
+* Centroid-Based Clustering (K-means)
+* Density-Based Clustering (DBSCAN)
+* Hierarchical Clustering
+* Evaluation of Clustering
+* Applications of Clustering
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Unsupervised Learning
+Clustering is an unsupervised learning method, meaning it does not rely on labeled data to train the model. Instead, it explores the inherent structure in the data and groups similar instances together based on certain similarity measures.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Similarity Measures
+Clustering algorithms use similarity or distance measures to assess how closely data points relate to each other. Common distance metrics include Euclidean distance, Manhattan distance, and cosine similarity, among others.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Cluster Representation
+A cluster is a group of data points that share similarities, and the goal of clustering is to find a meaningful representation of these groups. Each cluster is characterized by its center, often called the centroid, which is a representative point in the feature space.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Types of Clustering Algorithms
+There are various clustering algorithms, and they can be broadly categorized into two main types:
+* a. Partitioning Clustering
+* b. Hierarchical Clustering
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+### a. Partitioning Clustering
+These algorithms create non-overlapping clusters where each data point belongs to only one cluster. K-means and K-medoids are examples of partitioning clustering algorithms.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+### b. Hierarchical Clustering
+These algorithms create a tree-like structure of nested clusters, allowing for either agglomerative (bottom-up) or divisive (top-down) clustering. Examples include Agglomerative Hierarchical Clustering and Divisive Hierarchical Clustering.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Centroid-Based Clustering (K-means)
+K-means is one of the most popular centroid-based clustering algorithms. It assigns data points to clusters by minimizing the sum of squared distances between data points and their assigned cluster centroids. The number of clusters (K) needs to be specified in advance.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Density-Based Clustering (DBSCAN)
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a density-based clustering algorithm. It groups data points that are close to each other and separates points in low-density regions. It automatically identifies the number of clusters and is particularly effective for data with irregularly shaped clusters.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Hierarchical Clustering
+Hierarchical clustering builds a hierarchy of clusters, typically represented as a dendrogram. It allows for exploring different granularities of clustering, from individual data points to larger clusters. The choice of the number of clusters can be determined using the dendrogram structure.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Evaluation of Clustering
+Evaluating clustering results can be challenging due to the lack of ground truth labels. Internal evaluation metrics such as silhouette score and Davies-Bouldin index, as well as external evaluation metrics like adjusted Rand index, can help assess the quality of the clustering.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+## Applications of Clustering
+Clustering finds applications in various fields, including customer segmentation, image segmentation, anomaly detection, document categorization, and recommendation systems, to name a few.
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Clustering is a powerful technique for unsupervised learning, helping to reveal hidden patterns and structures in data and aiding in better understanding and analysis of complex datasets. However, the choice of clustering algorithm and the interpretation of results require careful consideration and domain knowledge.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

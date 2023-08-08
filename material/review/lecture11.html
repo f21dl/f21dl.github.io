@@ -1,0 +1,564 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+
+
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Convolutional Neural Networks
+**Data Mining and Machine Learning**
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+  - Introduction to convolutional neural networks (CNNs) and their architecture
+    - What are Convolutional Neural Networks (CNNs)?
+  - Convolutional layers, pooling layers, and activation functions in CNNs
+  - Training and fine-tuning CNNs for image classification tasks
+  - Transfer learning and pre-trained models in CNNs
+  - Applications of CNNs in computer vision tasks (e.g., object detection, image segmentation)
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are Convolutional Neural Networks (CNNs)?
+
+---
+
+##  What are Convolutional Neural Networks (CNNs)?
+
+Convolutional Neural Networks (CNNs) are a type of deep learning model specifically designed for analyzing visual data. They are highly effective in tasks such as image classification, object detection, and image segmentation.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are convolutional layers in CNNs?
+
+---
+
+## What are convolutional layers in CNNs?
+
+Convolutional layers are the fundamental building blocks of CNNs. They consist of filters (also known as kernels) that slide across the input image, performing element-wise multiplications and summations to extract local features. The output of a convolutional layer is called a feature map.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Pooling Layers
+### What are pooling layers in CNNs?
+
+---
+
+### What are pooling layers in CNNs?
+
+Pooling layers reduce the spatial dimensions of the feature maps. They help extract the most important features while reducing computational complexity. Common pooling operations include max pooling and average pooling, which downsample the feature maps by taking the maximum or average value within a specific region.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Activation Functions in CNNs
+### What are the commonly used activation functions in CNNs?
+
+---
+
+### What are the commonly used activation functions in CNNs?
+
+Common activation functions used in CNNs include:
+- ReLU (Rectified Linear Unit): Sets negative values to 0 and keeps positive values unchanged, introducing non-linearity.
+- Leaky ReLU: Similar to ReLU, but allows a small negative output for negative inputs, addressing the "dying ReLU" problem.
+- Sigmoid and Tanh: Used in certain cases, such as binary classification or when the output needs to be bounded.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Convolutional Neural Network Architecture
+### What is the typical architecture of a CNN?
+
+---
+
+### What is the typical architecture of a CNN?
+
+
+A typical CNN architecture consists of multiple convolutional layers, pooling layers, and fully connected layers. Convolutional layers extract local features, pooling layers downsample the feature maps, and fully connected layers perform classification or regression based on the learned features.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How are CNNs trained?
+
+---
+
+## How are CNNs trained?
+
+CNNs are trained using backpropagation, similar to other neural networks. The weights of the network are updated iteratively to minimize a defined loss function, such as cross-entropy for classification tasks. The optimization is usually performed using techniques like stochastic gradient descent (SGD) or its variants.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is transfer learning in CNNs?
+
+---
+
+## What is transfer learning in CNNs?
+
+Transfer learning is a technique where a pre-trained CNN model is used as a starting point for a new task. By leveraging the knowledge gained from large-scale datasets, transfer learning allows the fine-tuning or reusing of lower layers while training the upper layers specifically for the new task. This approach is especially useful when working with limited training data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data augmentation in CNNs?
+
+---
+
+## What is data augmentation in CNNs?
+
+Data augmentation is a technique used to artificially increase the size of the training dataset by applying various transformations to the original images. These transformations can include random rotations, translations, flips, zooms, and changes in brightness. Data augmentation helps improve model generalization and reduces overfitting.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Common Architectures: AlexNet, VGG, and ResNet
+### What are some commonly used CNN architectures?
+
+---
+
+<div style='font-size:80%'>
+
+### What are some commonly used CNN architectures?
+
+
+Some commonly used CNN architectures are:
+- AlexNet: Introduced in 2012, AlexNet was one of the first CNN models to achieve significant performance improvements on the ImageNet dataset. It consists of multiple convolutional and pooling layers, followed by fully connected layers.
+- VGG (Visual Geometry Group): VGG is known for its simplicity and uniform architecture. It consists of multiple convolutional layers with small filters, followed by max pooling and fully connected layers.
+- ResNet (Residual Network): ResNet introduced the concept of residual connections to address the vanishing gradient problem. It consists of residual blocks where the output of one block is added to the input, allowing the network to learn residual mappings.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Applications of CNNs
+### What are some applications of CNNs?
+
+---
+
+<div style='font-size:80%'>
+
+### What are some applications of CNNs?
+
+CNNs have a wide range of applications in computer vision and image analysis, including:
+- Image classification: CNNs can accurately classify images into different categories.
+- Object detection: CNNs can identify and locate objects within images or videos.
+- Semantic segmentation: CNNs can assign a class label to each pixel in an image, enabling detailed understanding of image content.
+- Face recognition: CNNs can identify and verify faces in images or videos.
+- Medical image analysis: CNNs can assist in diagnosing diseases by analyzing medical images.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Advantages of CNNs
+### What are the advantages of using CNNs?
+
+---
+
+### What are the advantages of using CNNs?
+
+Advantages of CNNs include:
+- Ability to learn and extract hierarchical features from raw image data.
+- Excellent performance in image-related tasks compared to traditional machine learning algorithms.
+- Robustness to translation, rotation, and scale variations in images.
+- Availability of pre-trained models and architectures for transfer learning.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the limitations of CNNs?
+
+---
+
+<div style='font-size:80%'>
+
+##  What are the limitations of CNNs?
+
+Limitations of CNNs include:
+- Difficulty in handling objects with complex structures or fine-grained details.
+- Sensitivity to variations in lighting, background, or image quality.
+- Computationally expensive, especially for large and deep architectures.
+- Limited understanding of context and semantics beyond local image patches.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+Key points:
+- Emphasis on the significance of CNNs in computer vision tasks.
+- Encouragement to explore and experiment with CNNs in practical applications.
+
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

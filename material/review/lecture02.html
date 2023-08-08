@@ -1,0 +1,595 @@
+
+		<style>
+            * {
+                /* font-family: "Open Sans"; */
+                font-family: "Source Sans Pro", Helvetica, sans-serif;
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html lang="en">
+<head>
+  <script>
+	window.history.replaceState = function(){ };
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/white.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/zenburn.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css">
+  
+<!--
+  <link rel="stylesheet" href="https://layout.xbdev.net/var/images/pdf.css">
+-->
+  <style>
+  b, strong {
+     color: red;
+  }
+  h1,h2,h3,h4,h5 {
+     color:unset!important;
+  }
+  .hljs {
+     font-size:105%;
+  }
+  </style>
+
+</head>
+<body>
+    <div class="reveal">
+      <div style='position:absolute;left:10px;top:10px;font-size:8pt;color:transparent;'>https://layout.xbdev.net</div>
+      <div class="slides" style='border:0px solid green;'>
+		<!--
+        <section data-background-color="rgb(70, 70, 255)"><h2>Welcome</h2></section>
+		<section style="height:720px; background-color:rgb(70, 70, 255);"><h2>How are you?</h2></section>
+		-->
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="linear-gradient(90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%),url('https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg')  50% 50%/contain no-repeat" 
+		 data-background-color="white"
+         data-background-size="cover"
+         class=""
+		 style="color:white"
+>
+<textarea data-template>
+     
+	
+<!--{border:0px solid green}-->
+
+<!--{color:white}-->
+<!--{background:https://testingtraveler.com/wp-content/uploads/2021/03/review.jpg, 50% 50%/contain no-repeat}-->
+<!--{gradient:90deg, black 0%, rgba(0,0,0,0.2) 80%, transparent 100%}-->
+
+
+# Knowledge Representation and Data Preparation
+**Data Mining and Machine Learning**
+
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Overview
+
+* What is knowledge representation in data mining?
+* What are some data preprocessing techniques?
+* How to Handling missing values and outliers in datasets?
+* What feature engineering and selection methods are there?
+* What data transformation techniques are there? 
+  * (e.g., dimensionality reduction, feature scaling)
+* How to handling categorical and numerical data?
+* Summary/Discussion
+
+
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is knowledge representation in data mining?
+
+---
+
+## What is knowledge representation in data mining?
+
+Knowledge representation refers to the process of organizing and structuring information in a way that facilitates efficient storage, retrieval, and manipulation. It involves selecting appropriate representations to capture and express knowledge in a form that can be used by data mining algorithms.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is knowledge representation important in data mining?
+
+---
+
+## Why is knowledge representation important in data mining?
+
+Knowledge representation is crucial as it provides a foundation for effective data mining. It enables the extraction of meaningful patterns, relationships, and insights from data by structuring and organizing knowledge in a way that algorithms can leverage. Proper representation enhances the accuracy, efficiency, and interpretability of the data mining process.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What are the different types of knowledge representation techniques?
+
+---
+
+<div style='font-size:90%'>
+
+## What are the different types of knowledge representation techniques?
+
+There are various types of knowledge representation techniques, including:
+- Logical representation: Using formal logic to represent knowledge, such as propositional logic, first-order logic, or fuzzy logic.
+- Semantic networks: Representing knowledge as interconnected nodes and relationships.
+- Frames and scripts: Organizing knowledge in the form of structured frames or scripts.
+- Ontologies: Capturing domain-specific knowledge using a hierarchical structure of concepts and their relationships.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is the entity-relationship model in data mining?
+
+---
+
+## What is the entity-relationship model in data mining?
+
+The entity-relationship model is a conceptual model used to represent the relationships between different entities in a database. It consists of entities (objects), attributes (properties), and relationships (associations) between entities. This model helps in organizing and understanding the structure of the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data integration and cleaning?
+
+---
+
+## What is data integration and cleaning?
+
+Data integration involves combining data from different sources into a unified format, resolving inconsistencies, and handling schema conflicts. Data cleaning focuses on identifying and correcting errors, removing duplicates, handling missing values, and ensuring data quality and consistency.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data transformation and normalization?
+
+---
+
+## What is data transformation and normalization?
+
+Data transformation involves converting data from one representation to another, such as scaling, log transformation, or discretization. Data normalization standardizes the data by rescaling it to a common range, typically between 0 and 1 or -1 and 1, to eliminate the effects of different scales and units.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data discretization?
+
+---
+
+## What is data discretization?
+
+Data discretization is the process of transforming continuous data into discrete intervals or bins. It reduces the complexity of continuous data and allows for the application of algorithms that require categorical or ordinal inputs.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is feature selection and extraction?
+
+---
+
+## What is feature selection and extraction?
+
+Feature selection aims to identify the most relevant and informative features from the dataset, removing redundant or irrelevant ones. Feature extraction involves transforming the original features into a new set of features that capture the essential information, often using dimensionality reduction techniques like principal component analysis (PCA) or linear discriminant analysis (LDA).
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# How do we handle missing values in data mining?
+
+---
+
+## How do we handle missing values in data mining?
+
+Missing values in the data can be handled through techniques such as:
+- Deleting the instances or features with missing values.
+- Imputing the missing values using statistical methods such as mean, median, or mode imputation.
+- Using advanced imputation techniques like regression imputation or k-nearest neighbors imputation.
+- Treating missing values as a separate category or creating a separate indicator variable.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data encoding in data mining?
+
+---
+
+## What is data encoding in data mining?
+
+Data encoding involves converting categorical or textual data into a numerical representation that can be processed by data mining algorithms. Common encoding techniques include one-hot encoding, label encoding, and ordinal encoding.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data sampling in data mining?
+
+---
+
+## What is data sampling in data mining?
+
+Data sampling refers to the process of selecting a subset of data from a larger dataset for analysis. It is often used when working with large datasets to reduce computational complexity. Common sampling techniques include random sampling, stratified sampling, and undersampling/oversampling for imbalanced datasets.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is data partitioning in data mining?
+
+---
+
+## What is data partitioning in data mining?
+
+Data partitioning involves splitting the dataset into training, validation, and testing subsets. The training set is used to build the model, the validation set is used for tuning hyperparameters, and the testing set is used to evaluate the final model's performance. Proper partitioning helps assess the model's generalization ability.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# What is dimensionality reduction in data mining?
+
+---
+
+## What is dimensionality reduction in data mining?
+
+Dimensionality reduction techniques aim to reduce the number of features or variables in a dataset while preserving the most relevant information. It helps in mitigating the curse of dimensionality, improving computational efficiency, and reducing noise and redundancy in the data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Why is data visualization important in data mining?
+
+---
+
+## Why is data visualization important in data mining?
+
+Data visualization techniques help in understanding and exploring the underlying patterns and relationships in the data. Visualizations can reveal insights, identify outliers, and support the decision-making process in data mining. They provide an intuitive and visual representation of the data's characteristics.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+The **key points** from this lecture are:
+
+- Knowledge representation is essential for effective data mining by organizing and structuring information.
+- Data preparation steps include integration, cleaning, transformation, normalization, and handling missing values.
+- Feature selection, encoding, sampling, partitioning, and dimensionality reduction are crucial for data analysis.
+- Data visualization aids in understanding and interpreting the data.
+
+
+
+
+</textarea>
+</section>
+        
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js"></script>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/katex.min.js"></script>
+-->
+
+    <script>
+    window.addEventListener('load', function() {
+      console.log('setting up reveal');
+	  //window.history.pushState(null, null, '?print-pdf');
+
+      Reveal.initialize( { width: 1240,
+  						   height: 720,
+						   controls: true,
+						   progress: true,
+						   center: true,
+						   hash: true,
+                           // transition: 'fade', // none/fade/slide/convex/concave/zoom
+						   controlsTutorial: true,
+						   transitionSpeed: 'slow',
+                           plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealChalkboard  ]
+                         } );
+    });
+    </script>
+    
+    <link rel="stylesheet" href="https://courses.xbdev.net/var/styles/revealjschalkboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">    
+    <script src="https://courses.xbdev.net/var/scripts/revealjschalkboard.js"></script>
+    <!--
+    RevealChalkboard
+    -->
+
+</body>
+</html>
+	

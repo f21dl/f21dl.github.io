@@ -1,0 +1,18 @@
+
+{
+  "words": [
+    "Convolution",
+    "Pooling",
+    "Filter",
+    "Stride",
+    "Activation",
+    "Kernel",
+    "Padding",
+    "FeatureMap",
+    "Backpropagation",
+    "TransferLearning",
+    "BatchNormalization"
+  ]
+}
+
+

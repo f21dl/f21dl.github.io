@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A widely used technique for predicting continuous values.",
+      "answer": "Regression"
+    },
+    {
+      "question": "A linear regression model that includes polynomial terms.",
+      "answer": "Polynomial"
+    },
+    {
+      "question": "A measure of how well the regression line fits the data points.",
+      "answer": "R-squared"
+    },
+    {
+      "question": "A regression model with multiple predictor variables.",
+      "answer": "Multiple"
+    },
+    {
+      "question": "A technique used to handle missing data in regression analysis.",
+      "answer": "Imputation"
+    },
+    {
+      "question": "A regression model with only one predictor variable.",
+      "answer": "Simple"
+    },
+    {
+      "question": "A probabilistic regression model used for binary classification tasks.",
+      "answer": "Logistic"
+    },
+    {
+      "question": "A measure of how well the logistic regression model fits the data.",
+      "answer": "Likelihood"
+    }
+  ]
+}
+
+

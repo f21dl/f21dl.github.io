@@ -1,0 +1,17 @@
+
+{
+  "words": [
+    "NaiveBayes",
+    "LogisticRegression",
+    "Probabilities",
+    "Sigmoid",
+    "ConfusionMatrix",
+    "ROC",
+    "AUCROC",
+    "LogLikelihood",
+    "Precision",
+    "Recall",
+    "F1Score"
+  ]
+}
+

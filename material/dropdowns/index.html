@@ -1,0 +1,359 @@
+
+
+<link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+
+
+<meta name="Keywords" content="code, learning, dropdowns, tutorial, javascript, html, css, markdown, run, free, beta, fast, testing, exploring, demos, running, debugging, tool">
+
+<meta name="Description" content="codedropdowns.xbdev.net - Web-based learning tool for learning syntax and words.">
+
+	
+<title>CodeDropDowns - Welcome to Code DropDowns Learning Resource</title>
+</head>
+<body>
+
+
+<style>
+
+    .ccont {
+        display: block;
+        margin:50px;
+        margin-top:23px;
+        vertical-align:top;
+    }
+    @media (max-width:960px) { 
+        .ccont {
+            margin-left:  20px;
+            margin-right: 20px;
+        }    
+    
+    }
+    
+    .head {
+        font-size:1.5em;
+        padding:0px;
+        margin:0px; 
+        display:inline-block;
+    }
+    select {
+        border: 2px solid rgb(205,205,0);
+        outline:0px;
+        background-color: yellow;
+    }
+    select:disabled, option:disabled {
+        font-weight:900;
+        color: black;
+    }
+    #code {
+        font-family:arial;
+        border:1px dashed gray;
+        white-space: pre-wrap;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script> 
+-->
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+
+
+
+
+
+<div class='ccont'>
+    
+<div style='padding-bottom:35px;padding-top:15px;'>
+<h1 class='head' style='float:left;' title='CodeDropDowns Learning Resource'>CodeDropDowns</h1> 
+</div>
+
+<!--
+<a href='https://codedropdowns.xbdev.net/examples/'>Examples</a><br><br>
+-->
+
+<div id='code'>
+</div>
+
+<p style='word-wrap: break-word;'>
+    Educational resource for learning the syntax and keywords for simple programs. Mix of test examples, such as, Python, C++, GLSL and Vulkan. View code with dopdown options, as you practice subsituting the words and syntax it helps you become familiar the language and how it functions. The dropdown words changes to <b>green</b> when you select the correct choice.
+</p>
+
+<div style='min-height:100px;'></div>
+
+</div>
+
+<script>
+
+function setupCode( jscode )
+{
+    let code = document.getElementById('code');
+    //js = js.replaceAll('<', '&lt;');
+    //js = js.replaceAll('>', '&gt;');
+    
+    //js = defaultExamples.sort( (d)=>{ return Math.random()<0.5?-1:1; } )[ 0 ];
+    //js = defaultExamples[1];
+    
+    //html = hljs.highlightAuto( js ).value;
+    //console.log( 'html:', html );
+    //js = html;
+    
+    /*
+    validWords = js.matchAll(/[ \n\r]([a-zA-Z]*?)[ \n\r]/g);
+    validWords = [...validWords];
+    validWords.forEach( (w,i)=>{ validWords[i]=w[1].trim();} );
+    
+    validWords = validWords.filter( (w)=>{ return w.length>1; } );
+    
+    console.log('validWords:', validWords);
+    */
+    
+    /*
+    function getAllIndexes(arr, val) {
+        var indexes = [], i = -1;
+        while ((i = arr.indexOf(val, i+1)) != -1){
+            indexes.push(i);
+        }
+        return indexes;
+    }
+    */
+    
+    const js = jscode;
+    
+    let newjs = '';
+    
+    let lines = js.split("\n");
+    
+    for (let n=0; n<lines.length; n++)
+    {
+        const line = lines[n];
+        
+        //let tmp = line.replaceAll('<', '&lt;');
+        //tmp = tmp.replaceAll('>', '&rt;');
+        //newjs += '<span>'+tmp+'</span>' + "\n"; continue;
+        
+        //newjs += hljs.highlightAuto( line ).value + "\n"; continue;
+        
+        // empty line
+        if ( line.trim().length < 1 ) { newjs += hljs.highlightAuto( line ).value + "\n";  continue; }
+        
+        // check if the line is a comment
+        if ( line.trim().startsWith('#' ) ) { newjs += hljs.highlightAuto( line ).value + "\n"; continue; }
+        if ( line.trim().startsWith('//') ) { newjs += hljs.highlightAuto( line ).value + "\n"; continue; }
+    
+        const colorline = hljs.highlightAuto( line ).value;
+        
+        
+        const leftb  = '[ ()>]';
+        const rightb = '[ ()<]'
+        
+        var re = new RegExp(leftb+'([a-zA-Z0-9]*?)'+rightb,"g");
+        
+        
+        let selWords = colorline.matchAll( re ); // /[ ()>]([a-zA-Z]*?)[ ()<]/g);
+        selWords = [...selWords];
+        selWords.forEach( (w,i)=>{ selWords[i]=w[1].trim();} );
+        selWords = selWords.filter( (w)=>{ return w.length>1; } );
+    
+        
+        
+        if ( selWords.length <= 0 ) { newjs += colorline + "\n"; continue; }
+        
+        //console.log('selWords:', selWords);
+        
+        selWords.sort(() => (Math.random() > .5) ? 1 : -1);
+        
+        let word = selWords[0];
+        
+        let rw = [ 'get', 'read', 'enter', 'flat', 'sing', 'help' ];
+        rw.sort(() => (Math.random() > .5) ? 1 : -1);
+    
+        let dd = `<select correct="${word}" onchange='update(this)'>`;
+        dd += `<option value="?">?</option>`;
+        dd +=  `<option value="${rw[0]}">${rw[0]}</option>`;  
+        dd +=  `<option value="${word}">${word}</option>`;
+        dd +=  `<option value="${rw[1]}">${rw[1]}</option>`;  
+        dd +=  `<option value="${rw[2]}">${rw[2]}</option>`;  
+        dd += `</select>`;
+        
+        function regexIndexOf(text, re, i) {
+            var indexInSuffix = text.slice(i).search(re);
+            return indexInSuffix < 0 ? indexInSuffix : indexInSuffix + i;
+        }
+        
+        var re = new RegExp(leftb+word+rightb,"g");
+        
+        let fixline = colorline;
+        const startIndex = regexIndexOf(colorline, re, 0) + 1; //js.indexOf(word);
+        if (startIndex !== -1) 
+        {
+          const endIndex = startIndex + word.length - 1;
+        
+          if ( startIndex>-1 && endIndex>-1 )
+          {
+             fixline = colorline.substring(0, startIndex) + dd + colorline.substring(endIndex+1);
+          }
+        }
+        
+        newjs += fixline + "\n";
+    }
+    
+
+    code.innerHTML = newjs.trim();
+}
+
+
+function update(sel)
+{
+   //console.log('update', sel);
+   //console.log( sel.getAttribute('correct') );
+   //console.log( sel.value );
+
+   if ( sel.value == sel.getAttribute('correct') )
+   {
+      sel.style.backgroundColor = 'green';
+      sel.style.border = '2px solid transparent';
+      //sel.disabled = true;
+   }
+   else 
+   {
+      sel.style.backgroundColor = '';
+      sel.style.border = '';
+   }
+}
+
+
+
+/*
+fetchPlus - fetch but with a bit more ('tries' harder)
+see: https://notebook.xbdev.net/index.php?page=fetchplus&
+*/
+function fetchPlus(url, options={}, n=3) {
+    console.log('n:', n );
+    return new Promise(function(resolve, reject) {
+        fetch(url, options)
+            .then(function(result) {
+                /* on success */
+
+                // You cannot throw an error or you'll lose your 'n'                
+                if ( !result.ok ) throw new Error('issue result.ok not good');
+                resolve(result);
+            })
+            .catch(function(error) {
+                console.log('plus catch:', error);
+                if (n === 1) return reject(error); 
+
+                // add a bit of a delay between retries, to help 
+                // the network/issue
+                setTimeout(function(){
+                    console.log('trying in 1000ms');
+                    fetchPlus(url, options, n - 1)
+                    .then(resolve)
+                    .catch(reject);
+                }, 500*(4-n) );
+            })
+    });
+}// end fetchPlus(..)
+	
+function getExamples( val )
+{
+    val = val.replace(/[^a-zA-Z0-9_ ]/g, '');
+    
+    if ( val.length < 1 ) 
+    {
+        console.log('invalid page id');
+        return;
+    }
+    console.log('val:', val );
+    
+    //doNew(false);
+    
+	
+	//fetchPlus( './?page='+val+'&', {cache: "no-store"} )
+	//.then( response => response.arrayBuffer() )
+	//.then( arrbuf => { 
+	
+	fetchPlus( `https://courses.xbdev.net/courses/dmandml/dropdowns/d${val}/`, {cache: "no-store"} )
+	.then( response => response.text() )
+	.then( text => {
+
+	//console.log('getExamples:', val,  text );
+		
+	const data = JSON.parse( text );
+		
+	//let js = defaultExamples.sort( (d)=>{ return Math.random()<0.5?-1:1; } )[ 0 ];
+	
+	const numTasks = data.tasks.length-1;
+	console.log('numTasks:', numTasks);
+	
+	const getRandomInt = (min, max) => {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+    }
+
+    const nn = getRandomInt(0,numTasks);
+    console.log('nn:', nn );
+    
+    setupCode( data.tasks[ nn ].input );
+
+	
+	/*
+	// update the url to reflect the change
+	if ( (window.history!=undefined) && ( String(document.domain).length>0 ) )
+	{
+		const queryString = window.location.search; // e.g. ?active=shirt&color=blue&newuser&size=m
+		let urlParams = new URLSearchParams(queryString);
+		if ( urlParams.has('id') )
+		{
+			urlParams.set( 'id', val );
+		}
+		else 
+		{
+			urlParams.append( 'id', val );
+		}
+		
+		document.title = val + ' - ' + 'CodeDropDown Learning, Development and Experimenting';
+		
+		//console.log( 'url:', urlParams.toString() );
+		//window.history.pushState( {}, null, '/index.php?' + urlParams.toString() + '&' );
+	}
+	*/
+	
+	} );// end .then text=>
+}
+
+
+window.onload = ()=>{ 
+    
+    /*
+		allow an example to be loaded directly using the 'url' path 
+		e.g.,
+		?examples=webgpu&
+	*/
+	const queryString = window.location.search; // e.g. ?active=shirt&color=blue&newuser&size=m
+
+	const urlParams = new URLSearchParams(queryString);
+	
+	if ( urlParams.has('id') )
+	{
+		const examples = urlParams.get('id');
+		getExamples( examples );
+		
+		//return;
+	}
+	
+	
+	//let js = defaultExamples.sort( (d)=>{ return Math.random()<0.5?-1:1; } )[ 0 ];
+	
+    //setupCode( js );
+
+    
+};
+</script>
+
+
+

@@ -1,0 +1,39 @@
+
+{
+  "questions": [
+    {
+      "question": "A type of layer in a Convolutional Neural Network responsible for feature extraction.",
+      "answer": "Convolution"
+    },
+    {
+      "question": "A pooling technique used in CNNs to reduce the spatial dimensions of the feature maps.",
+      "answer": "MaxPooling"
+    },
+    {
+      "question": "The type of data often used as input for Convolutional Neural Networks.",
+      "answer": "Images"
+    },
+    {
+      "question": "A deep learning architecture that excels at computer vision tasks.",
+      "answer": "CNN"
+    },
+    {
+      "question": "A layer in a Convolutional Neural Network used to reduce overfitting.",
+      "answer": "Dropout"
+    },
+    {
+      "question": "The type of neural network layer that holds learnable weights in CNNs.",
+      "answer": "FullyConnected"
+    },
+    {
+      "question": "A function used in CNNs to introduce non-linearity.",
+      "answer": "ReLU"
+    },
+    {
+      "question": "A technique used to optimize the weights in a CNN during training.",
+      "answer": "Backpropagation"
+    }
+  ]
+}
+
+

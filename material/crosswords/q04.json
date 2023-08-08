@@ -1,0 +1,36 @@
+{
+  "questions": [
+    {
+      "question": "A popular evaluation metric used for binary classification problems.",
+      "answer": "F1Score"
+    },
+    {
+      "question": "An evaluation metric that measures the proportion of true positive predictions.",
+      "answer": "Precision"
+    },
+    {
+      "question": "An evaluation metric that measures the ability to identify true positive cases.",
+      "answer": "Recall"
+    },
+    {
+      "question": "An evaluation metric that quantifies the overall performance of a model.",
+      "answer": "Accuracy"
+    },
+    {
+      "question": "An evaluation metric used for ranking and relevance-based tasks.",
+      "answer": "NDCG"
+    },
+    {
+      "question": "An evaluation metric that accounts for false positives and false negatives.",
+      "answer": "AUCROC"
+    },
+    {
+      "question": "An evaluation metric that considers both precision and recall.",
+      "answer": "PRCurve"
+    },
+    {
+      "question": "An evaluation metric used in clustering to measure the similarity within clusters.",
+      "answer": "Silhouette"
+    }
+  ]
+}

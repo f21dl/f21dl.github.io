@@ -1,0 +1,517 @@
+
+		<style>
+            * {
+                font-family: "Open Sans";
+                box-sizing :  content-box;
+            }
+            body {
+                background-color: transparent;
+            }
+        </style>
+		
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Notes (Layout.xbdev.net)</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.3/showdown.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+
+<style>
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+    word-wrap: break-word;
+}
+
+table { word-break:break-all !important; }
+
+html {
+    background: #CCC;
+    padding-bottom: 100vh; /* allow scrolling past end of page */
+}
+
+h1 {
+    font-size: 2em !important;
+}
+h2 {
+    font-size: 1.5em !important;
+}
+h3, h4, h5 {
+    font-size: 1.3em !important;
+}
+
+.mdcontent {
+	text-align:left;
+    position:relative;
+    background: #FFF;
+    font-family: "Open Sans";
+    line-height: 1.4;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 100px;
+    min-height: calc(100vh - 240px);
+    box-shadow: 0 0 10px;
+	background-color:#fff;
+	color: black;
+}
+
+.mdcontent::before {    
+      content: "";
+      background: url("https://courses.xbdev.net/var/images/backnote.png"); 
+	  background-position: right -50pt top 50pt;
+	  background-repeat: no-repeat;
+	  background-size: contain;	
+	  background-color:#fff;
+      opacity: 0.02;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+	  z-index:0;
+	  pointer-events: none;
+}
+
+@media (max-width: 568px) {
+    .mdcontent {
+        padding-left:20px;
+        padding-right:20px;
+    }
+}
+
+
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-variant: small-caps;
+    font-weight: 800;
+}
+
+li > ul {
+    padding-left: 20;
+}
+p + ul {
+    margin-top: -10;
+}
+li > p {
+    margin-top: 0;
+    margin-bottom: 10;
+}
+
+blockquote {
+  border-left: 8px solid rgba(100,100,100,0.5);
+  padding-left: 5px;
+}
+
+code {
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+    font-size: 85%;
+    line-height: 150%;
+    background: #f8f8f8;
+    border-radius: 3px;
+    border: 1px solid #e6e8db;
+    padding: 1px 3px 1px 3px;
+	border: 4px solid blue;
+}
+
+pre code {
+	border: 4px solid green;
+	display:block;
+	white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+hr { 
+    background-color: #fff;
+    border: 0;
+    border-top: 2px dashed #8c8b8b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 5px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+  background-color: #4C50AF;
+  color: white;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+</style>
+
+<style>
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+</style>
+
+</head>
+<body>
+
+<div id='mdcontainer' style='text-align:center;'>
+</div>
+  
+<br><br>
+
+<textarea id='rawmd' style='display:none;'>
+
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDspFBedeBJE4dSX6IxuVkCev8sWoRHsbbdPaPPPv8GFkKLybeu-e3p0wEkoFSnS-eoQ8&usqp=CAU) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=20689&root=157/PNG/256/&file=pie_chart_22137.png'>
+
+<div style='height:400px;'></div>
+
+## Data Mining and Machine Learning
+
+# Introduction to Python
+
+Practical exercises for the introduction to Python, data, arrays, and debugging in Jupyter Notebook format
+
+## Exercise 1: Getting Started with Python
+
+1. Install Python on your computer.
+2. Launch Jupyter Notebook.
+3. Create a new Jupyter Notebook file.
+4. Write a Python program to print "Hello, World!".
+5. Execute the program and verify the output.
+
+<details><summary>Click to see example solution</summary>
+1. Install Python on your computer.
+
+2. Launch Jupyter Notebook.
+
+3. Create a new Jupyter Notebook file.
+
+4. Write a Python program to print "Hello, World!".
+```
+print("Hello, World!")
+```
+
+5. Execute the program and verify the output.
+```
+Output: Hello, World!
+```
+</details>
+
+## Exercise 2: Working with Data in Python
+
+1. Create a list containing the names of five fruits.
+2. Print the list to verify its contents.
+3. Add two more fruits to the list.
+4. Sort the list in alphabetical order.
+5. Access and print the third fruit in the list.
+
+<details><summary>Click to see example solution</summary>
+
+1. Create a list containing the names of five fruits.
+
+```
+fruits = ['Apple', 'Banana', 'Orange', 'Mango', 'Grapes']
+```
+
+2. Print the list to verify its contents.
+```
+print(fruits)
+# Output: ['Apple', 'Banana', 'Orange', 'Mango', 'Grapes']
+```
+
+3. Add two more fruits to the list.
+```
+fruits.append('Pineapple')
+fruits.append('Strawberry')
+```
+
+4. Sort the list in alphabetical order.
+```
+fruits.sort()
+```
+
+5. Access and print the third fruit in the list.
+```
+print(fruits[2])
+# Output: Orange
+```
+</details>
+
+## Exercise 3: Introduction to Arrays
+
+1. Import the NumPy library.
+2. Create a one-dimensional array containing the numbers 1 to 5.
+3. Print the array.
+4. Calculate the sum, mean, and standard deviation of the array.
+5. Reshape the array into a 2x3 matrix and print it.
+
+<details><summary>Click to see example solution</summary>
+
+1. Import the NumPy library.
+```
+import numpy as np
+```
+
+2. Create a one-dimensional array containing the numbers 1 to 5.
+```
+arr = np.array([1, 2, 3, 4, 5])
+```
+
+3. Print the array.
+```
+print(arr)
+# Output: [1 2 3 4 5]
+```
+
+4. Calculate the sum, mean, and standard deviation of the array.
+```
+print("Sum:", np.sum(arr))
+# Output: Sum: 15
+
+print("Mean:", np.mean(arr))
+# Output: Mean: 3.0
+
+print("Standard Deviation:", np.std(arr))
+# Output: Standard Deviation: 1.4142135623730951
+```
+
+5. Reshape the array into a 2x3 matrix and print it.
+```
+reshaped_arr = np.reshape(arr, (2, 3))
+print(reshaped_arr)
+# Output:
+# [[1 2 3]
+#  [4 5 6]]
+```
+</details>
+
+## Exercise 4: Debugging in Python
+
+1. Write a function that calculates the factorial of a given number.
+2. Test the function with various input values.
+3. Identify and fix any bugs in the function.
+4. Add appropriate error handling to handle invalid inputs.
+5. Re-test the function to ensure it is working correctly.
+
+<details><summary>Click to see example solution</summary>
+
+1. Write a function that calculates the factorial of a given number.
+```
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+
+2. Test the function with various input values.
+```
+print(factorial(5))
+# Output: 120
+
+print(factorial(0))
+# Output: 1
+```
+
+3. Identify and fix any bugs in the function.
+```
+# The provided function is already correct.
+```
+
+4. Add appropriate error handling to handle invalid inputs.
+```
+def factorial(n):
+    if not isinstance(n, int) or n < 0:
+        raise ValueError("Input must be a non-negative integer.")
+    
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+
+5. Re-test the function to ensure it is working correctly.
+```
+print(factorial(5))
+# Output: 120
+
+print(factorial(0))
+# Output: 1
+
+# Error handling:
+print(factorial(-1))
+# Output: ValueError: Input must be a non-negative integer.
+```
+</details>
+
+
+These practical exercises are designed to help you get started with Python, understand basic data manipulation, work with arrays using the NumPy library, and practice debugging techniques. Remember to execute each code cell in the Jupyter Notebook to observe the results and make necessary modifications to achieve the desired outcomes.
+
+
+
+
+
+
+
+
+
+~~~
+
+<div style='box-sizing: border-box; position:absolute;left:0px;top:0px;width:100%;height:400px;border:0px solid green;background:url(https://i.pinimg.com/736x/d3/42/95/d342959e324beea1efb75a68e092950f.jpg) center/cover no-repeat;'></div>
+
+<img style='position:absolute; left:20px; top: 280px;' width='200px'src='https://icon-icons.com/downloadimage.php?id=20689&root=157/PNG/256/&file=pie_chart_22137.png'>
+
+<div style='height:400px;'></div>
+
+# Further Reading
+
+* Deep Learning with Python, Second Edition by Francois Chollet | Dec 21, 2021
+* Data Mining and Machine Learning: Fundamental Concepts and Algorithms 2nd Edition by Mohammed J. Zaki, Wagner Meira Jr 
+
+
+:::info
+**New to Python and Machine Learning?**
+<div style='width:40%;float:left;'>
+<img width='80%' src='https://m.media-amazon.com/images/I/51wM7dVxBOL._SX330_BO1,204,203,200_.jpg'>
+</div>
+<div markdown="1" tyle='width:60%;float:right;'>
+Try **Data Mining and Machine Learning: Fundamental Concepts and Algorithms**. Form the basis of data science, utilizing automated methods to analyze patterns and models for all kinds of data in applications ranging from scientific discovery to business analytics. This textbook for senior undergraduate and graduate courses provides a comprehensive, in-depth overview of data mining, machine learning and statistics, offering solid guidance for students, researchers, and practitioners. The book lays the foundations of data analysis, pattern mining, clustering, classification and regression, with a focus on the algorithms and the underlying algebraic, geometric, and probabilistic concepts. New to this second edition is an entire part devoted to regression methods, including neural networks and deep learning.**.
+</div>
+:::
+
+
+
+
+
+
+
+
+
+
+
+</textarea>
+
+<script>
+
+function extraMarkdown(txt)
+{
+	// bold words
+	//txt = txt.replaceAll( /\*\*([a-zA-Z0-9 ]*)\*\* /ig, `<b>$1</b> ` );
+	// italic words
+	//txt = txt.replaceAll( /\*(.*?)\* /ig, `<i>$1</i> ` );
+
+	let re = /(:::)(.*)\n((.|\n)*?)\n(:::)\n/ig;
+	txt = txt.replaceAll( re, `<div markdown=1 class='alert alert-$2'>$3<div style="clear: both;"></div></div>` );
+
+	return txt;
+}
+
+
+window.addEventListener('load', function() {
+
+	// html - add attribute 'markdown=1'
+
+	let converter = new showdown.Converter( { 
+                                            tables: 'true', 
+                                            disableForced4SpacesIndentedSublists: 'true', 
+                                            simpleLineBreaks: 'true',
+                                            strikethrough: 'true',
+                                            tasklists: true,
+                                            requireSpaceBeforeHeadingText: true }  );
+    converter.setFlavor('github');
+
+	let rawmd = document.getElementById('rawmd').value;
+
+    //console.log('rawmd:', rawmd );
+
+	let pages = rawmd.split("\n~~~");
+	
+	let res = '';
+	pages.forEach( (p,i )=>{
+		p = extraMarkdown( p );
+
+		p = converter.makeHtml( p );		
+
+		res += "<div id='page"+i+"' class='mdcontent'>"+p+"</div>";
+	});
+	
+	document.getElementById('mdcontainer').innerHTML = res;
+
+
+	/*
+	let els = document.getElementsByClassName('mdcontent');
+	els = [...els];
+	els.forEach( (el)=>{
+		el.innerHTML = converter.makeHtml( el.textContent );
+	});
+	*/
+
+	hljs.initHighlightingOnLoad();
+
+	
+	
+	let oldhash = window.location.hash;
+	let newhash = oldhash.replace('#', '');
+	console.log('--> old: ', oldhash, ' new:', newhash );
+	
+	window.location.hash = '';
+	window.location.hash = newhash;
+});
+</script>
+</body>
+</html>
