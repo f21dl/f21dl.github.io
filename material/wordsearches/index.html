@@ -876,7 +876,7 @@ if ( urlParams.has('id') )
 {
 	const id = urlParams.get('id');
 	console.log('loading: ', id );
-	let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/wordsearches/w${id}/` ); // {cache: "no-store"})
+	let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/wordsearches/w${id}.json` ); // {cache: "no-store"})
 	let txt  = await prom.text();
 	
 	//txt = txt.matchAll(/(\{"words":\[(\s|.| |"|\r|\n)*?]})/g);

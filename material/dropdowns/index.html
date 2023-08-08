@@ -276,7 +276,7 @@ function getExamples( val )
 	//.then( response => response.arrayBuffer() )
 	//.then( arrbuf => { 
 	
-	fetchPlus( `https://courses.xbdev.net/courses/dmandml/dropdowns/d${val}/`, {cache: "no-store"} )
+	fetchPlus( `https://courses.xbdev.net/courses/dmandml/dropdowns/d${val}.json`, {cache: "no-store"} )
 	.then( response => response.text() )
 	.then( text => {
 
