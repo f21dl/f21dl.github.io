@@ -137,7 +137,7 @@ onload = async function(){
 		
 		//let p = await fetch( '..../lab01.ipynb' );
 		// https://courses.xbdev.net/courses/dmandml/quizzes/q01/
-		let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/` ); // {cache: "no-store"})
+		let prom = await fetch( `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}.ipynb` ); // {cache: "no-store"})
 		let txt  = await prom.text();
 		
 		await loadIPythonNotebook( txt );
@@ -145,10 +145,10 @@ onload = async function(){
 		let d = document.getElementById('download');
 		let a = document.createElement('a');
 		d.appendChild( a );
-		a.href = `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/`;
+		a.href = `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}.ipynb`;
 		a.innerHTML = 'Download ipynb';
 		a.download  = `lab${id}.ipynb`;
-		//<a href='https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}/'>Download ipynb</a>
+		//<a href='https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}.ipynb'>Download ipynb</a>
 		
 		//Prism.highlightAll();
 	}
