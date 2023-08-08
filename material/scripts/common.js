@@ -1,6 +1,6 @@
 
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', function() {
 	
 let div = document.createElement('div');
 document.body.appendChild( div );
@@ -19,4 +19,4 @@ div.innerHTML = `<a href="https://f21dl.github.io"><img src="https://f21dl.githu
 </div>
 */
 
-};
+}, false);
