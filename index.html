@@ -109,7 +109,7 @@ td {
 }
 
 
-.ico_slides, .ico_review, .ico_review, .ico_notes, .ico_jupyter, .ico_quizzes, .ico_crossword, .ico_wordsearch, .ico_dropdowns {
+.ico_slides, .ico_review, .ico_review, .ico_notes, .ico_jupyter, .ico_quizzes, .ico_crossword, .ico_wordsearch, .ico_dropdowns, .ico_cheat {
     background:url('https://icon-icons.com/downloadimage.php?id=191192&root=3078/SVG/&file=presentation_graph_chart_blackboard_business_icon_191192.svg');
     background-size:cover;
     position:absolute;
@@ -158,8 +158,42 @@ td {
     background-size:cover;
 }
 
-
+.ico_cheat {
+    background:url('https://icon-icons.com/downloadimage.php?id=142239&root=2331/PNG/128/&file=software_time_management_daily_sheet_calendar_app_icon_142239.png');
+    background-size:cover;
+}
 </style>
+
+
+
+<style>
+.tooltip {
+  /* position: relative; */
+  position: absolute;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  right:0px;
+  visibility: hidden;
+  min-width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+
 
 <div id='container' class="container">
 <div class='innercontainer'>
@@ -189,6 +223,7 @@ Welcome to Data Mining and Machine Learning (F20DV/F21DV)<br><br>
 <td style='padding-right:10px;'><span class='rotate'>Crossword    	  </span></td>
 <td style='padding-right:10px;'><span class='rotate'>Wordsearch    	  </span></td>
 <td style='padding-right:10px;'><span class='rotate'>Dropdown 		  </span></td>
+<td style='padding-right:10px;'><span class='rotate'>Cheatsheet 	  </span></td>
 </tr>
 </thead>
 <tbody id="bodytoc">
@@ -238,27 +273,17 @@ let jtitle = {
 };
 */
 
-let toc = [
-{ wk:1,                  title:"Overview & Introduction"                       , l:'00',          t:'00'         , q:["00"]                            },
-{ a1: "Part 1: Data analysis & pattern mining"},                                                                                          
-{                        title:"Data Mining and Machine Learning"              , l:'01', r:'01',  t:'01', j:'01' , q:["01"],  c:'01' , w:'01', d:'01'  },
-{ wk:2,                  title:"Knowledge Representation and Data Preparation" , l:'02', r:'02',  t:'02', j:'02' , q:["03"],  c:'02' , w:'02', d:'02'  },
-{ wk:3,                  title:"Attribute Selection and Model Testing"         , l:'03', r:'03',  t:'03', j:'03' , q:["04"],  c:'03' , w:'03', d:'03'  },
-{ wk:4,                  title:"Evaluation Metrics"                            , l:'04', r:'04',  t:'04', j:'04' , q:['44'],  c:'04' , w:'04'          },
-{ a1: "Part 2: Classification & clustering" },                                                                                                  
-{ wk:5,                  title:"Probabilistic Classification (Bayes)"          , l:'05', r:'05',  t:'05', j:'05' , q:['05'],  c:'05' , w:'05'          },
-{ wk:6,                  title:"Reading Week (No-Lectures)"},                                                                                 
-{ wk:7,                  title:"Clustering"                                    , l:'07', r:'07',  t:'07', j:'07' , q:['07'],  c:'06' , w:'06'          },
-//{ a1: "Part 3: Clustering" },                                                                                                      
-{ wk:8,                  title:"Decision Trees"                                , l:'08', r:'08',  t:'08'         , q:['08'],  c:'07' , w:'07'          },
-{ a1: "Part 4: Regression"},                                                                                                              
-{                        title:"Linear and Logistic Regression"                , l:'09', r:'09',  t:'09', j:'08' , q:['08a'], c:'08' , w:'08'          },
-{ wk:9,                  title:"Neural Networks"                               , l:'10',                  j:'09' , q:['12'],  c:'09' , w:'09'          },	
-{ wk:10,                 title:"Multilayer Perceptron (Neural Networks)"       ,         r:'10',  t:'10'         , q:['13'],  c:'10' , w:'10'          },
-{ wk:11,                 title:"Convolutional Neural Networks"                 , l:'11', r:'11',  t:'11'         , q:['14'],  c:'11' , w:'11'          }
-]
+let jcheat = {
+    '01' : { files:[ "python"                ], title: 'Learning Python Cheatsheet' },
+    '02' : { files:[ "data"                  ], title: 'Cleaning Data Cheatsheet' },
+    '03' : { files:[ "pandas", "pandas2" ], title: 'Pandas Cheatsheet' },
+    '04' : { files:[ "numpy"                 ], title: 'Numpy Cheatsheet' },
+    '05' : { files:[ "scikit", "scikit2" ], title: 'Scikit Cheatsheet' },
+    '06' : { files:[ "keras"                 ], title: 'Keras Cheatsheet' },
+    '07' : { files:[ "machinelearning"       ], title: 'Machine Learning Cheatsheet (Algorithms)' },
+    
+};
 
-const bodytoc = document.getElementById('bodytoc');
 
 let jtitle = { 
    '01': { title: 'Getting started with Python' },
@@ -270,6 +295,31 @@ let jtitle = {
    '08': { title: 'Decision Tree, Linear Regression and Logistic Regression' },
    '09': { title: 'Classification using Perceptron and MLP' }
 };
+
+
+
+
+let toc = [
+{ wk:1,                  title:"Overview & Introduction"                       , l:'00',          t:'00'         , q:["00"]                                    },
+{ a1: "Part 1: Data analysis & pattern mining"},                                                                                          
+{                        title:"Data Mining and Machine Learning"              , l:'01', r:'01',  t:'01', j:'01' , q:["01"],  c:'01' , w:'01', d:'01', s:'01'  },
+{ wk:2,                  title:"Knowledge Representation and Data Preparation" , l:'02', r:'02',  t:'02', j:'02' , q:["03"],  c:'02' , w:'02', d:'02', s:'02'  },
+{ wk:3,                  title:"Attribute Selection and Model Testing"         , l:'03', r:'03',  t:'03', j:'03' , q:["04"],  c:'03' , w:'03', d:'03', s:'03'  },
+{ wk:4,                  title:"Evaluation Metrics"                            , l:'04', r:'04',  t:'04', j:'04' , q:['44'],  c:'04' , w:'04'                  },
+{ a1: "Part 2: Classification & clustering" },                                                                                                  
+{ wk:5,                  title:"Probabilistic Classification (Bayes)"          , l:'05', r:'05',  t:'05', j:'05' , q:['05'],  c:'05' , w:'05'        , s:'04'  },
+{ wk:6,                  title:"Reading Week (No-Lectures)"},                                                                                 
+{ wk:7,                  title:"Clustering"                                    , l:'07', r:'07',  t:'07', j:'07' , q:['07'],  c:'06' , w:'06'        , s:'05'  },
+//{ a1: "Part 3: Clustering" },                                                                                                      
+{ wk:8,                  title:"Decision Trees"                                , l:'08', r:'08',  t:'08'         , q:['08'],  c:'07' , w:'07'        , s:'06'  },
+{ a1: "Part 4: Regression"},                                                                                                              
+{                        title:"Linear and Logistic Regression"                , l:'09', r:'09',  t:'09', j:'08' , q:['08a'], c:'08' , w:'08'        , s:'07'  },
+{ wk:9,                  title:"Neural Networks"                               , l:'10',                  j:'09' , q:['12'],  c:'09' , w:'09'                  },	
+{ wk:10,                 title:"Multilayer Perceptron (Neural Networks)"       ,         r:'10',  t:'10'         , q:['13'],  c:'10' , w:'10'                  },
+{ wk:11,                 title:"Convolutional Neural Networks"                 , l:'11', r:'11',  t:'11'         , q:['14'],  c:'11' , w:'11'                  }
+]
+
+const bodytoc = document.getElementById('bodytoc');
 
 
 /*
@@ -298,7 +348,7 @@ for (let i=0; i<toc.length; i++)
 		newRow.style.backgroundColor = 'rgba(200,200,200,0.2)';
 		let cell = newRow.insertCell();
 		cell.innerHTML = toc[i].a1;
-		cell.colSpan = "12";
+		cell.colSpan = "13";
 		continue;
 	}
 	
@@ -337,7 +387,11 @@ for (let i=0; i<toc.length; i++)
 	if ( toc[i].t ) newRow.insertCell().innerHTML = `<a title='Tasks' class='content ico_notes' href='./material/labs/task${toc[i].t}.html'></a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].j ) newRow.insertCell().innerHTML = `<a title='Jyupter Notebook Exercises' class='content ico_jupyter' href='./material/jupyter/index.html?id=${toc[i].j}&'></a>`;
+	if ( toc[i].j ) 
+	{
+		let title = jtitle[ toc[i].j ].title;
+		newRow.insertCell().innerHTML = `<a title='Jyupter Exercises: ${title}' class='content ico_jupyter' href='./material/jupyter/index.html?id=${toc[i].j}&'></a>`;
+	}
 	else            newRow.insertCell().innerHTML = '-';
 	
 	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a title='Quiz' class='content ico_quizzes' href='./material/quizzes/index.html?id=${toc[i].q}&'></a>`;
@@ -350,6 +404,23 @@ for (let i=0; i<toc.length; i++)
 	else            newRow.insertCell().innerHTML = '-';
 	
 	if ( toc[i].d ) newRow.insertCell().innerHTML = `<a title='Dropdown Code Samples' class='content ico_dropdowns' href='./material/dropdowns/index.html?id=${toc[i].d}&'></a>`;
+	else            newRow.insertCell().innerHTML = '-';
+	
+	if ( toc[i].s ) 
+	{
+	    let title = jcheat[toc[i].s].title;
+	    let cont = '<div class="tooltip content ico_cheat"><span class="tooltiptext">';
+	    jcheat[toc[i].s].files.forEach( (file,gg)=>{
+	        
+	        cont += `
+	            <span><a style='color:white;' title='${title}' target='_blank' href='./material/cheat/${file}.pdf'>${gg+1}:${title}</a></span><br>
+            `;
+
+            //                Tooltip text</span>
+	    })
+	    cont += '</span></div>'
+	    newRow.insertCell().innerHTML = cont;
+	}
 	else            newRow.insertCell().innerHTML = '-';
 	
 	// extra
