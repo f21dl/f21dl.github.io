@@ -1,23 +1,27 @@
 
-		<style>
-            * {
-                /* font-family: "Open Sans"; */
-                font-family: "Source Sans Pro", Helvetica, sans-serif;
-                box-sizing :  content-box;
-            }
-            body {
-                background-color: transparent;
-            }
-        </style>
-		
 <!doctype html>
 <html lang="en">
 <head>
+
+	<style>
+		* {
+			/* font-family: "Open Sans"; */
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			box-sizing :  content-box;
+		}
+		body {
+			background-color: transparent;
+		}
+	</style>
+		
+		
   <script>
 	window.history.replaceState = function(){ };
   </script>
 
   <script src='https://f21dl.github.io/material/scripts/common.js'></script>
+
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/serif.min.css" id="theme">
@@ -279,6 +283,8 @@ We will explore the **vast landscape** of Machine Learning. We will start by und
 * Types of Attributes: Numerical, Categorical, Ordinal
 * Feature Engineering
 
+
+
 </textarea>
 </section>
         
@@ -329,6 +335,214 @@ We will explore the **vast landscape** of Machine Learning. We will start by und
 ## Importance of the Machine Learning Workflow
 
 Following a structured workflow is essential for successful Machine Learning projects. It ensures that each step is thoroughly executed, leading to well-prepared data, appropriately selected models, and reliable predictions. A well-defined workflow also promotes collaboration among team members and facilitates reproducibility.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+
+<div style='font-size:80%;'>
+
+# Attributes & Attribute Types
+
+
+- **Attributes:** Characteristics or properties of the data that are used for analysis and modeling.
+- **Attribute Types:** Different types of attributes include:
+  - **Numerical Attributes:** Represent real numbers, such as age or temperature.
+  - **Categorical Attributes:** Represent categories or labels, such as gender or color.
+  - **Ordinal Attributes:** Represent ordered categories, like education levels.
+  - **Binary Attributes:** Represent two categories, often 0 and 1.
+  - **Text Attributes:** Contain textual data, like product descriptions.
+  - **Date/Time Attributes:** Represent date and time information.
+
+</div>
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Looking at Some Data Sets
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# CPU Performance Data Set
+
+- **Description:** Contains information about CPU performance.
+- **Attributes:** Examples of attributes:
+  - `MYCT`: Machine cycle time in nanoseconds (numerical).
+  - `MMIN`: Minimum main memory in kilobytes (numerical).
+  - `CHMAX`: Maximum channels in units (numerical).
+  - `PRP`: Published relative performance (numerical).
+- **Use Case:** Predicting CPU performance based on attributes.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Weather Data Set
+
+- **Description:** Records weather-related data.
+- **Attributes:** Examples of attributes:
+  - `Temperature`: Temperature in Celsius (numerical).
+  - `Humidity`: Humidity percentage (numerical).
+  - `Wind Speed`: Wind speed in km/h (numerical).
+  - `Weather Condition`: Categorical (e.g., sunny, rainy).
+- **Use Case:** Predicting weather conditions based on historical data.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Iris Data Set
+
+- **Description:** Contains measurements of iris flowers.
+- **Attributes:** Examples of attributes:
+  - `Sepal Length`: Length of the sepal in cm (numerical).
+  - `Sepal Width`: Width of the sepal in cm (numerical).
+  - `Petal Length`: Length of the petal in cm (numerical).
+  - `Petal Width`: Width of the petal in cm (numerical).
+  - `Species`: Categorical (e.g., setosa, versicolor, virginica).
+- **Use Case:** Classifying iris flowers based on their attributes.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#3553bc"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# MNIST Data Set
+
+- **Description:** A dataset of handwritten digits (0-9).
+- **Attributes:** Each data point is a 28x28 pixel image (numerical).
+- **Use Case:** Digit recognition, often used for machine learning classification tasks.
+
+</textarea>
+</section>
+        
+<section data-markdown 
+         data-transition="fade" 
+         data-transition-speed="slow"
+         data-background-video="" 
+         data-background-video-loop data-background-video-muted 
+         data-background-opacity=""
+         data-background-image=''
+         data-background="" 
+		 data-background-color="#f9dc24"
+         data-background-size="cover"
+         class=""
+		 style=""
+>
+<textarea data-template>
+     
+	
+
+# Summary
+
+- We've covered essential concepts in Data Mining and Machine Learning:
+  - Attributes: Characteristics of data, including numerical, categorical, ordinal, binary, text, and date/time attributes.
+  - Data Description: Understanding and describing data is a crucial initial step.
+  
+- Diversity of data types and the wide range of machine learning applications in real-world scenarios
+
+
+
+
 
 
 
