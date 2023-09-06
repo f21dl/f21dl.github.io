@@ -223,94 +223,82 @@ table {
 
 ## Data Mining and Machine Learning
 
-# Decision Trees
+
+In this set of practical **open-ended exercises**, you will have the opportunity to cultivate and showcase various essential skills. To demonstrate your ability to **learn independently**, **research** and choose appropriate data and tools for the problem, while encouraging **in-depth exploration beyond the provided material**. Aim of the exercises is to help you practice your capacity for rational problem identification and definition to real-world datasets and formulating well-defined solutions. You'll hone your critical analysis and solution selection skills by assessing **different approaches for tackling the problem**, justifying your choices based on their merits. Manage your time management prowess by setting intermediate milestones and adhering to deadlines throughout the exercise. Utilize relevant computer software to preprocess and analyze the data, applying appropriate techniques. These exercises will not only strengthen your technical acumen but also highlight your proficiency in addressing multifaceted aspects of the field.
+
+> Open-ended exercises are instructional activities that lack a **single, predetermined correct answer**, fostering exploration, **critical thinking, and diverse problem-solving approaches**. These exercises prompt participants to engage deeply with a subject, encouraging them to analyze, evaluate, and synthesize information from various angles. Unlike closed-ended exercises, which have specific answers, open-ended exercises invite creativity and independent thought, often leading to a range of valid outcomes. These activities are especially useful for developing higher-order thinking skills, promoting discussion, and encouraging participants to grapple with ambiguity, uncertainty, and complex real-world scenarios. Examples of open-ended exercises include debates, case studies, research projects, and design challenges.
 
 :::warning
-Create a new Jupiter Notebook to track and record your solutions 
+These exercises should be attempted after you've reviewed the material and you want to apply the concepts to open-ended real-world examples. Record your activities/results/notes in **Jupiter Notebook**.
 :::
 
 
-# Exercises
-
-
-In these exercises, you will be working with the famous Iris dataset. You will load the dataset, split it into training and testing sets, initialize a DecisionTreeClassifier, fit the classifier on the training data, predict the target variable for the test data, calculate the accuracy of the model, and visualize the decision tree.
+# Decision Trees
 
 
 
-## Exercise 1: Import the required libraries
+In these exercises, you will be working with the famous **Iris dataset**. You will load the dataset, split it into training and testing sets, initialize a DecisionTreeClassifier, fit the classifier on the training data, predict the target variable for the test data, calculate the accuracy of the model, and visualize the decision tree.
+
+
+## Exercise 1: Data and Libraries
+
+1. Import the required libraries
+2. Load the Iris dataset
+3. Create a DataFrame with the feature variables
+4. Create a Series with the target variable
+5. Split the data into training and testing sets
+
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-```
-</details>
 
-## Exercise 2: Load the Iris dataset
-<details><summary>Click to see example solution</summary>
-```
+# 2
 iris = load_iris()
-```
-</details>
-
-## Exercise 3: Create a DataFrame with the feature variables
-<details><summary>Click to see example solution</summary>
-```
+#3 
 X = pd.DataFrame(iris.data, columns=iris.feature_names)
-```
-</details>
 
-## Exercise 4: Create a Series with the target variable
-<details><summary>Click to see example solution</summary>
-```
+# 4
 y = pd.Series(iris.target)
-```
-</details>
 
-## Exercise 5: Split the data into training and testing sets
-<details><summary>Click to see example solution</summary>
-```
+# 5
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+
 ```
 </details>
 
-## Exercise 6: Initialize a DecisionTreeClassifier
+
+
+## Exercise 2: Training and Classifying
+
+1. Initialize a DecisionTreeClassifier
+2. Fit the classifier on the training data
+3. Predict the target variable for the test data
+4. Calculate the accuracy of the model
+5. Visualize the decision tree
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 clf = DecisionTreeClassifier(random_state=42)
-```
-</details>
 
-## Exercise 7: Fit the classifier on the training data
-<details><summary>Click to see example solution</summary>
-```
+# 2
 clf.fit(X_train, y_train)
-```
-</details>
 
-
-## Exercise 8: Predict the target variable for the test data
-<details><summary>Click to see example solution</summary>
-```
+# 3
 y_pred = clf.predict(X_test)
-```
-</details>
 
-
-## Exercise 9: Calculate the accuracy of the model
-<details><summary>Click to see example solution</summary>
-```
+# 4
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
-```
-</details>
 
-
-## Exercise 10: Visualize the decision tree
-<details><summary>Click to see example solution</summary>
-```
+# 5
 from sklearn.tree import plot_tree
 import matplotlib.pyplot as plt
 
@@ -319,8 +307,6 @@ plot_tree(clf, feature_names=iris.feature_names, class_names=iris.target_names, 
 plt.show()
 ```
 </details>
-
-
 
 
 

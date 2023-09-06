@@ -222,20 +222,31 @@ table {
 
 <div style='height:400px;'></div>
 
+
 ## Data Mining and Machine Learning
 
-# Probabilistic Classification (Bayes)
+In this set of practical **open-ended exercises**, you will have the opportunity to cultivate and showcase various essential skills. To demonstrate your ability to **learn independently**, **research** and choose appropriate data and tools for the problem, while encouraging **in-depth exploration beyond the provided material**. Aim of the exercises is to help you practice your capacity for rational problem identification and definition to real-world datasets and formulating well-defined solutions. You'll hone your critical analysis and solution selection skills by assessing **different approaches for tackling the problem**, justifying your choices based on their merits. Manage your time management prowess by setting intermediate milestones and adhering to deadlines throughout the exercise. Utilize relevant computer software to preprocess and analyze the data, applying appropriate techniques. These exercises will not only strengthen your technical acumen but also highlight your proficiency in addressing multifaceted aspects of the field.
+
+> Open-ended exercises are instructional activities that lack a **single, predetermined correct answer**, fostering exploration, **critical thinking, and diverse problem-solving approaches**. These exercises prompt participants to engage deeply with a subject, encouraging them to analyze, evaluate, and synthesize information from various angles. Unlike closed-ended exercises, which have specific answers, open-ended exercises invite creativity and independent thought, often leading to a range of valid outcomes. These activities are especially useful for developing higher-order thinking skills, promoting discussion, and encouraging participants to grapple with ambiguity, uncertainty, and complex real-world scenarios. Examples of open-ended exercises include debates, case studies, research projects, and design challenges.
 
 :::warning
-Create a new Jupiter Notebook to track and record your solutions 
+These exercises should be attempted after you've reviewed the material and you want to apply the concepts to open-ended real-world examples. Record your activities/results/notes in **Jupiter Notebook**.
 :::
 
 
-# Exercises
+# Probabilistic Classification (Bayes)
 
-## Exercise 1: Load a dataset of your choice and split it into training and testing sets.
+
+## Exercise 1: Data and Training
+
+1. Load a dataset of your choice and split it into training and testing sets.
+2. Preprocess the data by handling missing values, categorical variables, and scaling numerical features.
+3. Train a Naive Bayes classifier on the training set.
+4. Use the trained model to make predictions on the testing set.
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -248,13 +259,8 @@ y = dataset['target']
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-```
-</details>
 
-
-## Exercise 2: Preprocess the data by handling missing values, categorical variables, and scaling numerical features.
-<details><summary>Click to see example solution</summary>
-```
+#2 
 from sklearn.preprocessing import StandardScaler
 
 # Handle missing values and categorical variables if applicable
@@ -263,13 +269,9 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
-```
-</details>
 
 
-## Exercise 3: Train a Naive Bayes classifier on the training set.
-<details><summary>Click to see example solution</summary>
-```
+# 3 
 from sklearn.naive_bayes import GaussianNB
 
 # Create a Gaussian Naive Bayes classifier
@@ -277,23 +279,26 @@ model = GaussianNB()
 
 # Train the model on the training set
 model.fit(X_train_scaled, y_train)
-```
-</details>
 
 
-
-## Exercise 4: Use the trained model to make predictions on the testing set.
-<details><summary>Click to see example solution</summary>
-```
+# 4 
 y_pred = model.predict(X_test_scaled)
 ```
 </details>
 
 
 
-## Exercise 5: Calculate the following evaluation metrics:
+## Exercise 2: Metrics
+1. Calculate the following evaluation metrics: accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+2. Explore different variations of Naive Bayes classifiers such as GaussianNB, MultinomialNB, or BernoulliNB.
+3. Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
+4. Implement cross-validation to assess the model's performance on multiple splits of the data.
+5. Calculate additional evaluation metrics such as log loss or Brier score.
+
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
 # Accuracy
@@ -317,15 +322,8 @@ print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
 print("Confusion Matrix:\n", confusion)
-```
-</details>
 
-
-
-
-## Exercise 6: Explore different variations of Naive Bayes classifiers such as GaussianNB, MultinomialNB, or BernoulliNB.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 
 # Create Multinomial Naive Bayes classifier
@@ -336,15 +334,7 @@ multinomial_model = MultinomialNB()
 # Create Bernoulli Naive Bayes classifier
 bernoulli_model = BernoulliNB()
 
-# Train and evaluate the model
-```
-</details>
-
-
-
-## Exercise 7: Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 3 
 from sklearn.model_selection import GridSearchCV
 
 # Define the hyperparameters to tune
@@ -367,14 +357,8 @@ accuracy_updated = accuracy_score(y_test, y_pred_updated)
 # Print the updated model's performance
 print("Best Parameters:", best_params)
 print("Updated Accuracy:", accuracy_updated)
-```
-</details>
 
-
-
-## Exercise 8: Implement cross-validation to assess the model's performance on multiple splits of the data.
-<details><summary>Click to see example solution</summary>
-```
+# 4
 from sklearn.model_selection import cross_val_score
 
 # Perform cross-validation
@@ -388,14 +372,8 @@ cv_std = cv_scores.std()
 print("Cross-Validation Scores:", cv_scores)
 print("Mean Cross-Validation Score:", cv_mean)
 print("Standard Deviation of Cross-Validation Scores:", cv_std)
-```
-</details>
 
-
-
-## Exercise 9: Calculate additional evaluation metrics such as log loss or Brier score.
-<details><summary>Click to see example solution</summary>
-```
+# 5
 from sklearn.metrics import log_loss, brier_score_loss
 
 # Calculate log loss
@@ -412,9 +390,17 @@ print("Brier Score:", brier_score)
 
 
 
-## Exercise 10: Compare the performance of Naive Bayes classifiers with other classification algorithms using evaluation metrics.
+## Exercise 3: Performance and Analysis
+
+1. Compare the performance of Naive Bayes classifiers with other classification algorithms using evaluation metrics.
+2. Analyze the impact of class imbalance on the performance of Naive Bayes classifiers and consider techniques such as oversampling, undersampling, or weighted metrics.
+3. Handle outliers in the dataset and evaluate the impact on Naive Bayes classification.
+4. Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
+
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 
@@ -426,14 +412,7 @@ logistic_model = LogisticRegression()
 # Create Random Forest classifier
 forest_model = RandomForestClassifier()
 
-# Train and evaluate the model
-```
-</details>
-
-
-## Exercise 11: Analyze the impact of class imbalance on the performance of Naive Bayes classifiers and consider techniques such as oversampling, undersampling, or weighted metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 # Implement oversampling using SMOTE or other techniques
 
 # Implement undersampling using RandomUnderSampler or other techniques
@@ -441,25 +420,13 @@ forest_model = RandomForestClassifier()
 # Implement weighted metrics using class weights
 
 # Train and evaluate the models on the balanced datasets
-```
-</details>
 
-
-
-## Exercise 12: Handle outliers in the dataset and evaluate the impact on Naive Bayes classification.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 # Identify and handle outliers using techniques like Z-score or IQR
 
 # Train and evaluate the model on the outlier-handled dataset
-```
-</details>
 
-
-
-## Exercise 13: Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
-<details><summary>Click to see example solution</summary>
-```
+# 4
 # Split the data into subsets based on desired criteria
 
 # Train and evaluate the model on each subset
@@ -468,19 +435,19 @@ forest_model = RandomForestClassifier()
 
 
 
-## Exercise 14: Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
+## Exercise 4: Discuss and Explain
+
+1. Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
+2. Document your findings and provide insights on the model's performance based on the evaluation metrics.
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 # Analyze the trade-off between metrics like accuracy, precision, recall, and F1-score
 
 # Choose the most appropriate metrics based on the specific problem and domain
-```
-</details>
 
-
-## Exercise 15: Document your findings and provide insights on the model's performance based on the evaluation metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 # Summarize the key findings and insights from the evaluation metrics
 
 # Provide recommendations or conclusions based on the model's performance
@@ -491,6 +458,13 @@ forest_model = RandomForestClassifier()
 - Perform feature selection or feature engineering techniques to improve the performance of Naive Bayes classifiers.
 - Implement ensemble methods like Bagging or Boosting to enhance the performance of Naive Bayes classifiers.
 - Apply different data preprocessing techniques and compare their impact on the model's performance.
+
+
+
+
+
+
+
 
 
 

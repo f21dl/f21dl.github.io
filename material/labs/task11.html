@@ -225,121 +225,110 @@ table {
 <div style='height:400px;'></div>
 
 
-# Convolutional Neural Networks
+## Data Mining and Machine Learning
+
+In this set of practical **open-ended exercises**, you will have the opportunity to cultivate and showcase various essential skills. To demonstrate your ability to **learn independently**, **research** and choose appropriate data and tools for the problem, while encouraging **in-depth exploration beyond the provided material**. Aim of the exercises is to help you practice your capacity for rational problem identification and definition to real-world datasets and formulating well-defined solutions. You'll hone your critical analysis and solution selection skills by assessing **different approaches for tackling the problem**, justifying your choices based on their merits. Manage your time management prowess by setting intermediate milestones and adhering to deadlines throughout the exercise. Utilize relevant computer software to preprocess and analyze the data, applying appropriate techniques. These exercises will not only strengthen your technical acumen but also highlight your proficiency in addressing multifaceted aspects of the field.
+
+> Open-ended exercises are instructional activities that lack a **single, predetermined correct answer**, fostering exploration, **critical thinking, and diverse problem-solving approaches**. These exercises prompt participants to engage deeply with a subject, encouraging them to analyze, evaluate, and synthesize information from various angles. Unlike closed-ended exercises, which have specific answers, open-ended exercises invite creativity and independent thought, often leading to a range of valid outcomes. These activities are especially useful for developing higher-order thinking skills, promoting discussion, and encouraging participants to grapple with ambiguity, uncertainty, and complex real-world scenarios. Examples of open-ended exercises include debates, case studies, research projects, and design challenges.
 
 :::warning
-Create a new Jupiter Notebook to track and record your solutions 
+These exercises should be attempted after you've reviewed the material and you want to apply the concepts to open-ended real-world examples. Record your activities/results/notes in **Jupiter Notebook**.
 :::
+
+
+
+# Convolutional Neural Networks
+
 
 # Exercises
 
-In these exercises, you will be working with the CIFAR-10 dataset. You will load the dataset, preprocess the data by scaling it, split it into training, validation, and test sets, initialize a CNN model, add convolutional layers, flatten the feature maps, add dense layers, compile the model, train the model, and evaluate its performance on the test set.
+In these exercises, you will be working with the **CIFAR-10 dataset**. You will load the dataset, preprocess the data by scaling it, split it into training, validation, and test sets, initialize a CNN model, add convolutional layers, flatten the feature maps, add dense layers, compile the model, train the model, and evaluate its performance on the test set.
 
 
 
 
-## Exercise 1: Import the required libraries
+## Exercise 1: Data and Libraries
+
+1. Import the required libraries
+2. Load the CIFAR-10 dataset
+3. Preprocess the data
+4. Split the data into training and validation sets
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 import tensorflow as tf
 from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
-```
-</details>
 
-
-## Exercise 2: Load the CIFAR-10 dataset
-<details><summary>Click to see example solution</summary>
-```
+# 2
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
-```
-</details>
 
-## Exercise 3: Preprocess the data
-<details><summary>Click to see example solution</summary>
-```
+# 3
 X_train = X_train / 255.0
 X_test = X_test / 255.0
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
-```
-</details>
 
-
-## Exercise 4: Split the data into training and validation sets
-<details><summary>Click to see example solution</summary>
-```
+# 4
 X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
 ```
 </details>
 
 
-## Exercise 5: Initialize a CNN model
+## Exercise 2: Model
+
+1. Initialize a CNN model
+2. Add convolutional layers
+3. Flatten the feature maps
+4. Add dense layers
+5. Compile the model
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 model = Sequential()
-```
-</details>
 
-
-## Exercise 6: Add convolutional layers
-<details><summary>Click to see example solution</summary>
-```
+# 2
 model.add(Conv2D(32, (3, 3), activation='relu', padding='same', input_shape=(32, 32, 3)))
 model.add(MaxPooling2D((2, 2)))
 model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
 model.add(MaxPooling2D((2, 2)))
 model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
 model.add(MaxPooling2D((2, 2)))
-```
-</details>
 
-
-## Exercise 7: Flatten the feature maps
-<details><summary>Click to see example solution</summary>
-```
+# 3
 model.add(Flatten())
-```
-</details>
 
-
-## Exercise 8: Add dense layers
-<details><summary>Click to see example solution</summary>
-```
+# 4
 model.add(Dense(256, activation='relu'))
 model.add(Dense(10, activation='softmax'))
-```
-</details>
 
-
-## Exercise 9: Compile the model
-<details><summary>Click to see example solution</summary>
-```
+# 5
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 ```
 </details>
 
 
-## Exercise 10: Train the model
+## Exercise 3: Train and Evaulate 
+
+1. Train the model
+2. Evaluate the model on the test set
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 history = model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=10, batch_size=64)
-```
-</details>
 
-
-## Exercise 11: Evaluate the model on the test set
-<details><summary>Click to see example solution</summary>
-```
+# 2
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
 print("Test Loss:", test_loss)
 print("Test Accuracy:", test_accuracy)
 ```
 </details>
-
 
 
 

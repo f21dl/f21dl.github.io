@@ -225,23 +225,34 @@ table {
 
 <div style='height:400px;'></div>
 
+
+
+
 ## Data Mining and Machine Learning
 
-# Clustering
+In this set of practical **open-ended exercises**, you will have the opportunity to cultivate and showcase various essential skills. To demonstrate your ability to **learn independently**, **research** and choose appropriate data and tools for the problem, while encouraging **in-depth exploration beyond the provided material**. Aim of the exercises is to help you practice your capacity for rational problem identification and definition to real-world datasets and formulating well-defined solutions. You'll hone your critical analysis and solution selection skills by assessing **different approaches for tackling the problem**, justifying your choices based on their merits. Manage your time management prowess by setting intermediate milestones and adhering to deadlines throughout the exercise. Utilize relevant computer software to preprocess and analyze the data, applying appropriate techniques. These exercises will not only strengthen your technical acumen but also highlight your proficiency in addressing multifaceted aspects of the field.
+
+> Open-ended exercises are instructional activities that lack a **single, predetermined correct answer**, fostering exploration, **critical thinking, and diverse problem-solving approaches**. These exercises prompt participants to engage deeply with a subject, encouraging them to analyze, evaluate, and synthesize information from various angles. Unlike closed-ended exercises, which have specific answers, open-ended exercises invite creativity and independent thought, often leading to a range of valid outcomes. These activities are especially useful for developing higher-order thinking skills, promoting discussion, and encouraging participants to grapple with ambiguity, uncertainty, and complex real-world scenarios. Examples of open-ended exercises include debates, case studies, research projects, and design challenges.
 
 :::warning
-Create a new Jupiter Notebook to track and record your solutions 
+These exercises should be attempted after you've reviewed the material and you want to apply the concepts to open-ended real-world examples. Record your activities/results/notes in **Jupiter Notebook**.
 :::
 
 
 
+# Clustering
 
-# Exercises
+
+## Exercise 1: Data and Preprocessing
+
+1. Load a dataset of your choice and perform necessary data preprocessing steps.
+2. Apply K-means clustering algorithm to the preprocessed data.
+3. Determine the optimal number of clusters using the elbow method or silhouette analysis.
 
 
-## Exercise 1: Load a dataset of your choice and perform necessary data preprocessing steps.
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
@@ -255,12 +266,8 @@ data = data.drop(['id', 'label'], axis=1)
 # Perform feature scaling
 scaler = StandardScaler()
 data_scaled = scaler.fit_transform(data)
-```
-</details>
 
-## Exercise 2: Apply K-means clustering algorithm to the preprocessed data.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 from sklearn.cluster import KMeans
 
 # Initialize the K-means clustering algorithm
@@ -268,12 +275,8 @@ kmeans = KMeans(n_clusters=3, random_state=42)
 
 # Fit the K-means model to the data
 kmeans.fit(data_scaled)
-```
-</details>
 
-## Exercise 3: Determine the optimal number of clusters using the elbow method or silhouette analysis.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 import matplotlib.pyplot as plt
 from sklearn.metrics import silhouette_score
 
@@ -296,9 +299,19 @@ plt.show()
 ```
 </details>
 
-## Exercise 4: Visualize the clustering results using scatter plots or other suitable visualization techniques.
+
+
+## Exercise 2: Visualization and Evaulation
+
+1. Visualize the clustering results using scatter plots or other suitable visualization techniques.
+2. Evaluate the quality of the clustering using internal evaluation metrics such as silhouette score or cohesion and separation measures.
+3. Apply hierarchical clustering algorithm to the preprocessed data.
+4. Visualize the clustering results using dendrograms or other suitable visualization techniques.
+
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 # Assign cluster labels to the data points
 data['cluster_label'] = kmeans.labels_
 
@@ -308,22 +321,13 @@ plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
 plt.title('K-means Clustering Results')
 plt.show()
-```
-</details>
 
-## Exercise 5: Evaluate the quality of the clustering using internal evaluation metrics such as silhouette score or cohesion and separation measures.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 # Calculate the silhouette score for the clustering
 silhouette_score = silhouette_score(data_scaled, kmeans.labels_)
 print("Silhouette Score:", silhouette_score)
-```
-</details>
 
-
-## Exercise 6: Apply hierarchical clustering algorithm to the preprocessed data.
-<details><summary>Click to see example solution</summary>
-```
+# 3 
 from sklearn.cluster import AgglomerativeClustering
 
 # Initialize the hierarchical clustering algorithm
@@ -331,13 +335,8 @@ agg_clustering = AgglomerativeClustering(n_clusters=3)
 
 # Fit the hierarchical clustering model to the data
 agg_clustering.fit(data_scaled)
-```
-</details>
 
-
-## Exercise 7: Visualize the clustering results using dendrograms or other suitable visualization techniques.
-<details><summary>Click to see example solution</summary>
-```
+# 4
 import scipy.cluster.hierarchy as shc
 
 # Create the dendrogram
@@ -346,9 +345,17 @@ dendrogram = shc.dendrogram(shc.linkage(data_scaled, method='ward'))
 </details>
 
 
-## Exercise 8: Perform agglomerative clustering with different linkage criteria and compare the results.
+## Exercise 3: Algorithms and Comparisons 
+
+1. Perform agglomerative clustering with different linkage criteria and compare the results.
+2. Evaluate the quality of the clustering using internal evaluation metrics.
+3. Apply DBSCAN (Density-Based Spatial Clustering of Applications with Noise) algorithm to the preprocessed data.
+4. Determine the optimal values for the epsilon and minimum points parameters in DBSCAN.
+5. Visualize the clustering results of DBSCAN.
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 # Initialize agglomerative clustering with different linkage criteria
 agg_clustering_single = AgglomerativeClustering(n_clusters=3, linkage='single')
 agg_clustering_complete = AgglomerativeClustering(n_clusters=3, linkage='complete')
@@ -356,13 +363,8 @@ agg_clustering_complete = AgglomerativeClustering(n_clusters=3, linkage='complet
 # Fit the models to the data
 agg_clustering_single.fit(data_scaled)
 agg_clustering_complete.fit(data_scaled)
-```
-</details>
 
-
-## Exercise 9: Evaluate the quality of the clustering using internal evaluation metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 # Calculate the silhouette score for the hierarchical clustering
 silhouette_score_agg = silhouette_score(data_scaled, agg_clustering.labels_)
 silhouette_score_single = silhouette_score(data_scaled, agg_clustering_single.labels_)
@@ -372,13 +374,8 @@ silhouette_score_complete = silhouette_score(data_scaled, agg_clustering_complet
 print("Silhouette Score (Agglomerative):", silhouette_score_agg)
 print("Silhouette Score (Agglomerative - Single linkage):", silhouette_score_single)
 print("Silhouette Score (Agglomerative - Complete linkage):", silhouette_score_complete)
-```
-</details>
 
-
-## Exercise 10: Apply DBSCAN (Density-Based Spatial Clustering of Applications with Noise) algorithm to the preprocessed data.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 from sklearn.cluster import DBSCAN
 
 # Initialize DBSCAN clustering algorithm
@@ -386,13 +383,8 @@ dbscan = DBSCAN(eps=0.5, min_samples=5)
 
 # Fit the DBSCAN model to the data
 dbscan.fit(data_scaled)
-```
-</details>
 
-
-## Exercise 11: Determine the optimal values for the epsilon and minimum points parameters in DBSCAN.
-<details><summary>Click to see example solution</summary>
-```
+# 4
 # Explore different values for epsilon and min_samples
 eps_values = [0.1, 0.3, 0.5, 0.7, 1.0]
 min_samples_values = [3, 5, 7, 10]
@@ -405,13 +397,8 @@ for eps in eps_values:
         # Assess the quality of the clustering using evaluation metrics
         silhouette_score_dbscan = silhouette_score(data_scaled, dbscan.labels_)
         print("Epsilon:", eps, "Min Samples:", min_samples, "Silhouette Score:", silhouette_score_dbscan)
-```
-</details>
 
-
-## Exercise 12: Visualize the clustering results of DBSCAN.
-<details><summary>Click to see example solution</summary>
-```
+# 5 
 # Assign cluster labels to the data points
 data['cluster_label_dbscan'] = dbscan.labels_
 
@@ -425,19 +412,20 @@ plt.show()
 </details>
 
 
-## Exercise 13: Evaluate the quality of the clustering using internal evaluation metrics.
+## Exercise 5: Evaluation and Metrics
+
+1. Evaluate the quality of the clustering using internal evaluation metrics.
+2. Apply other clustering algorithms such as Gaussian Mixture Models (GMM), Mean Shift, or Spectral Clustering.
+3. Compare the results of different clustering algorithms using evaluation metrics and visualization techniques.
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 # Calculate the silhouette score for the DBSCAN clustering
 silhouette_score_dbscan = silhouette_score(data_scaled, dbscan.labels_)
 print("Silhouette Score (DBSCAN):", silhouette_score_dbscan)
-```
-</details>
 
-
-## Exercise 14: Apply other clustering algorithms such as Gaussian Mixture Models (GMM), Mean Shift, or Spectral Clustering.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import MeanShift, SpectralClustering
 
@@ -452,13 +440,8 @@ mean_shift.fit(data_scaled)
 # Initialize and fit the Spectral Clustering model
 spectral_clustering = SpectralClustering(n_clusters=3, random_state=42)
 spectral_clustering.fit(data_scaled)
-```
-</details>
 
-
-## Exercise 15: Compare the results of different clustering algorithms using evaluation metrics and visualization techniques.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 # Compare the silhouette scores of different clustering algorithms
 silhouette_score_kmeans = silhouette_score(data_scaled, kmeans.labels_)
 silhouette_score_agg = silhouette_score(data_scaled, agg_clustering.labels_)
@@ -523,7 +506,7 @@ plt.show()
 
 
 
-This example provides a practical exercise in performing clustering using various algorithms, evaluating the clustering quality using silhouette scores, and visualizing the results. The answers to the exercises are provided through code examples and comments.
+These practical exercise let you perform clustering using various algorithms, evaluating the clustering quality using silhouette scores, and visualizing the results.
 
 
 

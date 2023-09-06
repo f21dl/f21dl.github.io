@@ -222,21 +222,29 @@ table {
 
 ## Data Mining and Machine Learning
 
-# Evaluation Metrics
+In this set of practical **open-ended exercises**, you will have the opportunity to cultivate and showcase various essential skills. To demonstrate your ability to **learn independently**, **research** and choose appropriate data and tools for the problem, while encouraging **in-depth exploration beyond the provided material**. Aim of the exercises is to help you practice your capacity for rational problem identification and definition to real-world datasets and formulating well-defined solutions. You'll hone your critical analysis and solution selection skills by assessing **different approaches for tackling the problem**, justifying your choices based on their merits. Manage your time management prowess by setting intermediate milestones and adhering to deadlines throughout the exercise. Utilize relevant computer software to preprocess and analyze the data, applying appropriate techniques. These exercises will not only strengthen your technical acumen but also highlight your proficiency in addressing multifaceted aspects of the field.
+
+> Open-ended exercises are instructional activities that lack a **single, predetermined correct answer**, fostering exploration, **critical thinking, and diverse problem-solving approaches**. These exercises prompt participants to engage deeply with a subject, encouraging them to analyze, evaluate, and synthesize information from various angles. Unlike closed-ended exercises, which have specific answers, open-ended exercises invite creativity and independent thought, often leading to a range of valid outcomes. These activities are especially useful for developing higher-order thinking skills, promoting discussion, and encouraging participants to grapple with ambiguity, uncertainty, and complex real-world scenarios. Examples of open-ended exercises include debates, case studies, research projects, and design challenges.
 
 :::warning
-Create a new Jupiter Notebook to track and record your solutions 
+These exercises should be attempted after you've reviewed the material and you want to apply the concepts to open-ended real-world examples. Record your activities/results/notes in **Jupiter Notebook**.
 :::
 
 
+# Evaluation Metrics
 
-# Practical Exercise: Evaluation Metrics
 
+## Exercises 1: Data management and pre-training.
 
-## Exercise 1: Load a dataset of your choice and split it into training and testing sets.
+1. Load a dataset of your choice and split it into training and testing sets.
+2. Train a classification model on the training set.
+3. Use the trained model to make predictions on the testing set.
+4. Calculate the following evaluation metrics: accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
 
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -249,12 +257,9 @@ y = dataset['target']
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-```
-</details>
 
-## Exercise 2: Train a classification model on the training set.
-<details><summary>Click to see example solution</summary>
-```
+
+# 2
 from sklearn.linear_model import LogisticRegression
 
 # Create a logistic regression model
@@ -262,20 +267,12 @@ model = LogisticRegression()
 
 # Train the model on the training set
 model.fit(X_train, y_train)
-```
-</details>
 
 
-## Exercise 3: Use the trained model to make predictions on the testing set.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 y_pred = model.predict(X_test)
-```
-</details>
 
-## Exercise 4: Calculate the following evaluation metrics:
-<details><summary>Click to see example solution</summary>
-```
+# 4
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
 # Accuracy
@@ -295,9 +292,18 @@ confusion = confusion_matrix(y_test, y_pred)
 ```
 </details>
 
-## Exercise 5: Visualize the ROC curve and calculate the Area Under the Curve (AUC) score.
+
+
+## Exercise 2: Visualization and Interpretation 
+
+1. Visualize the ROC curve and calculate the Area Under the Curve (AUC) score.
+2. Interpret and compare the evaluation metrics to assess the model's performance.
+3. Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
+4. Implement cross-validation to assess the model's performance on multiple splits of the data.
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 from sklearn.metrics import roc_curve, roc_auc_score
 import matplotlib.pyplot as plt
 
@@ -316,25 +322,16 @@ plt.show()
 
 # Calculate the AUC score
 auc_score = roc_auc_score(y_test, y_pred_prob)
-```
-</details>
 
-
-## Exercise 6: Interpret and compare the evaluation metrics to assess the model's performance.
-<details><summary>Click to see example solution</summary>
-```
+# 2
 print("Accuracy:", accuracy)
 print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
 print("Confusion Matrix:\n", confusion)
 print("AUC Score:", auc_score)
-```
-</details>
 
-## Exercise 7: Perform hyperparameter tuning to improve the model's performance and evaluate the updated model using the evaluation metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 from sklearn.model_selection import GridSearchCV
 
 # Define the hyperparameters to tune
@@ -353,13 +350,8 @@ best_model = grid_search.best_estimator_
 # Evaluate the updated model
 y_pred_updated = best_model.predict(X_test)
 accuracy_updated = accuracy_score(y_test, y_pred_updated)
-```
-</details>
 
-
-## Exercise 8: Implement cross-validation to assess the model's performance on multiple splits of the data.
-<details><summary>Click to see example solution</summary>
-```
+# 4
 from sklearn.model_selection import cross_val_score
 
 # Perform cross-validation
@@ -371,9 +363,18 @@ cv_std = cv.std()
 ```
 </details>
 
-## Exercise 9: Calculate additional evaluation metrics such as specificity, false positive rate, false negative rate, etc.
+
+## Exercise 3: Evaluation
+
+1. Calculate additional evaluation metrics such as specificity, false positive rate, false negative rate, etc.
+2. Compare the performance of different classification models using evaluation metrics.
+3. Analyze the impact of class imbalance on evaluation metrics and consider techniques such as oversampling, undersampling, or weighted metrics.
+4. Explore advanced evaluation techniques like precision-recall curve, average precision, or Cohen's Kappa coefficient.
+5. Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
+
 <details><summary>Click to see example solution</summary>
 ```
+# 1
 from sklearn.metrics import specificity_score, fpr_score, fnr_score
 
 # Specificity
@@ -384,12 +385,8 @@ fpr = fpr_score(y_test, y_pred)
 
 # False Negative Rate
 fnr = fnr_score(y_test, y_pred)
-```
-</details>
 
-## Exercise 10: Compare the performance of different classification models using evaluation metrics.
-<details><summary>Click to see example solution</summary>
-```
+#2 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
@@ -408,12 +405,8 @@ forest_pred = forest_model.predict(X_test)
 # Calculate evaluation metrics for each model
 tree_accuracy = accuracy_score(y_test, tree_pred)
 forest_accuracy = accuracy_score(y_test, forest_pred)
-```
-</details>
 
-## Exercise 11: Analyze the impact of class imbalance on evaluation metrics and consider techniques such as oversampling, undersampling, or weighted metrics.
-<details><summary>Click to see example solution</summary>
-```
+# 3
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.utils import class_weight
@@ -430,12 +423,8 @@ X_undersampled, y_undersampled = undersampler.fit_resample(X_train, y_train)
 class_weights = class_weight.compute_class_weight('balanced', classes=np.unique(y_train), y=y_train)
 
 # Train and evaluate models on oversampled, undersampled, and weighted datasets
-```
-</details>
 
-## Exercise 12: Explore advanced evaluation techniques like precision-recall curve, average precision, or Cohen's Kappa coefficient.
-<details><summary>Click to see example solution</summary>
-```
+# 4
 from sklearn.metrics import precision_recall_curve, average_precision_score, cohen_kappa_score
 
 # Precision-Recall curve
@@ -446,12 +435,9 @@ avg_precision = average_precision_score(y_test, y_pred_prob)
 
 # Cohen's Kappa coefficient
 kappa = cohen_kappa_score(y_test, y_pred)
-```
-</details>
 
-## Exercise 13: Evaluate the model's performance on different subsets or groups within the data (e.g., by age, gender, or location).
-<details><summary>Click to see example solution</summary>
-```
+
+# 5
 from sklearn.metrics import classification_report
 
 # Generate a classification report for different subsets or groups
@@ -460,9 +446,12 @@ report_gender = classification_report(y_test, y_pred, labels=[0, 1], target_name
 ```
 </details>
 
-## Exercise 14: Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
 
-## Exercise 15: Document your findings and provide insights on the model's performance based on the evaluation metrics.
+
+## Exercise 5: Explain and Discuss
+
+1. Consider the trade-off between different evaluation metrics and choose the most suitable metrics based on the problem and domain.
+2. Document your findings and provide insights on the model's performance based on the evaluation metrics.
 
 
 ## Additional tasks:
@@ -482,7 +471,7 @@ report_gender = classification_report(y_test, y_pred, labels=[0, 1], target_name
 
 <div style='height:400px;'></div>
 
-# Example Solutions for Exercises
+# Example Solution for Exercises
 
 
 
@@ -666,6 +655,9 @@ report_gender = classification_report(y_test, y_pred, labels=[0, 1], target_name
 # Add further tasks or additional code as required for your specific exercise.
 
 ```
+
+
+
 
 
 
