@@ -896,6 +896,8 @@ console.log('text:', text );
 
 setupWordsearch();
 
+aboutButton();
+
 }
 
 
@@ -903,3 +905,57 @@ setupWordsearch();
 
 </script>
 
+
+
+
+
+async function aboutButton()
+{
+    function aboutscreen()
+    {
+        let div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.left = '0px'
+        div.style.right = '0px';
+        div.style.top   = '0px';
+        div.style.bottom = '0px';
+        div.style.backgroundColor = 'rgba(0,0,0,0.9)';
+        div.style.color = 'white';
+        div.style.fontSize = 'max(10pt,2vw)';
+        div.style.padding = '50px';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'center';
+        div.style.alignItems = 'center';
+        
+        
+        document.body.appendChild( div );
+        div.innerHTML = `
+        <div>
+        <h2>Learning with Word Searches</h2>
+        
+        Word search puzzles offer both enjoyment and cognitive benefits. They enhance vocabulary, pattern recognition, and attention to detail, making them valuable tools for learning and mental stimulation. To make the most of word search puzzles as learning aids, adopt a strategic approach. Delve deeper by <span style='color:red;'>researching the meaning and context of each word</span>, relating it to the overarching topic to reinforce understanding. Focus on the process rather than speed, allowing you to internalize words and concepts effectively. Collaborate with peers to discuss findings and gain new perspectives. Treating word searches as opportunities for deliberate learning, you can harness their fun and educational potential to enrich your skills and cognitive abilities.
+        
+        </div>
+        `;
+        div.onclick = ()=>{ div.remove(); };
+    }
+    
+    let mynavbuttons = document.getElementById('helperbar');
+    if ( mynavbuttons )
+    {
+        let link = document.createElement('a');
+        link.href = '#';
+        link.onclick = aboutscreen;
+        let img = document.createElement('img');
+        link.appendChild( img );
+        mynavbuttons.appendChild( link );
+        img.style.height = '40px';
+        img.style.width = 'auto';
+        img.src = 'https://icon-icons.com/downloadimage.php?id=57384&root=624/SVG/&file=About_Us-80_icon-icons.com_57384.svg';
+    }
+}
+
+
+
+
+</script>

@@ -273,16 +273,32 @@ let jtitle = {
 };
 */
 
+
 let jcheat = {
-    '01' : { files:[ "python"                ], title: 'Learning Python Cheatsheet' },
-    '02' : { files:[ "data"                  ], title: 'Cleaning Data Cheatsheet' },
-    '03' : { files:[ "pandas", "pandas2" ], title: 'Pandas Cheatsheet' },
-    '04' : { files:[ "numpy"                 ], title: 'Numpy Cheatsheet' },
-    '05' : { files:[ "scikit", "scikit2" ], title: 'Scikit Cheatsheet' },
-    '06' : { files:[ "keras"                 ], title: 'Keras Cheatsheet' },
-    '07' : { files:[ "machinelearning"       ], title: 'Machine Learning Cheatsheet (Algorithms)' },
-    
+    '01' : [ { file:"python",          title: "Learning Python Cheatsheet"},
+             { file:"numpy",           title: 'Learning Numpy Cheatsheet'},
+             { file:"datastructures",  title: 'Data Structures Cheatsheet'} ],
+    '02' : [ { file:"data",            title: 'Cleaning Data Cheatsheet'},
+             { file:"balance",         title: 'Unbalanced Data Cheatsheet'},
+             { file:"bias",            title: 'Data Bias Cheatsheet'} ],
+    '03' : [ { file:"pandas",          title: 'Pandas Cheatsheet 1'},
+             { file:"pandas2",         title: 'Pandas Cheatsheet 2' },
+             { file:"dimensionality",  title: 'Dimensionality Cheatsheet' } ],
+    '04' : [ { file:"bayes",           title: 'Bayes Theorem Cheatsheet' }  ],
+    '05' : [ { file:"scikit",          title: 'Scikit Cheatsheet 1' },
+             { file:"scikit2",         title: 'Scikit Cheatsheet 2' },
+             { file:"unsupervised",    title: 'Unsupervised Cheatsheet' } ],
+    '06' : [ { file:"decisiontree",    title: 'Decision Tree Cheatsheet' } ],
+    '07' : [ { file:"regression",      title: 'Regression Cheatsheet' } ],
+    '08' : [ { file:"keras",           title: 'Keras Cheatsheet' } ],
+    '09' : [ { file:"ml",              title: 'Machine Learning Cheatsheet 1' },
+             { file:"machinelearning", title: 'Machine Learning Cheatsheet (Algorithms)' },
+             { file:"ml2",             title: 'Machine Learning Cheatsheet 2' },
+             { file:"mlcode",          title: 'ML Code Cheatsheet' } ],
+    '10' : [ { file:"cnn",             title: 'CNN Cheatsheet' },
+             { file:"ensemble",        title: 'Ensemble Cheatsheet' } ]
 };
+
 
 
 let jtitle = { 
@@ -314,9 +330,9 @@ let toc = [
 { wk:8,                  title:"Decision Trees"                                , l:'08', r:'08',  t:'08'         , q:['08'],  c:'07' , w:'07'        , s:'06'  },
 { a1: "Part 4: Regression"},                                                                                                              
 {                        title:"Linear and Logistic Regression"                , l:'09', r:'09',  t:'09', j:'08' , q:['08a'], c:'08' , w:'08'        , s:'07'  },
-{ wk:9,                  title:"Neural Networks"                               , l:'10',                  j:'09' , q:['12'],  c:'09' , w:'09'                  },	
-{ wk:10,                 title:"Multilayer Perceptron (Neural Networks)"       ,         r:'10',  t:'10'         , q:['13'],  c:'10' , w:'10'                  },
-{ wk:11,                 title:"Convolutional Neural Networks"                 , l:'11', r:'11',  t:'11'         , q:['14'],  c:'11' , w:'11'                  }
+{ wk:9,                  title:"Neural Networks"                               , l:'10',                  j:'09' , q:['12'],  c:'09' , w:'09'        , s:'08'  },	
+{ wk:10,                 title:"Multilayer Perceptron (Neural Networks)"       ,         r:'10',  t:'10'         , q:['13'],  c:'10' , w:'10'        , s:'09'  },
+{ wk:11,                 title:"Convolutional Neural Networks"                 , l:'11', r:'11',  t:'11'         , q:['14'],  c:'11' , w:'11'        , s:'10'  }
 ]
 
 const bodytoc = document.getElementById('bodytoc');
@@ -406,11 +422,13 @@ for (let i=0; i<toc.length; i++)
 	if ( toc[i].d ) newRow.insertCell().innerHTML = `<a title='Dropdown Code Samples' class='content ico_dropdowns' href='./material/dropdowns/index.html?id=${toc[i].d}&'></a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].s ) 
+    if ( toc[i].s ) 
 	{
-	    let title = jcheat[toc[i].s].title;
+	    //let title = jcheat[toc[i].s].title;
 	    let cont = '<div class="tooltip content ico_cheat"><span class="tooltiptext">';
-	    jcheat[toc[i].s].files.forEach( (file,gg)=>{
+	    jcheat[ toc[i].s ].forEach( (dd,gg)=>{
+	        let file  = dd.file;
+	        let title = dd.title;
 	        
 	        cont += `
 	            <span><a style='color:white;' title='${title}' target='_blank' href='./material/cheat/${file}.pdf'>${gg+1}:${title}</a></span><br>
@@ -422,6 +440,7 @@ for (let i=0; i<toc.length; i++)
 	    newRow.insertCell().innerHTML = cont;
 	}
 	else            newRow.insertCell().innerHTML = '-';
+	
 	
 	// extra
 	//newRow.insertCell().innerHTML = '-';

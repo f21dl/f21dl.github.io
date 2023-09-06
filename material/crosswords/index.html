@@ -1,5 +1,9 @@
 
 <head>
+
+
+<title>Data Mining and Machine Learning Crosswords</title>
+
 </head>
 <body>
 
@@ -728,6 +732,8 @@ window.onload = async function(){
     // make a nice legend for the clues
     var legend = cw.getLegend(grid);
     addLegendToPage(legend);
+	
+	aboutButton();
 };
 
 function addLegendToPage(groups){
@@ -764,6 +770,62 @@ function addLegendToPage(groups){
 <p style="text-align:center">
 Revision Crossword<br> (Note: crossword squares turn yellow when the correct answer is typed).  Have fun!
 </p>
+
+
+
+
+
+<script>
+
+async function aboutButton()
+{
+    function aboutscreen()
+    {
+        let div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.left = '0px'
+        div.style.right = '0px';
+        div.style.top   = '0px';
+        div.style.bottom = '0px';
+        div.style.backgroundColor = 'rgba(0,0,0,0.9)';
+        div.style.color = 'white';
+        div.style.fontSize = 'max(10pt,2vw)';
+        div.style.padding = '50px';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'center';
+        div.style.alignItems = 'center';
+        
+        
+        document.body.appendChild( div );
+        div.innerHTML = `
+        <div>
+        <h2>Learning with Crosswords</h2>
+        
+        Crossword puzzles offer cognitive, educational, and recreational advantages. They enhance vocabulary, language skills, and pattern recognition, while fostering critical thinking through clues and word associations. To maximize their benefits, approach crosswords as engaging learning tools. Thoroughly <span style='color:red;'>research each word's definition and relevance to the topic</span>, promoting deeper understanding. Employ contextual analysis to grasp subtle nuances and connections. Strive for accuracy over speed, and review correct answers to solidify learning. Collaborate with peers to exchange insights, broadening perspectives and knowledge. Embrace crosswords not only for their entertainment value but as structured exercises that invigorate learning and cognitive development.
+        
+        
+        </div>
+        `;
+        div.onclick = ()=>{ div.remove(); };
+    }
+    
+    let mynavbuttons = document.getElementById('helperbar');
+    if ( mynavbuttons )
+    {
+        let link = document.createElement('a');
+        link.href = '#';
+        link.onclick = aboutscreen;
+        let img = document.createElement('img');
+        link.appendChild( img );
+        mynavbuttons.appendChild( link );
+        img.style.height = '40px';
+        img.style.width = 'auto';
+        img.src = 'https://icon-icons.com/downloadimage.php?id=57384&root=624/SVG/&file=About_Us-80_icon-icons.com_57384.svg';
+    }
+}
+
+</script>
+
 
 
 </body>
