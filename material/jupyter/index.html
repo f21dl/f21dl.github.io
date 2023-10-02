@@ -151,6 +151,8 @@ onload = async function(){
 		a.href = `https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}.ipynb`;
 		a.innerHTML = 'Download ipynb';
 		a.download  = `lab${id}.ipynb`;
+		a.target = "_blank";
+		a.type = "application/octet-stream";
 		//<a href='https://raw.githubusercontent.com/f21dl/f21dl.github.io/main/material/jupyter/lab${id}.ipynb'>Download ipynb</a>
 		
 		//Prism.highlightAll();
