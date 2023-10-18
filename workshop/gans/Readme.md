@@ -12,5 +12,19 @@ Hopefully you'll learn about the magic behind GANs, while equiping you with the 
 * Working Examples - Try out and test [see how simple and easy it's to get started with GANs]
 * Hackathon - Rest of the day developing a GAN of your own for creating some unique content
 
+---
+
+## Resources
+
+**Presentation slides**
+* [Slides](./learning-gans.pdf)
+
+**Code steps from the slides**
+* [01_cifar10.py](./code/01_cifar10.py)
+* [02_generator.py](./code/02_generator.py)
+* [03_generator_plot.py](./code/03_generator_plot.py)
+* [04_discriminator.py](./code/04_discriminator.py)
+* [05_training.py](./code/05_training.py)
+
 
 
