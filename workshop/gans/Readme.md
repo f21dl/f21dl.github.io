@@ -1,7 +1,7 @@
 
 # Workshop/Hackathon GANS
 
-The reading week offers us an exhilarating opportutnity to learn about the captivating world of Generative Adversarial Networks (GANs). We will run a short workshop (working examples of GANs) followed by an exciting hackathon, all in one day, dedicated to exploring the boundless potential and unleashing the creative prowess of GANs. 
+The consolidation/reading week offers us an exhilarating opportutnity to learn about the captivating world of Generative Adversarial Networks (GANs). We will run a short workshop (working examples of GANs) followed by an exciting hackathon, all in one day, dedicated to exploring the boundless potential and unleashing the creative prowess of GANs. 
 
 GANs have revolutionized the realm of artificial intelligence, enabling machines to generate astonishingly realistic content such as images, music, and text, among others. 
 
