@@ -392,10 +392,10 @@ for (let i=0; i<toc.length; i++)
 	
 	//if ( toc[i].l ) newRow.insertCell().innerHTML = `<a class='content' href='./lectures/lecture${toc[i].no}/'>Slides</a>`;
 	//else            newRow.insertCell().innerHTML = '-';
-	if ( toc[i].l ) newRow.insertCell().innerHTML = `<a title='Slides' class='content ico_slides' href="./material/lectures/lecture${toc[i].l}.html"></a>`; // lecture 
+	if ( toc[i].l ) newRow.insertCell().innerHTML = `<a title='Slides' class='content ico_slides' href="./material/lectures/lecture${toc[i].l}.html">x</a>`; // lecture 
 	else            newRow.insertCell().innerHTML = ''; 
 	
-	if ( toc[i].r)  newRow.insertCell().innerHTML = `<a title='Review Slides' class='review ico_review' href="./material/review/lecture${toc[i].r}.html"></a>`; // review lecture 
+	if ( toc[i].r)  newRow.insertCell().innerHTML = `<a title='Review Slides' class='review ico_review' href="./material/review/lecture${toc[i].r}.html">x</a>`; // review lecture 
 	else            newRow.insertCell().innerHTML = ''; 
 	
 	newRow.insertCell().innerHTML = ' '; // gap
@@ -403,26 +403,26 @@ for (let i=0; i<toc.length; i++)
 	//if ( toc[i].n ) newRow.insertCell().innerHTML = `<a href='./notes/Notes ${toc[i].no} - ${toc[i].name}/'>Notes</a>`;
 	//else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].t ) newRow.insertCell().innerHTML = `<a title='Tasks' class='content ico_notes' href='./material/labs/task${toc[i].t}.html'></a>`;
+	if ( toc[i].t ) newRow.insertCell().innerHTML = `<a title='Tasks' class='content ico_notes' href='./material/labs/task${toc[i].t}.html'>x</a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
 	if ( toc[i].j ) 
 	{
 		let title = jtitle[ toc[i].j ].title;
-		newRow.insertCell().innerHTML = `<a title='Jyupter Exercises: ${title}' class='content ico_jupyter' href='./material/jupyter/index.html?id=${toc[i].j}&'></a>`;
+		newRow.insertCell().innerHTML = `<a title='Jyupter Exercises: ${title}' class='content ico_jupyter' href='./material/jupyter/index.html?id=${toc[i].j}&'>x</a>`;
 	}
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a title='Quiz' class='content ico_quizzes' href='./material/quizzes/index.html?id=${toc[i].q}&'></a>`;
+	if ( toc[i].q ) newRow.insertCell().innerHTML = `<a title='Quiz' class='content ico_quizzes' href='./material/quizzes/index.html?id=${toc[i].q}&'>x</a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].c ) newRow.insertCell().innerHTML = `<a title='Crossword' class='content ico_crossword' href='./material/crosswords/index.html?id=${toc[i].c}&'></a>`;
+	if ( toc[i].c ) newRow.insertCell().innerHTML = `<a title='Crossword' class='content ico_crossword' href='./material/crosswords/index.html?id=${toc[i].c}&'>x</a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].w ) newRow.insertCell().innerHTML = `<a title='Wordsearch' class='content ico_wordsearch' href='./material/wordsearches/index.html?id=${toc[i].w}&'></a>`;
+	if ( toc[i].w ) newRow.insertCell().innerHTML = `<a title='Wordsearch' class='content ico_wordsearch' href='./material/wordsearches/index.html?id=${toc[i].w}&'>x</a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
-	if ( toc[i].d ) newRow.insertCell().innerHTML = `<a title='Dropdown Code Samples' class='content ico_dropdowns' href='./material/dropdowns/index.html?id=${toc[i].d}&'></a>`;
+	if ( toc[i].d ) newRow.insertCell().innerHTML = `<a title='Dropdown Code Samples' class='content ico_dropdowns' href='./material/dropdowns/index.html?id=${toc[i].d}&'>x</a>`;
 	else            newRow.insertCell().innerHTML = '-';
 	
     if ( toc[i].s ) 
@@ -434,7 +434,7 @@ for (let i=0; i<toc.length; i++)
 	        let title = dd.title;
 	        
 	        cont += `
-	            <span><a style='color:white;' title='${title}' target='_blank' href='./material/cheat/${file}.pdf'>${gg+1}:${title}</a></span><br>
+	            <span><a style='color:white;' title='${title}' target='_blank' href='./material/cheat/${file}.pdf'>${gg+1}:${title}</a>x</span><br>
             `;
 
             //                Tooltip text</span>
